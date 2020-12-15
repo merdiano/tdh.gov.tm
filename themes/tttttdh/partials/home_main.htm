@@ -1,0 +1,105 @@
+[newsPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "{{ 1 }}"
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postFeatured = 0
+categoryFilter = 2
+postPage = "post"
+categoryPage = "home"
+==
+<?php
+function onStart(){
+    
+    $this["main_posts"] = \Indikator\News\Models\Posts::where("category_id", $this->theme->main_news)->orderBy('created_at', 'desc')->first();
+    $this["myposts"] = \Indikator\News\Models\Posts::where("category_id", $this->theme->comment_news)->orderBy('created_at', 'desc')->first();
+
+
+    $this["cat"] = \Indikator\News\Models\Categories::where("id", $this->theme->main_news)->first();
+    
+    $this["posts_filtered2"] = \Indikator\News\Models\Posts::where("category_id", $this->theme->comment_news)->orderBy('created_at', 'desc')->first();
+    $this["cat2"] = \Indikator\News\Models\Categories::where("id", $this->theme->comment_news)->first();
+
+}
+?>
+==
+
+{% component "newsPosts" %}
+{% if main_posts %}
+    <div class="title__a" id="title">
+        {{cat.name}}
+    </div>
+
+    <button class="btn__prev">
+        <img src="{{ 'assets/images/prev blue.svg'|theme }}" alt="">
+    </button>
+    <button class="btn__next">
+        <img src="{{ 'assets/images/next blue.svg'|theme }}" alt="">
+    </button>
+
+    <div class="main__title" id="mainInner">
+        <a href="{{ ''| page}}/post/{{main_posts.slug}}"> {{ main_posts.title }} </a>
+        
+    </div>
+    <div class="main__photo">
+        <img src="{{ ''| page}}{{ main_posts.image|media }} " alt="">
+    </div>
+    <div class="main__text">
+        {{ main_posts.introductory|raw }} 
+    </div>
+    <div class="main__foot">
+        <div class="main__time">
+            {{ main_posts.published_at| date("d.m.Y") }}
+        </div>
+        <div class="main__link">
+            <a href="#">Узнать больше</a>
+        </div>
+    </div>
+{% endif %}
+
+{% for item in posts %}
+    <hr>
+    <div class="texts">
+        <div class="sub__titles">
+            <a href="{{item.url}}"> {{ item.title }}</a>
+        </div>
+        <div class="sony">
+            <div class="sub__end">
+                <div class="sub__names">
+                    {{ item.category.name }}
+                </div>
+                <div class="devider">
+                </div>
+                <div class="sub__time">
+                    {{ item.published_at| date("d.m.Y") }}
+                </div>
+            </div>
+            <div class="sub__end-link">
+                <a href="{{item.url}}">Узнать больше</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% if  posts_filtered2 %}
+    <div class="comment__block">
+        <div class="title">
+            {{cat2.name}}
+        </div>
+        <hr>
+        <div class="comment__title">
+            
+        </div>
+        <div class="comment__scroll">
+            <div class="theme">
+                <span class="theme__name">
+                    На тему:
+                </span> {{ posts_filtered2.introductory|raw }} 
+            </div>
+            <div class="comment__text">
+                {{ posts_filtered2.content|raw }}
+            </div>
+            
+        </div>
+    </div>
+{% endif %}

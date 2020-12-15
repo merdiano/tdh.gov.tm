@@ -1,0 +1,17 @@
+plugin:
+    name: 'admin.interesting::lang.plugin.name'
+    description: 'admin.interesting::lang.plugin.description'
+    author: Admin
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Interesting
+        url: admin/interesting/interesting
+        icon: icon-life-ring
+        permissions:
+            - manage_intersting
+permissions:
+    manage_intersting:
+        tab: Interesting
+        label: 'Manage Interesting'

@@ -1,0 +1,17 @@
+plugin:
+    name: 'admin.photos::lang.plugin.name'
+    description: 'admin.photos::lang.plugin.description'
+    author: Admin
+    icon: oc-icon-file-photo-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Photo
+        url: admin/photos/photocontroller
+        icon: icon-life-ring
+        permissions:
+            - manage_photos
+permissions:
+    manage_photos:
+        tab: Photos
+        label: 'Manage Photos'

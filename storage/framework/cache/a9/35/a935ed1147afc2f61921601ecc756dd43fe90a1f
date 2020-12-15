@@ -1,0 +1,162 @@
+1608037142a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:3147:"title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[newsPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postFeatured = 0
+postPage = "news/post"
+==
+<div class="main__content" id="main">
+    <div class="container">
+        <div class="main__content-inner" id="rowGrid">
+            <div class="main">
+                <div class="main__inner">
+                    
+                    {% partial 'home_main' %}
+                    
+                </div>
+                
+            </div>
+            <div class="left">
+                <div class="left__inner">
+                    {% partial 'home_left' %}
+                </div>
+            </div>
+            <div class="right">
+                <div class="right__inner">
+                    {% partial 'home_right' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="channel">
+        <div class="channel__inner">
+            <div class="chanel__items">
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Altyn_asyr_link}}"><img src="{{this.theme.Altyn_asyr.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Yaslyk_link.path}}">
+                            <img src="{{this.theme.Yaslyk_link}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Miras_link}}">
+                            <img src="{{this.theme.Miras.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Turkmenistan_sport_link}}">
+                            <img src="{{this.theme.Turkmenistan_sport.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Turkmen_owazy_link}}">
+                            <img src="{{this.theme.Turkmen_owazy.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Asgabat_link}}">
+                            <img src="{{this.theme.Asgabat.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+            </div><!-- chanel__items -->                
+        </div>  <!-- channel__inner -->         
+    </div><!-- channel -->        
+</div>  <!-- container -->";s:5:"mtime";i:1608032949;s:6:"markup";s:2909:"<div class="main__content" id="main">
+    <div class="container">
+        <div class="main__content-inner" id="rowGrid">
+            <div class="main">
+                <div class="main__inner">
+                    
+                    {% partial 'home_main' %}
+                    
+                </div>
+                
+            </div>
+            <div class="left">
+                <div class="left__inner">
+                    {% partial 'home_left' %}
+                </div>
+            </div>
+            <div class="right">
+                <div class="right__inner">
+                    {% partial 'home_right' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="channel">
+        <div class="channel__inner">
+            <div class="chanel__items">
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Altyn_asyr_link}}"><img src="{{this.theme.Altyn_asyr.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Yaslyk_link.path}}">
+                            <img src="{{this.theme.Yaslyk_link}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Miras_link}}">
+                            <img src="{{this.theme.Miras.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Turkmenistan_sport_link}}">
+                            <img src="{{this.theme.Turkmenistan_sport.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Turkmen_owazy_link}}">
+                            <img src="{{this.theme.Turkmen_owazy.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="{{this.theme.Asgabat_link}}">
+                            <img src="{{this.theme.Asgabat.path}}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+            </div><!-- chanel__items -->                
+        </div>  <!-- channel__inner -->         
+    </div><!-- channel -->        
+</div>  <!-- container -->";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"newsPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"postFeatured";s:1:"0";s:8:"postPage";s:9:"news/post";}}}

@@ -1,0 +1,90 @@
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "searchresult.htm"
+==
+<?php
+function onStart(){
+        $categories = \Indikator\News\Models\Categories::all();
+        $this["categories"] = $categories;
+
+    }
+?>
+==
+<div class="top__bground"></div>
+    <div class="bg__white"></div>
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">
+                    <img src="{{ 'assets/images/Logo-2.png'|theme }}" alt="Logo">
+                </a>
+                <div class="ham" onclick="showFunction()">
+                    <div class="ham__btn" id="ham"></div>
+                    <div class="ham__btn1" id="ham1"></div>
+                    <div class="ham__btn2" id="ham2"></div>
+                </div>
+            </div> <!-- header__logo -->
+        </div> <!-- header__inner -->
+        <div class="container">
+            <div class="header__search ">
+                <form action="{{ 'search' | page }}" method="get">
+                     
+                    <input name="q"type="search" placeholder="Поиск" class="poisk">
+                    <button type="submit">Search</button>
+                </form>
+                <!-- <img src="{{ 'assets/images/search.svg'|theme }}" class="lupa"> -->
+            </div>
+        </div>
+
+        <div class="nav__header">
+            <div class="container">
+                <div class="js__menu" id="dropDown">
+
+                    <div class="js__menu-inner">
+                        <a href="{{ 'home'|page}}" >Главная</a>
+                    </div>
+                    <div class="drop__link">
+                        <a href="#">Разделы</a>
+                        <div class="main__link-list">
+                            
+                            {% for item in categories %}
+                                <a href="#" class="just__link">{{item.name}}</a>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div class="js__menu-inner">
+                        <a href="#">Комментарии</a>
+                    </div>
+                    <div class="js__menu-inner">
+                        <a href="new__single-page.html">2020 год - Туркменистан - родина Нейтралитета</a>
+                    </div>
+                    <div class="js__menu-inner">
+                        <a href="{{ 'gallery'|page}}">Мультимедиа</a>
+                    </div>
+                    <div class="js__menu-inner">
+                        <a href="contact__us.html">Обратная связь</a>
+                    </div>
+
+                    <div class="flag__row">
+                        <button class="flag ">
+                            <img src="{{ 'assets/images/NoPath___10.png'|theme }}" alt="" />
+                        </button>
+                        <div class="devider2"></div>
+
+                        <button class="flag ">
+                            <img src="{{ 'assets/images/NoPath___9.png'|theme }}" alt="" />
+                        </button>
+                        <div class="devider2"></div>
+
+                        <button class="flag">
+                            <img src="{{ 'assets/images/NoPath___4.png'|theme }}" alt="" />
+                        </button>
+                    </div>
+
+                </div><!-- js-menu -->
+            </div><!-- container -->
+        </div>
+    </header>

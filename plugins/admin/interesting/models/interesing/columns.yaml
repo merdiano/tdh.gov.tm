@@ -1,0 +1,16 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    count:
+        label: Count
+        type: switch
+        searchable: true
+        sortable: true
+    url:
+        label: Url
+        type: text
+        searchable: true
+        sortable: true

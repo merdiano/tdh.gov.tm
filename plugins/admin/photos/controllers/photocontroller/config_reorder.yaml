@@ -1,0 +1,4 @@
+title: PhotoController
+modelClass: Admin\Photos\Models\Photo
+toolbar:
+    buttons: reorder_toolbar

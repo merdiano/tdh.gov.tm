@@ -1,0 +1,21 @@
+columns:
+    title_tm:
+        label: 'Title Tm'
+        type: text
+        searchable: true
+        sortable: true
+    title_ru:
+        label: 'Title Ru'
+        type: text
+        searchable: true
+        sortable: true
+    title_en:
+        label: 'Title En'
+        type: text
+        searchable: true
+        sortable: true
+    date:
+        label: Date
+        type: date
+        searchable: true
+        sortable: true

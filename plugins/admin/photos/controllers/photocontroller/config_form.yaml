@@ -1,0 +1,10 @@
+name: PhotoController
+form: $/admin/photos/models/photo/fields.yaml
+modelClass: Admin\Photos\Models\Photo
+defaultRedirect: admin/photos/photocontroller
+create:
+    redirect: 'admin/photos/photocontroller/update/:id'
+    redirectClose: admin/photos/photocontroller
+update:
+    redirect: admin/photos/photocontroller
+    redirectClose: admin/photos/photocontroller

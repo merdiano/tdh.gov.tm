@@ -1,0 +1,4 @@
+title: Interesting
+modelClass: Admin\Interesting\Models\Interesing
+toolbar:
+    buttons: reorder_toolbar

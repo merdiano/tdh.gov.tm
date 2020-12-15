@@ -1,0 +1,135 @@
+tabs:
+  fields:
+    footer:
+      tab: Main
+      label: Footer
+      type: text
+      default: "Copyright 2012-2020 Государственное информационное агентство Туркменистана (TDH) - Туркменистан сегодня"
+
+    main_news:
+      tab: Titles
+      label: Main news
+      span: left
+      type: number
+      default: "Главные новости на сегодня"
+      
+    foreign_news:
+      tab: Titles
+      label: Foreign news
+      span: left
+      type: number
+      default: "Зарубежные новости"
+
+    comment_news:
+      tab: Titles
+      label: Comment news
+      span: left
+      type: number
+      default: "Комментарии"
+
+    # interesting_links:
+    #   tab: Titles
+    #   label: Interesting links
+    #   span: left
+    #   type: text
+    #   default: "Интересные ссылки"
+
+    # video_material:
+    #   tab: Titles
+    #   label: Видеоматериалы
+    #   span: right
+    #   type: text
+    #   default: "Видеоматериалы"
+
+    # photo_report:
+    #   tab: Titles
+    #   label: Фоторепортаж
+    #   span: left
+    #   type: text
+    #   default: "Фоторепортаж"
+
+    Altyn_asyr:
+      tab: Channels
+      label: Altyn asyr 
+      type: fileupload
+      span: left
+      mode: image
+
+    Altyn_asyr_link:
+      tab: Channels
+      label: Altyn asyr link
+      span: right
+      type: text
+      default: ""
+     
+    Yaslyk:
+      tab: Channels
+      label: Yaslyk
+      type: fileupload
+      span: left
+      mode: image
+      default: Yaslyk
+    
+    Yaslyk_link:
+      tab: Channels
+      label: Yaslyk link
+      span: right
+      type: text
+      default: ""
+
+    Miras:
+      tab: Channels
+      label: Miras
+      type: fileupload
+      span: left
+      mode: image
+
+    Miras_link:
+      tab: Channels
+      label: Miras link
+      span: right
+      type: text
+      default: ""
+
+    Turkmenistan_sport:
+      tab: Channels
+      label: Turkmenistan sport
+      type: fileupload
+      span: left
+      mode: image
+
+    Turkmenistan_sport_link:
+      tab: Channels
+      label: Turkmenistan_sport link
+      span: right
+      type: text
+      default: ""
+
+    Turkmen_owazy:
+      tab: Channels
+      label: Turkmen owazy
+      type: fileupload
+      span: left
+      mode: image
+
+    Turkmen_owazy_link:
+      tab: Channels
+      label: Turkmen_owazy link
+      span: right
+      type: text
+      default: ""
+
+    Asgabat:
+      tab: Channels
+      label: Asgabat
+      type: fileupload
+      span: left
+      mode: image
+
+    Asgabat_link:
+      tab: Channels
+      label: Asgabat link
+      span: right
+      type: text
+      default: ""
+

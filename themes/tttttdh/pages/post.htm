@@ -1,0 +1,333 @@
+title = "Post"
+url = "/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[newsPost]
+slug = "{{ :slug }}"
+==
+<?php
+
+?>
+==
+{% component 'newsPost' %}
+
+<div class="container">
+    <div class="info">
+        <div class="info__inner">
+            <!---------------------------------------------------------- -->
+            <div class="info__content">
+                <div class="info__content-inner">
+                    <div class="title">
+                        {{ post.category.name }}
+                    </div>
+                    <hr>
+                    <div class="main__title">
+                        {{ post.title }}
+                    </div>
+                    <div class="views">
+                        {{ post.published_at| date("d.m.Y") }} | 1047 - просмотров
+                    </div><!-- views -->
+                    
+                    <div class="slider" id="slider">
+                        <!-- {{ post.images }} -->
+                        aaa
+                        <div class="slider__big">
+                            <div>
+                                <div class="slider__card">
+                                    <div class="image__innir">
+                                        <img src="{{ post.images[0].path }}" alt="picture">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="slider__card">
+                                    <div class="image__innir">
+                                        <img src="{{ url('/') }}{{ post.image[1]|media }}" alt="picture">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="slider__card">
+                                    <div class="image__innir">
+                                        <img src="images/NoPath___40.png" alt="picture">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="slider__card">
+                                    <div class="image__innir">
+                                        <img src="images/NoPath___42.png" alt="picture">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="slider__card">
+                                    <div class="image__innir">
+                                        <img src="images/NoPath___39.png" alt="picture">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- slider__mini -->
+                        <div class="slider__mini">
+                            <div>
+                                <div class="image__innir">
+                                    <img src="images/NoPath___31.png" alt="picture">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="image__innir">
+                                    <img src="images/NoPath___39.png" alt="picture">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="image__innir">
+                                    <img src="images/NoPath___40.png" alt="picture">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="image__innir">
+                                    <img src="images/NoPath___42.png" alt="picture">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="image__innir">
+                                    <img src="images/NoPath___39.png" alt="picture">
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- slider -->
+
+                    <section class="main__news-text">
+                        <p class="mini__text">
+                            <!-- {{ post.content}}                           -->
+                        </p>
+                       
+                     </section>
+                     
+                </div><!-- info__content-inner -->
+            </div><!-- info__content -->
+            
+          <!-- -------------------------------------------------------- -->
+            <div class="info__right">
+                <div class="info__right-inner">
+                    <div class="title">
+                        Материалы по теме
+                    </div>
+                    <hr>
+                    <div class="news__wrap">
+                        <div class="news">
+                            <div class="left__text1">
+                                Президент Гурбангулы 
+                                Бердымухамедов принял участие в 
+                                открытии юбилейных объектов
+                            </div>
+                            <div class="left__end">
+                                <div class="left__time">
+                                    27.10.2020
+                                </div>
+                                <div class="left__link">
+                                    <a href="#">Узнать больше</a>
+                                </div>
+                            </div>
+                        </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    <hr class="mobile">
+                    <div class="news">
+                        <div class="left__text1">
+                            Президент Гурбангулы 
+                            Бердымухамедов принял участие в 
+                            открытии юбилейных объектов
+                        </div>
+                        <div class="left__end">
+                            <div class="left__time">
+                                27.10.2020
+                            </div>
+                            <div class="left__link">
+                                <a href="#">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div> <!-- news -->
+                    </div>
+                </div> <!-- info__right-inner -->
+            </div><!-- info__right -->
+            <!-- ------------------------------------------------------ -->
+        </div> <!-- info__inner -->
+    </div><!-- info -->
+</div><!-- container -->

@@ -1,0 +1,10 @@
+name: Interesting
+form: $/admin/interesting/models/interesing/fields.yaml
+modelClass: Admin\Interesting\Models\Interesing
+defaultRedirect: admin/interesting/interesting
+create:
+    redirect: 'admin/interesting/interesting/update/:id'
+    redirectClose: admin/interesting/interesting
+update:
+    redirect: admin/interesting/interesting
+    redirectClose: admin/interesting/interesting

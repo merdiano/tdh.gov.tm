@@ -1,0 +1,36 @@
+fields:
+    title_tm:
+        label: 'Title Tm'
+        span: full
+        type: text
+    title_ru:
+        label: 'Title Ru'
+        span: full
+        type: text
+    title_en:
+        label: 'Title En'
+        span: full
+        type: text
+    image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    cat_image:
+        label: 'Category Image'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload
+    date:
+        label: Date
+        mode: date
+        span: auto
+        type: datepicker

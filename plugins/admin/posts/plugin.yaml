@@ -1,0 +1,6 @@
+plugin:
+    name: 'admin.posts::lang.plugin.name'
+    description: 'admin.posts::lang.plugin.description'
+    author: Admin
+    icon: oc-icon-newspaper-o
+    homepage: ''

@@ -1,0 +1,61 @@
+1608037142a:1:{s:14:"home_right.htm";a:6:{s:8:"fileName";s:14:"home_right.htm";s:7:"content";s:802:"==
+<?php
+    function onStart(){
+
+        $this['interesting'] = Admin\Interesting\Models\Interesing::all();
+
+    }
+?>
+==
+
+<div class="right__block">
+    <div class="title__c ">
+        Интересные ссылки
+    </div>
+    <button class="btn__prev">
+        <img src="images/prev blue.svg" alt="">
+    </button>
+    <button class="btn__next">
+        <img src="images/next blue.svg" alt="">
+    </button>
+    <hr>
+    <div class="amazing">
+        {% for item in interesting %}
+            <div class="amazing__pic1">
+                <a href="{{ item.url }}">
+                    <img src="{{ item.image.getPath() }}" alt="">
+                    
+                </a>  
+            </div>
+        {% endfor %}
+        
+    </div>
+    <!-- amazing -->
+</div>";s:5:"mtime";i:1606992545;s:6:"markup";s:669:"<div class="right__block">
+    <div class="title__c ">
+        Интересные ссылки
+    </div>
+    <button class="btn__prev">
+        <img src="images/prev blue.svg" alt="">
+    </button>
+    <button class="btn__next">
+        <img src="images/next blue.svg" alt="">
+    </button>
+    <hr>
+    <div class="amazing">
+        {% for item in interesting %}
+            <div class="amazing__pic1">
+                <a href="{{ item.url }}">
+                    <img src="{{ item.image.getPath() }}" alt="">
+                    
+                </a>  
+            </div>
+        {% endfor %}
+        
+    </div>
+    <!-- amazing -->
+</div>";s:4:"code";s:110:"    function onStart(){
+
+        $this['interesting'] = Admin\Interesting\Models\Interesing::all();
+
+    }";s:17:"_PARSER_ERROR_INI";s:0:"";}}
