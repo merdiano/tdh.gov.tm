@@ -10,6 +10,12 @@ scopes:
         modelClass: Indikator\News\Models\Posts
         options: filterCategory
 
+    locale:
+        label: Language
+        modelClass: Indikator\News\Models\Posts
+        options: filterLocale
+        conditions: locale in (:filtered)
+
     statistics:
         label: indikator.news::lang.stat.viewed
         type: numberrange

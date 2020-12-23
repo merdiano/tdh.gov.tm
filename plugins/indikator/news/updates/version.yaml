@@ -132,6 +132,6 @@
     - common_rename_comment.php
 1.11.7: Improved the frontend components.
 1.11.8: Fixed bug showing the previous and next post
-1.13.0:
-    - Added Turkmen Russian locale to Posts and Categories
-    - adding_new_localized_fields_to_posts.php
+1.12.1:
+    - Added Turkmen Russian locale to Posts and Categories.
+    - add_locale_field_to_news_table.php

@@ -5,23 +5,7 @@
 fields:
 
     title:
-        label: Title English
-        required: true
-        attributes:
-           autofocus: ''
-        span: storm
-        cssClass: col-lg-6
-
-    title_tm:
-        label: Title Turkmen
-        required: true
-        attributes:
-           autofocus: ''
-        span: storm
-        cssClass: col-lg-6
-
-    title_ru:
-        label: Title Russian
+        label: indikator.news::lang.form.title
         required: true
         attributes:
            autofocus: ''
@@ -47,6 +31,17 @@ fields:
         span: storm
         cssClass: col-md-6
 
+    locale:
+        label: language
+        span: storm
+        cssClass: col-md-6
+        type: dropdown
+        default: tm
+        options:
+            en: English
+            ru: Russian
+            tm: Turkmen
+
     images:
         label: indikator.news::lang.form.image
         type: fileupload
@@ -66,42 +61,14 @@ tabs:
     fields:
 
         introductory:
-            tab: Introductory English
-            type: richeditor
-            size: large
-            span: storm
-            cssClass: col-xs-12
-        
-        introductory_tm:
-            tab: Introductory Turkmen
-            type: richeditor
-            size: large
-            span: storm
-            cssClass: col-xs-12
-
-        introductory_ru:
-            tab: Introductory Russian
+            tab: indikator.news::lang.form.introductory
             type: richeditor
             size: large
             span: storm
             cssClass: col-xs-12
 
         content:
-            tab: Content English
-            type: richeditor
-            size: giant
-            span: storm
-            cssClass: col-xs-12
-
-        content_tm:
-            tab: Content Turkmen
-            type: richeditor
-            size: giant
-            span: storm
-            cssClass: col-xs-12
-
-        content_ru:
-            tab: Content Russian
+            tab: indikator.news::lang.form.content
             type: richeditor
             size: giant
             span: storm

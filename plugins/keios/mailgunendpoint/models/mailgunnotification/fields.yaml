@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    messageId:
+        label: Message Id
+        span: left
+    subject:
+        label: Subject
+        span: right
+    sender:
+        label: Sender
+        span: left
+    bodyHtml:
+        label: Message
+        type: richeditor
+        span: right
+    receiver:
+        label: Receiver
+        span: left
+    date:
+        label: Date
+        span: left
+        type: datepicker
+    attachments:
+        label: Attachments
+        type: fileupload

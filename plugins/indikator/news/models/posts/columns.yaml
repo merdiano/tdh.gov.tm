@@ -20,13 +20,6 @@ columns:
         label: indikator.news::lang.form.title
         searchable: true
 
-    title_tm:
-        label: Title TM
-        searchable: true
-
-    title_ru:
-        label: Title RU
-        searchable: true
 
     slug:
         label: indikator.news::lang.form.slug
@@ -39,6 +32,10 @@ columns:
         type: partial
         path: ~/plugins/indikator/news/models/posts/_category.htm
 
+    locale:
+        label: Language
+        sortable: true
+        
     tags:
         label: indikator.news::lang.form.tags
         sortable: false

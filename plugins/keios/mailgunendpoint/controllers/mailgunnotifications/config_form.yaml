@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: keios.mailgunendpoint::lang.mailgunnotification.label
+
+# Model Form Field configuration
+form: $/keios/mailgunendpoint/models/mailgunnotification/fields.yaml
+
+# Model Class name
+modelClass: Keios\MailgunEndpoint\Models\MailgunNotification
+
+# Default redirect location
+defaultRedirect: keios/mailgunendpoint/mailgunnotifications
+
+# Create page
+create:
+    title: keios.mailgunendpoint::lang.mailgunnotification.create_title
+    redirect: keios/mailgunendpoint/mailgunnotifications/update/:id
+    redirectClose: keios/mailgunendpoint/mailgunnotifications
+
+# Update page
+update:
+    title: keios.mailgunendpoint::lang.mailgunnotification.update_title
+    redirect: keios/mailgunendpoint/mailgunnotifications
+    redirectClose: keios/mailgunendpoint/mailgunnotifications
+
+# Preview page
+preview:
+    title: keios.mailgunendpoint::lang.mailgunnotification.preview_title

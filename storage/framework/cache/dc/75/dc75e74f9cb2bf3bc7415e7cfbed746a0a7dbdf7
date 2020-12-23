@@ -1,4 +1,4 @@
-1608037142a:1:{s:13:"home_main.htm";a:6:{s:8:"fileName";s:13:"home_main.htm";s:7:"content";s:3257:"[newsPosts]
+1608544892a:1:{s:13:"home_main.htm";a:6:{s:8:"fileName";s:13:"home_main.htm";s:7:"content";s:3257:"[newsPosts]
 pageNumber = "{{ :page }}"
 postsPerPage = "{{ 1 }}"
 noPostsMessage = "No posts found"

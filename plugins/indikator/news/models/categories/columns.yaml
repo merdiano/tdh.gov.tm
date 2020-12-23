@@ -38,6 +38,10 @@ columns:
         invisible: true
         align: center
 
+    locale:
+        label: language
+        sortable: true
+
     posts:
         label: indikator.news::lang.menu.posts
         sortable: false

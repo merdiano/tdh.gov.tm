@@ -21,11 +21,10 @@ class Posts extends Model
 
     public $rules = [
         'title'    => 'required',
-        'title_tm'    => 'required',
-        'title_ru'    => 'required',
         'slug'     => ['regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_news_posts'],
         // 'status'   => 'required|between:1,3|numeric',
-        'featured' => 'required|between:1,2|numeric'
+        'featured' => 'required|between:1,2|numeric',
+        'locale' => 'required'
     ];
 
     public $attributes = [
@@ -60,7 +59,9 @@ class Posts extends Model
         'updated_at asc',
         'updated_at desc',
         'published_at asc',
-        'published_at desc'
+        'published_at desc',
+        'locale asc',
+        'locale desc',
     ];
 
     public $belongsTo = [
@@ -145,6 +146,10 @@ class Posts extends Model
         }
 
         return $result;
+    }
+
+    public function filterLocale(){
+        return ['en' => 'English','tm' => 'Turkmen', 'ru' => 'Russian'];
     }
 
     /**
@@ -331,22 +336,16 @@ class Posts extends Model
     {
         $clone = new Posts();
         $clone->title = \Lang::get('indikator.news::lang.form.clone_of').' '.$post->title;
-        $clone->title_tm = $post->title_tm;
-        $clone->title_ru = $post->title_ru;
         $clone->slug = $post->slug.'-'.now()->format('Y-m-d-h-i-s');
         $clone->status = 3;
         $clone->introductory = $post->introductory;
-        $clone->introductory_tm = $post->introductory_tm;
-        $clone->introductory_ru = $post->introductory_ru;
         $clone->content = $post->content;
-        $clone->content_tm = $post->content_tm;
-        $clone->content_ru = $post->content_ru;
         $clone->image = $post->image;
         $clone->category_id = $post->category_id;
         $clone->featured = $post->featured;
         $clone->enable_newsletter_content = $post->enable_newsletter_content;
         $clone->newsletter_content = $post->newsletter_content;
-        
+        $clone->locale = $post->locale;
         $clone->seo_desc = $post->seo_desc;     
         $clone->seo_title = $post->seo_title;
         $clone->seo_keywords = $post->seo_keywords;

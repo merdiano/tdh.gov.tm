@@ -1,0 +1,13 @@
+{
+    "name": "keios/oc-mailgunendpoint",
+    "description": "Endpoint for Mailgun Routes Callback",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jakub Zych",
+            "email": "jakub@keios.eu"
+        }
+    ],
+    "require": {}
+}

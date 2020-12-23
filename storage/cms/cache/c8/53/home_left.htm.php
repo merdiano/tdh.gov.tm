@@ -1,5 +1,5 @@
 <?php 
-class Cms5fd8b0be6e329203127423_4a5ec4afd7caaaed11dcc3767355af18Class extends Cms\Classes\PartialCode
+class Cms5fdb4ceb48b70972856120_37e72f0cfad9dd18de14aafc7df9f182Class extends Cms\Classes\PartialCode
 {
 public function onStart(){
         $this["posts_filtered"] = \Indikator\News\Models\Posts::where("category_id", $this->theme->foreign_news)->get();
