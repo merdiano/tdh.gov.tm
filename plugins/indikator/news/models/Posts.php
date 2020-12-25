@@ -9,6 +9,16 @@ use Db;
 use App;
 use Str;
 use Url;
+require "plugins\\donatello-za\\rake-php-plus\\src\\RakePlus.php";
+require 'plugins\\donatello-za\\rake-php-plus\\src\\AbstractStopwordProvider.php';
+require 'plugins\\donatello-za\\rake-php-plus\\src\\StopwordArray.php';
+require 'plugins\\donatello-za\\rake-php-plus\\src\\StopwordsPatternFile.php';
+require 'plugins\\donatello-za\\rake-php-plus\\src\\StopwordsPHP.php';
+require 'plugins\\donatello-za\\rake-php-plus\\src\\ILangParseOptions.php';
+require 'plugins\\donatello-za\\rake-php-plus\\src\\LangParseOptions.php';
+
+
+use DonatelloZa\RakePlus\RakePlus;
 
 class Posts extends Model
 {
@@ -36,14 +46,14 @@ class Posts extends Model
     ];
 
     public $translatable = [
-        'title',
-        ['slug', 'index' => true],
-        'introductory',
-        'content',
-        'newsletter_content',
-        'seo_desc',
-        'seo_title',
-        'seo_keywords'
+        // 'title',
+        // ['slug', 'index' => true],
+        // 'introductory',
+        // 'content',
+        // 'newsletter_content',
+        // 'seo_desc',
+        // 'seo_title',
+        // 'seo_keywords'
     ];
 
     protected $dates = [
@@ -172,6 +182,35 @@ class Posts extends Model
         if ($this->status == 1 && empty($this->published_at)) {
             $this->published_at = Carbon::now();
         }
+        
+        if (!isset($this->seo_keywords) || empty($this->seo_keywords)) {
+            $this->seo_keywords = $this->getKeywords();
+        }
+    }
+
+    private function getKeywords(){
+
+
+        $text = strip_tags($this->content);
+        if($this->locale == 'ru')
+        {
+            $rake = RakePlus::create($text,'ru_RU');
+        }
+        else if($this->locale == 'tm')
+        {
+            $rake = RakePlus::create($text,'tm_TM');
+        }
+        //en
+        else{
+            $rake = RakePlus::create($text,'en_US');
+        }
+        $rake = $rake->sort(RakePlus::ORDER_DESC);
+        $scores = $rake->scores();
+        $keywords = $rake->keywords();
+        arsort($scores);
+        $scores = array_slice(array_keys($scores),0,6,true);
+        $keywords = implode(",",$scores);
+        return $keywords;
     }
 
     /**
