@@ -10,7 +10,7 @@ class AddSeoFieldsToTable extends Migration
         Schema::table('indikator_news_posts', function($table)
         {
             $table->string('seo_title', 100)->nullable();
-            $table->string('seo_keywords', 100)->nullable();
+            $table->string('seo_keywords', 10000)->nullable();
             $table->string('seo_desc', 191)->nullable();
             $table->string('seo_image', 191)->nullable();
         });
