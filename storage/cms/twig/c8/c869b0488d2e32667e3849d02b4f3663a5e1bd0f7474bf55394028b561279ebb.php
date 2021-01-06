@@ -29,13 +29,13 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("partial" => 7);
-        $filters = array("escape" => 33);
+        $tags = array("set" => 1, "partial" => 10);
+        $filters = array("escape" => 5);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                ['partial'],
+                ['set', 'partial'],
                 ['escape'],
                 []
             );
@@ -59,18 +59,25 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
     {
         $macros = $this->macros;
         // line 1
-        echo "<div class=\"main__content\" id=\"main\">
+        $context["CurrentLanguage"] = ($context["SelectedLanguage"] ?? null);
+        // line 2
+        echo "
+<div class=\"main__content\" id=\"main\">
     <div class=\"container\">
+        ";
+        // line 5
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["CurrentLanguage"] ?? null), 5, $this->source), "html", null, true);
+        echo "
         <div class=\"main__content-inner\" id=\"rowGrid\">
             <div class=\"main\">
                 <div class=\"main__inner\">
                     
                     ";
-        // line 7
+        // line 10
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("home_main"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 8
+        // line 11
         echo "                    
                 </div>
                 
@@ -78,21 +85,21 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
             <div class=\"left\">
                 <div class=\"left__inner\">
                     ";
-        // line 14
+        // line 17
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("home_left"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 15
+        // line 18
         echo "                </div>
             </div>
             <div class=\"right\">
                 <div class=\"right__inner\">
                     ";
-        // line 19
+        // line 22
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("home_right"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 20
+        // line 23
         echo "                </div>
             </div>
         </div>
@@ -107,10 +114,10 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
                 <div class=\"items\">
                     <div class=\"chan__pic1\">
                         <a href=\"";
-        // line 33
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 33), "Altyn_asyr_link", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 36), "Altyn_asyr_link", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
         echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 33), "Altyn_asyr", [], "any", false, false, true, 33), "path", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 36), "Altyn_asyr", [], "any", false, false, true, 36), "path", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
         echo "\" alt=\"channel\">
                         </a>
                     </div>
@@ -118,12 +125,12 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
                 <div class=\"items\">
                     <div class=\"chan__pic1\">
                         <a href=\"";
-        // line 39
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 39), "Yaslyk_link", [], "any", false, false, true, 39), "path", [], "any", false, false, true, 39), 39, $this->source), "html", null, true);
+        // line 42
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 42), "Yaslyk_link", [], "any", false, false, true, 42), "path", [], "any", false, false, true, 42), 42, $this->source), "html", null, true);
         echo "\">
                             <img src=\"";
-        // line 40
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 40), "Yaslyk_link", [], "any", false, false, true, 40), 40, $this->source), "html", null, true);
+        // line 43
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 43), "Yaslyk_link", [], "any", false, false, true, 43), 43, $this->source), "html", null, true);
         echo "\" alt=\"channel\">
                         </a>
                     </div>
@@ -131,12 +138,12 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
                 <div class=\"items\">
                     <div class=\"chan__pic1\">
                         <a href=\"";
-        // line 46
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 46), "Miras_link", [], "any", false, false, true, 46), 46, $this->source), "html", null, true);
+        // line 49
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 49), "Miras_link", [], "any", false, false, true, 49), 49, $this->source), "html", null, true);
         echo "\">
                             <img src=\"";
-        // line 47
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 47), "Miras", [], "any", false, false, true, 47), "path", [], "any", false, false, true, 47), 47, $this->source), "html", null, true);
+        // line 50
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 50), "Miras", [], "any", false, false, true, 50), "path", [], "any", false, false, true, 50), 50, $this->source), "html", null, true);
         echo "\" alt=\"channel\">
                         </a>
                     </div>
@@ -144,12 +151,12 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
                 <div class=\"items\">
                     <div class=\"chan__pic1\">
                         <a href=\"";
-        // line 53
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 53), "Turkmenistan_sport_link", [], "any", false, false, true, 53), 53, $this->source), "html", null, true);
+        // line 56
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 56), "Turkmenistan_sport_link", [], "any", false, false, true, 56), 56, $this->source), "html", null, true);
         echo "\">
                             <img src=\"";
-        // line 54
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 54), "Turkmenistan_sport", [], "any", false, false, true, 54), "path", [], "any", false, false, true, 54), 54, $this->source), "html", null, true);
+        // line 57
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 57), "Turkmenistan_sport", [], "any", false, false, true, 57), "path", [], "any", false, false, true, 57), 57, $this->source), "html", null, true);
         echo "\" alt=\"channel\">
                         </a>
                     </div>
@@ -157,12 +164,12 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
                 <div class=\"items\">
                     <div class=\"chan__pic1\">
                         <a href=\"";
-        // line 60
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 60), "Turkmen_owazy_link", [], "any", false, false, true, 60), 60, $this->source), "html", null, true);
+        // line 63
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 63), "Turkmen_owazy_link", [], "any", false, false, true, 63), 63, $this->source), "html", null, true);
         echo "\">
                             <img src=\"";
-        // line 61
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 61), "Turkmen_owazy", [], "any", false, false, true, 61), "path", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+        // line 64
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 64), "Turkmen_owazy", [], "any", false, false, true, 64), "path", [], "any", false, false, true, 64), 64, $this->source), "html", null, true);
         echo "\" alt=\"channel\">
                         </a>
                     </div>
@@ -170,12 +177,12 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
                 <div class=\"items\">
                     <div class=\"chan__pic1\">
                         <a href=\"";
-        // line 67
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 67), "Asgabat_link", [], "any", false, false, true, 67), 67, $this->source), "html", null, true);
+        // line 70
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 70), "Asgabat_link", [], "any", false, false, true, 70), 70, $this->source), "html", null, true);
         echo "\">
                             <img src=\"";
-        // line 68
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 68), "Asgabat", [], "any", false, false, true, 68), "path", [], "any", false, false, true, 68), 68, $this->source), "html", null, true);
+        // line 71
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 71), "Asgabat", [], "any", false, false, true, 71), "path", [], "any", false, false, true, 71), 71, $this->source), "html", null, true);
         echo "\" alt=\"channel\">
                         </a>
                     </div>
@@ -198,13 +205,16 @@ class __TwigTemplate_232a5cccc669c07161f329c5d701917e2e638bf0903c30f7a589629485b
 
     public function getDebugInfo()
     {
-        return array (  178 => 68,  174 => 67,  165 => 61,  161 => 60,  152 => 54,  148 => 53,  139 => 47,  135 => 46,  126 => 40,  122 => 39,  111 => 33,  96 => 20,  92 => 19,  86 => 15,  82 => 14,  74 => 8,  70 => 7,  62 => 1,);
+        return array (  185 => 71,  181 => 70,  172 => 64,  168 => 63,  159 => 57,  155 => 56,  146 => 50,  142 => 49,  133 => 43,  129 => 42,  118 => 36,  103 => 23,  99 => 22,  93 => 18,  89 => 17,  81 => 11,  77 => 10,  69 => 5,  64 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"main__content\" id=\"main\">
+        return new Source("{% set CurrentLanguage = SelectedLanguage %}
+
+<div class=\"main__content\" id=\"main\">
     <div class=\"container\">
+        {{ CurrentLanguage }}
         <div class=\"main__content-inner\" id=\"rowGrid\">
             <div class=\"main\">
                 <div class=\"main__inner\">

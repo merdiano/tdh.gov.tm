@@ -1,4 +1,4 @@
-1608544894a:1:{s:10:"header.htm";a:6:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:3647:"[searchInput]
+1609849072a:1:{s:10:"header.htm";a:6:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:5245:"[searchInput]
 useAutoComplete = 1
 autoCompleteResultCount = 5
 showProviderBadge = 1
@@ -30,7 +30,7 @@ function onStart(){
         <div class="container">
             <div class="header__search ">
                 <form action="{{ 'search' | page }}" method="get">
-                     
+
                     <input name="q"type="search" placeholder="Поиск" class="poisk">
                     <button type="submit">Search</button>
                 </form>
@@ -43,16 +43,16 @@ function onStart(){
                 <div class="js__menu" id="dropDown">
 
                     <div class="js__menu-inner">
-                        <a href="{{ 'home'|page}}" >Главная</a>
+                        <a href="{{ 'home'|page}}" >{{"Главная"|_}}</a>
                     </div>
                     <div class="drop__link">
                         <a href="#">Разделы</a>
                         <div class="main__link-list">
-                            
+
                             {% for item in categories %}
                                 <a href="#" class="just__link">{{item.name}}</a>
                             {% endfor %}
-                            
+
                         </div>
                     </div>
                     <div class="js__menu-inner">
@@ -69,25 +69,57 @@ function onStart(){
                     </div>
 
                     <div class="flag__row">
-                        <button class="flag ">
+                        <a href="{{ url('/ru') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'ru'">
+
                             <img src="{{ 'assets/images/NoPath___10.png'|theme }}" alt="" />
-                        </button>
+
+                        </a>
+
                         <div class="devider2"></div>
 
-                        <button class="flag ">
+                        <a href="{{ url('/en') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'en'">
+
                             <img src="{{ 'assets/images/NoPath___9.png'|theme }}" alt="" />
-                        </button>
+
+                        </a>
                         <div class="devider2"></div>
 
-                        <button class="flag">
+                        <a href="{{ url('/tm') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'tm'">
+
                             <img src="{{ 'assets/images/NoPath___4.png'|theme }}" alt="" />
-                        </button>
+
+                        </a>
+
+<!--                        <a href="{{ url('/changeLanguage/ru') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'ru'">-->
+<!--                            &lt;!&ndash; <button class="flag ">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src="{{ 'assets/images/NoPath___10.png'|theme }}" alt="" />-->
+
+<!--                        </a>-->
+<!--                        -->
+<!--                        <div class="devider2"></div>-->
+
+<!--                        <a href="{{ url('/changeLanguage/en') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'en'">-->
+<!--                            &lt;!&ndash; <button class="flag ">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src="{{ 'assets/images/NoPath___9.png'|theme }}" alt="" />-->
+
+<!--                        </a>-->
+<!--                        <div class="devider2"></div>-->
+
+<!--                        <a href="{{ url('/changeLanguage/tm') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'tm'">-->
+<!--                            &lt;!&ndash; <button class="flag ">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src="{{ 'assets/images/NoPath___4.png'|theme }}" alt="" />-->
+
+<!--                        </a>-->
                     </div>
 
                 </div><!-- js-menu -->
             </div><!-- container -->
         </div>
-    </header>";s:5:"mtime";i:1608032810;s:6:"markup";s:3368:"<div class="top__bground"></div>
+    </header>
+";s:5:"mtime";i:1608804789;s:6:"markup";s:4964:"<div class="top__bground"></div>
     <div class="bg__white"></div>
     <header class="header">
         <div class="header__inner">
@@ -105,7 +137,7 @@ function onStart(){
         <div class="container">
             <div class="header__search ">
                 <form action="{{ 'search' | page }}" method="get">
-                     
+
                     <input name="q"type="search" placeholder="Поиск" class="poisk">
                     <button type="submit">Search</button>
                 </form>
@@ -118,16 +150,16 @@ function onStart(){
                 <div class="js__menu" id="dropDown">
 
                     <div class="js__menu-inner">
-                        <a href="{{ 'home'|page}}" >Главная</a>
+                        <a href="{{ 'home'|page}}" >{{"Главная"|_}}</a>
                     </div>
                     <div class="drop__link">
                         <a href="#">Разделы</a>
                         <div class="main__link-list">
-                            
+
                             {% for item in categories %}
                                 <a href="#" class="just__link">{{item.name}}</a>
                             {% endfor %}
-                            
+
                         </div>
                     </div>
                     <div class="js__menu-inner">
@@ -144,19 +176,50 @@ function onStart(){
                     </div>
 
                     <div class="flag__row">
-                        <button class="flag ">
+                        <a href="{{ url('/ru') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'ru'">
+
                             <img src="{{ 'assets/images/NoPath___10.png'|theme }}" alt="" />
-                        </button>
+
+                        </a>
+
                         <div class="devider2"></div>
 
-                        <button class="flag ">
+                        <a href="{{ url('/en') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'en'">
+
                             <img src="{{ 'assets/images/NoPath___9.png'|theme }}" alt="" />
-                        </button>
+
+                        </a>
                         <div class="devider2"></div>
 
-                        <button class="flag">
+                        <a href="{{ url('/tm') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'tm'">
+
                             <img src="{{ 'assets/images/NoPath___4.png'|theme }}" alt="" />
-                        </button>
+
+                        </a>
+
+<!--                        <a href="{{ url('/changeLanguage/ru') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'ru'">-->
+<!--                            &lt;!&ndash; <button class="flag ">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src="{{ 'assets/images/NoPath___10.png'|theme }}" alt="" />-->
+
+<!--                        </a>-->
+<!--                        -->
+<!--                        <div class="devider2"></div>-->
+
+<!--                        <a href="{{ url('/changeLanguage/en') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'en'">-->
+<!--                            &lt;!&ndash; <button class="flag ">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src="{{ 'assets/images/NoPath___9.png'|theme }}" alt="" />-->
+
+<!--                        </a>-->
+<!--                        <div class="devider2"></div>-->
+
+<!--                        <a href="{{ url('/changeLanguage/tm') }}" class="flag" data-request="onSwitchLocale" data-request-data="locale: 'tm'">-->
+<!--                            &lt;!&ndash; <button class="flag ">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src="{{ 'assets/images/NoPath___4.png'|theme }}" alt="" />-->
+
+<!--                        </a>-->
                     </div>
 
                 </div><!-- js-menu -->

@@ -30,14 +30,14 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 38);
-        $filters = array("theme" => 7, "page" => 18, "escape" => 39);
-        $functions = array();
+        $filters = array("theme" => 7, "page" => 18, "_" => 32, "escape" => 39);
+        $functions = array("url" => 58);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for'],
-                ['theme', 'page', 'escape'],
-                []
+                ['theme', 'page', '_', 'escape'],
+                ['url']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);
@@ -83,7 +83,7 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
         // line 18
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("search");
         echo "\" method=\"get\">
-                     
+
                     <input name=\"q\"type=\"search\" placeholder=\"Поиск\" class=\"poisk\">
                     <button type=\"submit\">Search</button>
                 </form>
@@ -102,12 +102,14 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
                         <a href=\"";
         // line 32
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("home");
-        echo "\" >Главная</a>
+        echo "\" >";
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Главная"]);
+        echo "</a>
                     </div>
                     <div class=\"drop__link\">
                         <a href=\"#\">Разделы</a>
                         <div class=\"main__link-list\">
-                            
+
                             ";
         // line 38
         $context['_parent'] = $context;
@@ -123,7 +125,7 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 41
-        echo "                            
+        echo "
                         </div>
                     </div>
                     <div class=\"js__menu-inner\">
@@ -143,28 +145,86 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
                     </div>
 
                     <div class=\"flag__row\">
-                        <button class=\"flag \">
+                        <a href=\"";
+        // line 58
+        echo url("/ru");
+        echo "\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'ru'\">
+
                             <img src=\"";
-        // line 59
+        // line 60
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___10.png");
         echo "\" alt=\"\" />
-                        </button>
+
+                        </a>
+
                         <div class=\"devider2\"></div>
 
-                        <button class=\"flag \">
+                        <a href=\"";
+        // line 66
+        echo url("/en");
+        echo "\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'en'\">
+
                             <img src=\"";
-        // line 64
+        // line 68
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___9.png");
         echo "\" alt=\"\" />
-                        </button>
+
+                        </a>
                         <div class=\"devider2\"></div>
 
-                        <button class=\"flag\">
+                        <a href=\"";
+        // line 73
+        echo url("/tm");
+        echo "\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'tm'\">
+
                             <img src=\"";
-        // line 69
+        // line 75
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___4.png");
         echo "\" alt=\"\" />
-                        </button>
+
+                        </a>
+
+<!--                        <a href=\"";
+        // line 79
+        echo url("/changeLanguage/ru");
+        echo "\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'ru'\">-->
+<!--                            &lt;!&ndash; <button class=\"flag \">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src=\"";
+        // line 82
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___10.png");
+        echo "\" alt=\"\" />-->
+
+<!--                        </a>-->
+<!--                        -->
+<!--                        <div class=\"devider2\"></div>-->
+
+<!--                        <a href=\"";
+        // line 88
+        echo url("/changeLanguage/en");
+        echo "\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'en'\">-->
+<!--                            &lt;!&ndash; <button class=\"flag \">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src=\"";
+        // line 91
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___9.png");
+        echo "\" alt=\"\" />-->
+
+<!--                        </a>-->
+<!--                        <div class=\"devider2\"></div>-->
+
+<!--                        <a href=\"";
+        // line 96
+        echo url("/changeLanguage/tm");
+        echo "\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'tm'\">-->
+<!--                            &lt;!&ndash; <button class=\"flag \">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src=\"";
+        // line 99
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___4.png");
+        echo "\" alt=\"\" />-->
+
+<!--                        </a>-->
                     </div>
 
                 </div><!-- js-menu -->
@@ -185,7 +245,7 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
 
     public function getDebugInfo()
     {
-        return array (  165 => 69,  157 => 64,  149 => 59,  138 => 51,  126 => 41,  117 => 39,  113 => 38,  104 => 32,  92 => 23,  84 => 18,  70 => 7,  62 => 1,);
+        return array (  224 => 99,  218 => 96,  210 => 91,  204 => 88,  195 => 82,  189 => 79,  182 => 75,  177 => 73,  169 => 68,  164 => 66,  155 => 60,  150 => 58,  140 => 51,  128 => 41,  119 => 39,  115 => 38,  104 => 32,  92 => 23,  84 => 18,  70 => 7,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -208,7 +268,7 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
         <div class=\"container\">
             <div class=\"header__search \">
                 <form action=\"{{ 'search' | page }}\" method=\"get\">
-                     
+
                     <input name=\"q\"type=\"search\" placeholder=\"Поиск\" class=\"poisk\">
                     <button type=\"submit\">Search</button>
                 </form>
@@ -221,16 +281,16 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
                 <div class=\"js__menu\" id=\"dropDown\">
 
                     <div class=\"js__menu-inner\">
-                        <a href=\"{{ 'home'|page}}\" >Главная</a>
+                        <a href=\"{{ 'home'|page}}\" >{{\"Главная\"|_}}</a>
                     </div>
                     <div class=\"drop__link\">
                         <a href=\"#\">Разделы</a>
                         <div class=\"main__link-list\">
-                            
+
                             {% for item in categories %}
                                 <a href=\"#\" class=\"just__link\">{{item.name}}</a>
                             {% endfor %}
-                            
+
                         </div>
                     </div>
                     <div class=\"js__menu-inner\">
@@ -247,19 +307,50 @@ class __TwigTemplate_842da7f0bb86ed14a2f944cc70f25549fc785f840a28186e11c91a4a8aa
                     </div>
 
                     <div class=\"flag__row\">
-                        <button class=\"flag \">
+                        <a href=\"{{ url('/ru') }}\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'ru'\">
+
                             <img src=\"{{ 'assets/images/NoPath___10.png'|theme }}\" alt=\"\" />
-                        </button>
+
+                        </a>
+
                         <div class=\"devider2\"></div>
 
-                        <button class=\"flag \">
+                        <a href=\"{{ url('/en') }}\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'en'\">
+
                             <img src=\"{{ 'assets/images/NoPath___9.png'|theme }}\" alt=\"\" />
-                        </button>
+
+                        </a>
                         <div class=\"devider2\"></div>
 
-                        <button class=\"flag\">
+                        <a href=\"{{ url('/tm') }}\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'tm'\">
+
                             <img src=\"{{ 'assets/images/NoPath___4.png'|theme }}\" alt=\"\" />
-                        </button>
+
+                        </a>
+
+<!--                        <a href=\"{{ url('/changeLanguage/ru') }}\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'ru'\">-->
+<!--                            &lt;!&ndash; <button class=\"flag \">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src=\"{{ 'assets/images/NoPath___10.png'|theme }}\" alt=\"\" />-->
+
+<!--                        </a>-->
+<!--                        -->
+<!--                        <div class=\"devider2\"></div>-->
+
+<!--                        <a href=\"{{ url('/changeLanguage/en') }}\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'en'\">-->
+<!--                            &lt;!&ndash; <button class=\"flag \">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src=\"{{ 'assets/images/NoPath___9.png'|theme }}\" alt=\"\" />-->
+
+<!--                        </a>-->
+<!--                        <div class=\"devider2\"></div>-->
+
+<!--                        <a href=\"{{ url('/changeLanguage/tm') }}\" class=\"flag\" data-request=\"onSwitchLocale\" data-request-data=\"locale: 'tm'\">-->
+<!--                            &lt;!&ndash; <button class=\"flag \">-->
+<!--                            </button> &ndash;&gt;-->
+<!--                            <img src=\"{{ 'assets/images/NoPath___4.png'|theme }}\" alt=\"\" />-->
+
+<!--                        </a>-->
                     </div>
 
                 </div><!-- js-menu -->

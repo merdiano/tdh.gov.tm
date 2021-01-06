@@ -36,14 +36,14 @@ class Posts extends Model
     ];
 
     public $translatable = [
-        'title',
-        ['slug', 'index' => true],
-        'introductory',
-        'content',
-        'newsletter_content',
-        'seo_desc',
-        'seo_title',
-        'seo_keywords'
+        // 'title',
+        // ['slug', 'index' => true],
+        // 'introductory',
+        // 'content',
+        // 'newsletter_content',
+        // 'seo_desc',
+        // 'seo_title',
+        // 'seo_keywords'
     ];
 
     protected $dates = [
