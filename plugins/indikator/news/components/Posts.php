@@ -21,6 +21,8 @@ class Posts extends ComponentBase
 
     public $searchFilter;
 
+    public $dateFilter;
+
     public function componentDetails()
     {
         return [
@@ -93,6 +95,11 @@ class Posts extends ComponentBase
                 'type'        => 'string',
                 'default'     => ''
             ],
+            'searchFilter' => [
+                'title'       => 'Search Filter',
+                'type'        => 'string',
+                'default'     => ''
+            ],
             'postPage' => [
                 'title'       => 'indikator.news::lang.settings.post_title',
                 'description' => 'indikator.news::lang.settings.post_description',
@@ -141,7 +148,8 @@ class Posts extends ComponentBase
     {
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
         $this->noPostsMessage = $this->page['noPostsMessage'] = $this->property('noPostsMessage');
-        $this->searchFilter = $this->page['searchFilter'] = trim(input('search'));
+        $this->searchFilter = $this->page['searchFilter'] = trim(input('q'));
+        $this->dateFilter = $this->page['dateFilter'] = trim(input('date'));
 
         // Page links
         $this->postPage = $this->page['postPage'] = $this->property('postPage');
@@ -158,6 +166,7 @@ class Posts extends ComponentBase
             'perPage'  => $this->property('postsPerPage'),
             'featured' => $this->property('postFeatured'),
             'search'   => $this->searchFilter,
+            'dateFilter'   => $this->dateFilter,
             'isTrans'  => $this->property('postTranslated'),
             'category' => $category
         ]);

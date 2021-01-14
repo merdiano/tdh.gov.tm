@@ -20,6 +20,10 @@ function onStart(){
     $this["posts_filtered2"] = \Indikator\News\Models\Posts::where("category_id", $this->theme->comment_news)->orderBy('created_at', 'desc')->first();
     $this["cat2"] = \Indikator\News\Models\Categories::where("id", $this->theme->comment_news)->first();
 
+
+    $featured = \Indikator\News\Models\Posts::where("featured", true)->orderBy('created_at', 'desc')->get();
+    
+    $this['postFeatured'] = $featured; 
 }
 ?>
 ==
@@ -57,13 +61,15 @@ function onStart(){
     </div>
 {% endif %}
 
-{% for item in posts %}
+{% for item in postFeatured %}
     <hr>
     <div class="texts">
-        <div class="sub__titles">
+        {{ item.images }}   
+        <img src="{{ item.images[0].path }}" alt="">
+        <!-- <div class="sub__titles">
             <a href="{{item.url}}"> {{ item.title }}</a>
-        </div>
-        <div class="sony">
+        </div> -->
+        <!-- <div class="sony">
             <div class="sub__end">
                 <div class="sub__names">
                     {{ item.category.name }}
@@ -75,9 +81,9 @@ function onStart(){
                 </div>
             </div>
             <div class="sub__end-link">
-                <a href="{{item.url}}">Узнать больше</a>
+                <a href="{{item.url}}">Узнать большeeeе</a>
             </div>
-        </div>
+        </div> -->
     </div>
 {% endfor %}
 
@@ -102,4 +108,37 @@ function onStart(){
             
         </div>
     </div>
-{% endif %}
+{% endif %} 
+
+<!-- Intro ===================== -->
+<div class="auto_container" id="intro">
+    
+    <div class="intro">
+        <div class="main">
+            <div class="title">
+                В центре событий
+            </div>
+            {{ postFeatured.images }}
+            <div class="main_part">
+                <div class="main_photo">
+                    <img src="{{ postFeatured.images[0].path }}" alt="">
+                </div>
+                <div class="main_title">
+                    {{ postFeatured.title }}
+                </div>
+                <div class="main_text">
+                    {{ postFeatured.introductory|raw }} 
+                </div>
+                <div class="main_end">
+                    <div class="main_date">
+                        {{ postFeatured.published_at| date("d.m.Y") }}
+                    </div>
+                    <div class="main_link">
+                        <a href="{{postFeatured.url}}">
+                            Узнать больше
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

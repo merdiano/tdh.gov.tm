@@ -1,0 +1,10 @@
+name: WeeklyNewsController
+form: $/admin/weeklynews/models/weeklynews/fields.yaml
+modelClass: Admin\WeeklyNews\Models\WeeklyNews
+defaultRedirect: admin/weeklynews/weeklynewscontroller
+create:
+    redirect: 'admin/weeklynews/weeklynewscontroller/update/:id'
+    redirectClose: admin/weeklynews/weeklynewscontroller
+update:
+    redirect: admin/weeklynews/weeklynewscontroller
+    redirectClose: admin/weeklynews/weeklynewscontroller

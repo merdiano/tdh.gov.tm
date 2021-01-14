@@ -5,28 +5,13 @@
 fields:
 
     name:
-        label: Name English
+        label: Name
         required: true
         attributes:
            autofocus: ''
         span: storm
         cssClass: col-lg-6
 
-    name_tm:
-        label: Name Turkmen
-        required: true
-        attributes:
-            autofocus: ''
-        span: storm
-        cssClass: col-lg-6
-
-    name_ru:
-        label: Name Russian
-        required: true
-        attributes:
-            autofocus: ''
-        span: storm
-        cssClass: col-lg-6
 
     slug:
         label: indikator.news::lang.form.slug

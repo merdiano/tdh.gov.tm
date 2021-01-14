@@ -1,5 +1,6 @@
 <?php namespace Indikator\News\Models;
 
+use Illuminate\Support\Facades\App;
 use Model;
 
 class Categories extends Model
@@ -14,8 +15,6 @@ class Categories extends Model
 
     public $rules = [
         'name'   => 'required',
-        'name_tm'   => 'required',
-        'name_ru'   => 'required',
         'slug'   => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_news_categories'],
         'status' => 'required|between:1,2|numeric',
         'hidden' => 'required|between:1,2|numeric'
@@ -62,6 +61,15 @@ class Categories extends Model
         ];
 
         return $this->url = $controller->pageUrl($pageName, $params);
+    }
+
+    public function getPosts($limit = 6){
+        return Posts::where('category_id', $this->id)
+            ->where("locale", App::getLocale())
+            ->isPublished()
+            ->limit($limit)
+            ->orderBy('published_at', 'desc')
+            ->get();
     }
 
  

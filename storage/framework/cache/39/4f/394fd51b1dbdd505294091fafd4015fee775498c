@@ -1,0 +1,193 @@
+1610639555a:1:{s:11:"archive.htm";a:9:{s:8:"fileName";s:11:"archive.htm";s:7:"content";s:3533:"title = "archive"
+url = "/archive"
+layout = "default"
+is_hidden = 0
+==
+<?php
+    function onStart(){
+
+        
+        if(input("date")){
+            $this['todayNews'] = \Indikator\News\Models\Posts::whereDate('published_at', '=', input("date"))->where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->get();
+        }else{
+            $this['todayNews'] = \Indikator\News\Models\Posts::whereDate('published_at', '=', Carbon\Carbon::today())->where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->get();
+
+        }
+
+        $this['dateToday'] = input("date");
+
+        
+    }
+?>
+==
+
+<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <div class="page_name">
+                Главная
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                Архив
+            </div>
+        </div>
+        <div class="section_wrapper">
+            <div class="center">
+                <div class="title">
+                    Архив
+                </div>
+                <div class="main_news">
+                    
+                {% for item in todayNews %}
+                    <div class="main_news-item">
+                        <div class="main_news-date">
+                            <span>
+                                {{ item.published_at| date("d.m") }}
+                            </span>
+                            <span>
+                                {{ item.published_at| date("Y") }}
+                            </span>
+                        </div>
+                        <div class="main_news-content">
+                            <div class="main_news-title">
+
+                                {{item.title}}
+                            </div>
+                            <div class="main_news-text">
+                                
+                                {{item.introductory}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}       
+                    
+                </div>
+            </div>
+            <div class="right_side half full">
+                <div class="title">
+                    Календарь
+                </div>
+
+                <div class="cal">
+                    <div class="calendar">
+                        <input type="text" name="cal" id="calendar" />
+                    </div>
+                    <img src="{{ 'assets/images/left.svg'|theme }}" class="prev_btn" alt="">
+                    <img src="{{ 'assets/images/right.svg'|theme }}" class="next_btn" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{{ 'assets/js/moment.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/lightpick.js'|theme }}"></script>
+<script>;
+
+    var picker = new Lightpick({
+        inline: true,
+        selectBackward: true,
+        selectForward: false,
+        singleDate: true,
+        startDate: moment('{{dateToday}}', "Y-M-D"),
+        maxDate: moment().endOf("day"),
+        lang: 'ru',
+        field: document.getElementById('calendar'),
+        onSelect:function(date){
+            window.location.replace("{{ ''| page}}?date=" + date.format("Y-M-D"));
+        }
+    });
+</script>";s:5:"mtime";i:1610549020;s:6:"markup";s:2785:"<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <div class="page_name">
+                Главная
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                Архив
+            </div>
+        </div>
+        <div class="section_wrapper">
+            <div class="center">
+                <div class="title">
+                    Архив
+                </div>
+                <div class="main_news">
+                    
+                {% for item in todayNews %}
+                    <div class="main_news-item">
+                        <div class="main_news-date">
+                            <span>
+                                {{ item.published_at| date("d.m") }}
+                            </span>
+                            <span>
+                                {{ item.published_at| date("Y") }}
+                            </span>
+                        </div>
+                        <div class="main_news-content">
+                            <div class="main_news-title">
+
+                                {{item.title}}
+                            </div>
+                            <div class="main_news-text">
+                                
+                                {{item.introductory}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}       
+                    
+                </div>
+            </div>
+            <div class="right_side half full">
+                <div class="title">
+                    Календарь
+                </div>
+
+                <div class="cal">
+                    <div class="calendar">
+                        <input type="text" name="cal" id="calendar" />
+                    </div>
+                    <img src="{{ 'assets/images/left.svg'|theme }}" class="prev_btn" alt="">
+                    <img src="{{ 'assets/images/right.svg'|theme }}" class="next_btn" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{{ 'assets/js/moment.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/lightpick.js'|theme }}"></script>
+<script>;
+
+    var picker = new Lightpick({
+        inline: true,
+        selectBackward: true,
+        selectForward: false,
+        singleDate: true,
+        startDate: moment('{{dateToday}}', "Y-M-D"),
+        maxDate: moment().endOf("day"),
+        lang: 'ru',
+        field: document.getElementById('calendar'),
+        onSelect:function(date){
+            window.location.replace("{{ ''| page}}?date=" + date.format("Y-M-D"));
+        }
+    });
+</script>";s:4:"code";s:653:"    function onStart(){
+
+        
+        if(input("date")){
+            $this['todayNews'] = \Indikator\News\Models\Posts::whereDate('published_at', '=', input("date"))->where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->get();
+        }else{
+            $this['todayNews'] = \Indikator\News\Models\Posts::whereDate('published_at', '=', Carbon\Carbon::today())->where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->get();
+
+        }
+
+        $this['dateToday'] = input("date");
+
+        
+    }";s:5:"title";s:7:"archive";s:3:"url";s:8:"/archive";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

@@ -1,0 +1,57 @@
+
+==
+<?php
+function onStart(){
+
+    $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(10)->get();
+    
+}
+?>
+==
+
+<div class="left">
+    <div class="title">
+        Последние новости
+    </div>
+    {% if imageType == "horizontal" %}
+        <div class="scroll">
+            {% for item in lastNews %}
+            <div class="top-news_info">
+                <div class="left_date">
+                    
+                    {{ item.published_at| date("d.m") }}
+                </div>
+                <div class="left_info">
+                    <div class="left_title">
+                        <a href="#">{{item.category.name}}</a>
+                    </div>
+                    <div class="top-news_text">
+                        {{item.title}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}   
+        </div>
+    
+    {% else %}
+
+        <div class="scroll_vertical">
+            {% for item in lastNews %}
+            <div class="top-news_info">
+                <div class="left_date">
+                    
+                    {{ item.published_at| date("d.m") }}
+                </div>
+                <div class="left_info">
+                    <div class="left_title">
+                        <a href="#">{{item.category.name}}</a>
+                    </div>
+                    <div class="top-news_text">
+                        {{item.title}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}   
+        </div>
+    {% endif %}
+</div> 

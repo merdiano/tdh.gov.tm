@@ -1,0 +1,17 @@
+plugin:
+    name: 'admin.weeklynews::lang.plugin.name'
+    description: 'admin.weeklynews::lang.plugin.description'
+    author: Admin
+    icon: oc-icon-newspaper-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Weekly News'
+        url: admin/weeklynews/weeklynewscontroller
+        icon: icon-newspaper-o
+        permissions:
+            - manage_weekly_news
+permissions:
+    manage_weekly_news:
+        tab: 'admin.weeklynews::lang.plugin.name'
+        label: 'Manage Weekly News'

@@ -24,6 +24,8 @@ return [
     |
     */
 
+    
+
     'edgeUpdates' => false,
 
     /*
@@ -459,5 +461,17 @@ return [
     */
 
     'enableBackendServiceWorkers' => false,
+
+    'fileDefinitions' => [
+        'imageExtensions' => [
+            'jpg',
+            'jpeg',
+            'bmp',
+            'png',
+            'webp',
+            'gif',
+            'svg'
+         ]
+    ]
 
 ];

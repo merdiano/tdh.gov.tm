@@ -13,6 +13,8 @@ function onStart(){
         $cat = \Indikator\News\Models\Categories::where("id", $this->theme->foreign_news)->first();
         $this["cat"] = $cat;
        
+
+        
     }
 ?>
 ==
@@ -34,7 +36,7 @@ function onStart(){
     <div class="news">
         <div class="left__title">
             <a href="{{post.url}}"> {{ post.title }}</a>
-            
+            aa
         </div>
         <div class="left__text">
             {{ post.introductory|raw }} 
@@ -44,7 +46,7 @@ function onStart(){
                 {{ post.published_at| date("d.m.Y") }}
             </div>
             <div class="left__link">
-                <a href="{{post.url}}">Узнать больше</a>
+                <a href="{{post.url}}">Узнать большеrrrrrrrrrrrr</a>
             </div>
         </div>
     </div>

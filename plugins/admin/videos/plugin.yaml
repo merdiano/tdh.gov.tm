@@ -1,0 +1,17 @@
+plugin:
+    name: 'admin.videos::lang.plugin.name'
+    description: 'admin.videos::lang.plugin.description'
+    author: Admin
+    icon: oc-icon-video-camera
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Videos
+        url: admin/videos/videoscontroller
+        icon: icon-video-camera
+        permissions:
+            - manage_videos
+permissions:
+    manage_videos:
+        tab: 'admin.videos::lang.plugin.name'
+        label: 'Manage vidoes'

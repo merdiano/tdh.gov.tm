@@ -1,0 +1,53 @@
+
+==
+<?php
+function onStart(){
+
+
+    $this['collegueNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(10)->get();
+    
+    $this["cat"] = \Indikator\News\Models\Categories::where("id", $this->theme->colleagues_news)->first();
+}
+?>
+==
+
+<div class="right">
+    <div class="title">
+        {{cat.name}}
+    </div>
+    
+    {% if imageType == "horizontal" %}
+        <div class="scroll">
+            
+            {% for item in collegueNews %}
+            <div class="right_news">
+                {% set foo = item.title|split(':') %}
+                <div class="right_title">
+                    {{foo[0]}}
+                </div>
+                <div class="right_text">
+                    {{foo[1]}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    
+    {% else %}
+
+        <div class="scroll_vertical">
+                
+            {% for item in collegueNews %}
+            <div class="right_news">
+                {% set foo = item.title|split(':') %}
+                <div class="right_title">
+                    {{foo[0]}}
+                </div>
+                <div class="right_text">
+                    {{foo[1]}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    
+    {% endif %}
+</div>

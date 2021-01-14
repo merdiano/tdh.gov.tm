@@ -1,5 +1,5 @@
 <?php 
-use RainLab\Translate\Classes\Translator;class Cms5ff452cc166ca597069915_a55373d066eff23a6577a0e76cac340cClass extends Cms\Classes\PageCode
+use RainLab\Translate\Classes\Translator;class Cms6000472a61b3d198968447_14a5510966435a377db0b1a9f4cadee0Class extends Cms\Classes\PageCode
 {
 
 protected $translator;

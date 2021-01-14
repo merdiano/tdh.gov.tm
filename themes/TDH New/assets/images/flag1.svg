@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="20" viewBox="0 0 30 20">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 275 183">
+      <image width="275" height="183" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAD1BMVEX+0AEBg9EAftertGb/0wAd3yjtAAAA3UlEQVR4nO3QuQ2AAAzAwPDsPzN93CJBcTeB5TnY5uuAH/KkPClPypPypDwpT8qT8qQ8KU/Kk/KkPClPypPypDwpT8qT8qQ8KU/Kk/KkPClPypPypDwpT8qT8qQ8KU/Kk/KkPClPypPypDwpT8qT8qQ8KU/Kk/KkPClPypPypDwpT8qT8qQ8KU/Kk/KkPClPypPypDwpT8qT8qQ8KU/Kk/KkPClPypPypDwpT8qT8qQ8KU/Kk/KkPClPypOak20utrnZBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4CUP0etqWldRmbQAAAAASUVORK5CYII="/>
+    </pattern>
+  </defs>
+  <rect id="NoPath_копия_2_" data-name="NoPath — копия (2)" width="30" height="20" fill="url(#pattern)"/>
+</svg>

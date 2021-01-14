@@ -1,0 +1,10 @@
+name: VideosController
+form: $/admin/videos/models/video/fields.yaml
+modelClass: Admin\Videos\Models\Video
+defaultRedirect: admin/videos/videoscontroller
+create:
+    redirect: 'admin/videos/videoscontroller/update/:id'
+    redirectClose: admin/videos/videoscontroller
+update:
+    redirect: admin/videos/videoscontroller
+    redirectClose: admin/videos/videoscontroller

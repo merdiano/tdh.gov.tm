@@ -1,0 +1,240 @@
+1610639425a:1:{s:8:"post.htm";a:10:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:4458:"title = "post"
+url = "/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[newsPost]
+slug = "{{ :slug }}"
+==
+
+<?php
+function onStart(){
+
+    $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
+
+
+}
+?>
+==
+{% component 'newsPost' %}
+
+<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <div class="page_name">
+                Главная
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                    {{ post.category.name }}
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                {{ post.title }}
+            </div>
+        </div>
+        <div class="section_wrapper">
+            <div class="center">
+                <div class="title">
+                    {{ post.category.name }}
+                </div>
+                <div class="news_page-title">
+                    {{ post.title }}
+                </div>
+                <div class="news_publish">
+                    <div class="publish_date">
+                        <span>
+                            Опубликованно
+                        </span>
+                        <span>
+                            {{ post.published_at| date("d.m.Y") }}
+                        </span>
+                    </div>
+                    <div class="views">
+                        <span class="view_icon">
+                            <img src="{{ 'assets/images/eye.svg'|theme }}" alt="">
+                        </span>
+                        <span>
+                            {{ post.statistics }}
+                        </span>
+                    </div>
+                </div>
+                {% if post.images|length > 1 %}
+                    <div class="news_slider">
+                        <div class="slider__big">
+                            {% for item in  post.images %}
+                            <div>
+                                <div class="slider__card">
+                                    <div class="image__inner">
+                                        <img class="norm" src="{{item.path}}" alt="picture">
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                        <div class="slider__mini">
+                            {% for item in  post.images %}
+                            <div>
+                                <div class="image__inner">
+                                    <img src="{{item.path}}" alt="picture">
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            
+
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="big_photo">
+                        <img src="{{ post.images[0].path }}" alt="">
+                    </div>
+                {% endif %}
+
+                
+                <div class="news_page-text">
+                    <p class="para_text">
+                        {{ post.content|raw }}
+                    </p>
+                    
+                </div>
+            </div>
+
+            <div class="right_side break">
+                <div class="title">
+                    Последние новости
+                </div>
+                
+                {% for item in lastNews %}
+                    <div class="news_info">
+                        <div class="left_date">
+                            {{ item.published_at| date("d.m") }}
+                        </div>
+                        <div class="left_info">
+                            <div class="left_title">
+                                <a href="#">{{item.category.name}}</a>
+                            </div>
+                            <div class="news_text">
+                                {{item.title}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}       
+            </div>
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1610638824;s:6:"markup";s:4102:"{% component 'newsPost' %}
+
+<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <div class="page_name">
+                Главная
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                    {{ post.category.name }}
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                {{ post.title }}
+            </div>
+        </div>
+        <div class="section_wrapper">
+            <div class="center">
+                <div class="title">
+                    {{ post.category.name }}
+                </div>
+                <div class="news_page-title">
+                    {{ post.title }}
+                </div>
+                <div class="news_publish">
+                    <div class="publish_date">
+                        <span>
+                            Опубликованно
+                        </span>
+                        <span>
+                            {{ post.published_at| date("d.m.Y") }}
+                        </span>
+                    </div>
+                    <div class="views">
+                        <span class="view_icon">
+                            <img src="{{ 'assets/images/eye.svg'|theme }}" alt="">
+                        </span>
+                        <span>
+                            {{ post.statistics }}
+                        </span>
+                    </div>
+                </div>
+                {% if post.images|length > 1 %}
+                    <div class="news_slider">
+                        <div class="slider__big">
+                            {% for item in  post.images %}
+                            <div>
+                                <div class="slider__card">
+                                    <div class="image__inner">
+                                        <img class="norm" src="{{item.path}}" alt="picture">
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                        <div class="slider__mini">
+                            {% for item in  post.images %}
+                            <div>
+                                <div class="image__inner">
+                                    <img src="{{item.path}}" alt="picture">
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            
+
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="big_photo">
+                        <img src="{{ post.images[0].path }}" alt="">
+                    </div>
+                {% endif %}
+
+                
+                <div class="news_page-text">
+                    <p class="para_text">
+                        {{ post.content|raw }}
+                    </p>
+                    
+                </div>
+            </div>
+
+            <div class="right_side break">
+                <div class="title">
+                    Последние новости
+                </div>
+                
+                {% for item in lastNews %}
+                    <div class="news_info">
+                        <div class="left_date">
+                            {{ item.published_at| date("d.m") }}
+                        </div>
+                        <div class="left_info">
+                            <div class="left_title">
+                                <a href="#">{{item.category.name}}</a>
+                            </div>
+                            <div class="news_text">
+                                {{item.title}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}       
+            </div>
+        </div>
+    </div>
+</section>";s:4:"code";s:225:"function onStart(){
+
+    $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
+
+
+}";s:5:"title";s:4:"post";s:3:"url";s:11:"/post/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:8:"newsPost";a:1:{s:4:"slug";s:11:"{{ :slug }}";}}}

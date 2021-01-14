@@ -192,4 +192,13 @@
   'Indikator\\News\\Classes\\NewsSender' => 'plugins\\indikator\\news\\classes\\NewsSender.php',
   'Renatio\\DynamicPDF\\Classes\\PDFParser' => 'plugins\\renatio\\dynamicpdf\\classes\\PDFParser.php',
   'renatio\\dynamicpdf\\Controllers\\layouts' => 'plugins\\renatio\\dynamicpdf\\controllers\\layouts.php',
+  'admin\\dailynews\\Plugin' => 'plugins\\admin\\dailynews\\Plugin.php',
+  'admin\\dailynews\\Controllers\\dailynewscontroller' => 'plugins\\admin\\dailynews\\controllers\\dailynewscontroller.php',
+  'Admin\\DailyNews\\Models\\DailyNews' => 'plugins\\admin\\dailynews\\models\\DailyNews.php',
+  'admin\\weeklynews\\Plugin' => 'plugins\\admin\\weeklynews\\Plugin.php',
+  'admin\\weeklynews\\Controllers\\weeklynewscontroller' => 'plugins\\admin\\weeklynews\\controllers\\weeklynewscontroller.php',
+  'Admin\\WeeklyNews\\Models\\WeeklyNews' => 'plugins\\admin\\weeklynews\\models\\WeeklyNews.php',
+  'admin\\videos\\Plugin' => 'plugins\\admin\\videos\\Plugin.php',
+  'admin\\videos\\Controllers\\videoscontroller' => 'plugins\\admin\\videos\\controllers\\videoscontroller.php',
+  'Admin\\Videos\\Models\\Video' => 'plugins\\admin\\videos\\models\\Video.php',
 );

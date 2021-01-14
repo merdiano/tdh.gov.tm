@@ -19,6 +19,7 @@ require 'plugins\\donatello-za\\rake-php-plus\\src\\LangParseOptions.php';
 
 
 use DonatelloZa\RakePlus\RakePlus;
+use Illuminate\Support\Facades\App as FacadesApp;
 
 class Posts extends Model
 {
@@ -329,9 +330,15 @@ class Posts extends Model
         }
 
         $search = trim($search);
+        $dateFilter = trim($dateFilter);
+
 
         if (strlen($search)) {
             $query->searchWhere($search, $searchableFields);
+        }
+
+        if (strlen($dateFilter)) {
+            $query->whereDate('published_at', $dateFilter);
         }
 
         if ($isTrans) {
@@ -343,6 +350,7 @@ class Posts extends Model
                 $query->whereIn('id', $ids);
             }
         }
+        $query->where("locale", FacadesApp::getLocale());
 
         return $query->paginate($perPage, $page);
     }

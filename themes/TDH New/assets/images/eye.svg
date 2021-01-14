@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16">
+  <g id="eye" transform="translate(0 -3)">
+    <path id="Контур_6489" data-name="Контур 6489" d="M1,11S4.636,4,11,4s10,7,10,7-3.636,7-10,7S1,11,1,11Z" fill="none" stroke="#adadad" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <ellipse id="Эллипс_12" data-name="Эллипс 12" cx="4.859" cy="4.791" rx="4.859" ry="4.791" transform="translate(6.141 6.209)" fill="none" stroke="#adadad" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

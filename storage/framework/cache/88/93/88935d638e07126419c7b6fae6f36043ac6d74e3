@@ -1,0 +1,287 @@
+1610638937a:1:{s:10:"header.htm";a:6:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:4899:"==
+<?php
+function onStart(){
+        $categories = \Indikator\News\Models\Categories::all();
+        $this["categories"] = $categories;
+
+    }
+?>
+==
+<!-- Header ==================== -->
+
+<header class="header">
+  <div class="auto_container">
+    <div class="header_inner">
+      <div class="lang">
+        <div class="lang_icon">
+          <img src="{{ 'assets/images/lan.svg'|theme }}" alt="" />
+        </div>
+        <div>
+          <!-- Taze language -->
+          <div class="select_language">
+            <div class="current_lang">
+              <div>
+                <a href="#"> {{activeLocaleName}} </a>
+              </div>
+              <div class="pyramid">
+                <img src="{{ 'assets/images/strelka.svg'|theme }}" alt="" />
+              </div>
+            </div>
+            <div class="languages">
+              <a href="{{ url('/ru') }}"> Русский </a>
+              <a href="{{ url('/tm') }}"> Türkmen </a>
+              <a href="{{ url('/en') }}"> English </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="logo">
+        <a href="{{ 'home'|page}}">
+          {% set logo = attribute(this.theme, 'logo_' ~ activeLocale) %}
+
+          <img src="{{logo.path}}" alt="" />
+        </a>
+      </div>
+      <div class="head_right">
+        <form action="{{ 'search'|page }}" class="form" method="GET">
+          <div class="input">
+            <input type="text" name="q" placeholder="{{'Поиск'|_}}" />
+          </div>
+          <button class="search">
+            <img src="{{ 'assets/images/lupa.svg'|theme }}" alt="" />
+          </button>
+        </form>
+      </div>
+      <button type="button" class="hamburg">
+        <span></span>
+      </button>
+    </div>
+  </div>
+  <!-- auto_container -->
+  <div class="navs_section" id="nav">
+    <div class="auto_container">
+      <div class="navs_inner">
+        <!-- taze -->
+        <div class="search_mobile">
+          <form action="#" class="form">
+            <div class="input">
+              <input type="text" placeholder="{{'Поиск'|_}}" />
+            </div>
+            <button class="search">
+              <img src="{{ 'assets/images/lupa.svg'|theme }}" alt="" />
+            </button>
+          </form>
+        </div>
+        <div class="menu">
+          <div class="span"></div>
+          <div class="menu_text">
+            <div class="hover_menu">Разделы</div>
+            <!-- {{categories}} -->
+          </div>
+        </div>
+        <div class="hide_menu">
+          {% for item in categories %}
+          <a href="{{ 'category'|page({ slug: item.slug })}}">{{item.name}}</a>
+          {% endfor %}
+          <!-- <a href="#">
+                        Политика
+                    </a> -->
+        </div>
+        <nav class="navs">
+          <div class="link">
+            <span class="icons">
+              <img src="{{ 'assets/images/inbox.svg'|theme }}" alt="" />
+            </span>
+            <a href="{{ 'archive'|page }}" class="nav_link"> Архив </a>
+          </div>
+          <div class="stick"></div>
+          <div class="link link_media">
+            <div class="icons">
+              <img src="{{ 'assets/images/film.svg'|theme }}" alt="" />
+            </div>
+            <div class="nav_link">
+              <div class="hover_media">Мультимедиа</div>
+            </div>
+          </div>
+          <div class="hide_media">
+            <a href="{{ 'gallery'|page}}"> Фоторепортаж </a>
+            
+            <a href="{{ 'videos'|page}}"> Видеорепортаж </a>
+          </div>
+          <div class="stick"></div>
+          <div class="link">
+            <div class="icons">
+              <img src="{{ 'assets/images/phone-call.svg'|theme }}" alt="" />
+            </div>
+            <a href="#" class="nav_link"> Обратная связь </a>
+          </div>
+        </nav>
+        <div class="langMobile">
+          <div class="lang_icon">
+            <img src="{{ 'assets/images/lan.svg'|theme }}" alt="" />
+          </div>
+          <div class="select_language2">
+            <div class="current_langMobile">
+              <div>
+                <a href="#"> {{activeLocaleName}} </a>
+              </div>
+              <div class="pyramid">
+                <img
+                  src="{{ 'assets/images/whitePyramid.svg'|theme }}"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="languagesMobile">
+          <a href="{{ url('/ru') }}"> Русский </a>
+          <a href="{{ url('/tm') }}"> Türkmen </a>
+          <a href="{{ url('/en') }}"> English </a>
+        </div>
+      </div>
+    </div>
+    <!-- auto_container -->
+  </div>
+</header>
+";s:5:"mtime";i:1610636323;s:6:"markup";s:4739:"<!-- Header ==================== -->
+
+<header class="header">
+  <div class="auto_container">
+    <div class="header_inner">
+      <div class="lang">
+        <div class="lang_icon">
+          <img src="{{ 'assets/images/lan.svg'|theme }}" alt="" />
+        </div>
+        <div>
+          <!-- Taze language -->
+          <div class="select_language">
+            <div class="current_lang">
+              <div>
+                <a href="#"> {{activeLocaleName}} </a>
+              </div>
+              <div class="pyramid">
+                <img src="{{ 'assets/images/strelka.svg'|theme }}" alt="" />
+              </div>
+            </div>
+            <div class="languages">
+              <a href="{{ url('/ru') }}"> Русский </a>
+              <a href="{{ url('/tm') }}"> Türkmen </a>
+              <a href="{{ url('/en') }}"> English </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="logo">
+        <a href="{{ 'home'|page}}">
+          {% set logo = attribute(this.theme, 'logo_' ~ activeLocale) %}
+
+          <img src="{{logo.path}}" alt="" />
+        </a>
+      </div>
+      <div class="head_right">
+        <form action="{{ 'search'|page }}" class="form" method="GET">
+          <div class="input">
+            <input type="text" name="q" placeholder="{{'Поиск'|_}}" />
+          </div>
+          <button class="search">
+            <img src="{{ 'assets/images/lupa.svg'|theme }}" alt="" />
+          </button>
+        </form>
+      </div>
+      <button type="button" class="hamburg">
+        <span></span>
+      </button>
+    </div>
+  </div>
+  <!-- auto_container -->
+  <div class="navs_section" id="nav">
+    <div class="auto_container">
+      <div class="navs_inner">
+        <!-- taze -->
+        <div class="search_mobile">
+          <form action="#" class="form">
+            <div class="input">
+              <input type="text" placeholder="{{'Поиск'|_}}" />
+            </div>
+            <button class="search">
+              <img src="{{ 'assets/images/lupa.svg'|theme }}" alt="" />
+            </button>
+          </form>
+        </div>
+        <div class="menu">
+          <div class="span"></div>
+          <div class="menu_text">
+            <div class="hover_menu">Разделы</div>
+            <!-- {{categories}} -->
+          </div>
+        </div>
+        <div class="hide_menu">
+          {% for item in categories %}
+          <a href="{{ 'category'|page({ slug: item.slug })}}">{{item.name}}</a>
+          {% endfor %}
+          <!-- <a href="#">
+                        Политика
+                    </a> -->
+        </div>
+        <nav class="navs">
+          <div class="link">
+            <span class="icons">
+              <img src="{{ 'assets/images/inbox.svg'|theme }}" alt="" />
+            </span>
+            <a href="{{ 'archive'|page }}" class="nav_link"> Архив </a>
+          </div>
+          <div class="stick"></div>
+          <div class="link link_media">
+            <div class="icons">
+              <img src="{{ 'assets/images/film.svg'|theme }}" alt="" />
+            </div>
+            <div class="nav_link">
+              <div class="hover_media">Мультимедиа</div>
+            </div>
+          </div>
+          <div class="hide_media">
+            <a href="{{ 'gallery'|page}}"> Фоторепортаж </a>
+            
+            <a href="{{ 'videos'|page}}"> Видеорепортаж </a>
+          </div>
+          <div class="stick"></div>
+          <div class="link">
+            <div class="icons">
+              <img src="{{ 'assets/images/phone-call.svg'|theme }}" alt="" />
+            </div>
+            <a href="#" class="nav_link"> Обратная связь </a>
+          </div>
+        </nav>
+        <div class="langMobile">
+          <div class="lang_icon">
+            <img src="{{ 'assets/images/lan.svg'|theme }}" alt="" />
+          </div>
+          <div class="select_language2">
+            <div class="current_langMobile">
+              <div>
+                <a href="#"> {{activeLocaleName}} </a>
+              </div>
+              <div class="pyramid">
+                <img
+                  src="{{ 'assets/images/whitePyramid.svg'|theme }}"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="languagesMobile">
+          <a href="{{ url('/ru') }}"> Русский </a>
+          <a href="{{ url('/tm') }}"> Türkmen </a>
+          <a href="{{ url('/en') }}"> English </a>
+        </div>
+      </div>
+    </div>
+    <!-- auto_container -->
+  </div>
+</header>";s:4:"code";s:137:"function onStart(){
+        $categories = \Indikator\News\Models\Categories::all();
+        $this["categories"] = $categories;
+
+    }";s:17:"_PARSER_ERROR_INI";s:0:"";}}

@@ -1,4 +1,4 @@
-1609849072a:1:{s:13:"home_left.htm";a:6:{s:8:"fileName";s:13:"home_left.htm";s:7:"content";s:1386:"[newsPosts]
+1610637804a:1:{s:13:"home_left.htm";a:6:{s:8:"fileName";s:13:"home_left.htm";s:7:"content";s:1412:"[newsPosts]
 pageNumber = "{{ :page }}"
 postsPerPage = 10
 noPostsMessage = "No posts found"
@@ -13,6 +13,8 @@ function onStart(){
         $cat = \Indikator\News\Models\Categories::where("id", $this->theme->foreign_news)->first();
         $this["cat"] = $cat;
        
+
+        
     }
 ?>
 ==
@@ -34,7 +36,7 @@ function onStart(){
     <div class="news">
         <div class="left__title">
             <a href="{{post.url}}"> {{ post.title }}</a>
-            
+            aa
         </div>
         <div class="left__text">
             {{ post.introductory|raw }} 
@@ -44,11 +46,11 @@ function onStart(){
                 {{ post.published_at| date("d.m.Y") }}
             </div>
             <div class="left__link">
-                <a href="{{post.url}}">Узнать больше</a>
+                <a href="{{post.url}}">Узнать большеrrrrrrrrrrrr</a>
             </div>
         </div>
     </div>
-{% endfor %}";s:5:"mtime";i:1606934152;s:6:"markup";s:889:"{% component "newsPosts" %}
+{% endfor %}";s:5:"mtime";i:1610637203;s:6:"markup";s:903:"{% component "newsPosts" %}
 
     <div class="title__b ">
         {{cat.name}}
@@ -66,7 +68,7 @@ function onStart(){
     <div class="news">
         <div class="left__title">
             <a href="{{post.url}}"> {{ post.title }}</a>
-            
+            aa
         </div>
         <div class="left__text">
             {{ post.introductory|raw }} 
@@ -76,13 +78,15 @@ function onStart(){
                 {{ post.published_at| date("d.m.Y") }}
             </div>
             <div class="left__link">
-                <a href="{{post.url}}">Узнать больше</a>
+                <a href="{{post.url}}">Узнать большеrrrrrrrrrrrr</a>
             </div>
         </div>
     </div>
-{% endfor %}";s:4:"code";s:288:"function onStart(){
+{% endfor %}";s:4:"code";s:300:"function onStart(){
         $this["posts_filtered"] = \Indikator\News\Models\Posts::where("category_id", $this->theme->foreign_news)->get();
         $cat = \Indikator\News\Models\Categories::where("id", $this->theme->foreign_news)->first();
         $this["cat"] = $cat;
        
+
+        
     }";s:9:"newsPosts";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"postFeatured";s:1:"0";s:8:"postPage";s:4:"post";s:12:"categoryPage";s:4:"home";}}}

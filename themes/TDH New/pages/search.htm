@@ -1,0 +1,115 @@
+title = "search"
+url = "/search"
+layout = "default"
+is_hidden = 0
+
+[newsPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postFeatured = 0
+searchFilter
+postPage = "archive"
+categoryPage = "archive"
+==
+<?php
+function onStart(){
+
+        
+        //$this['search_results'] = \Indikator\News\Models\Posts::searchWhere(input("q"))->where("locale", App::getLocale())->orderBy('created_at', 'desc')->paginate(10);
+        //$search_results = \Indikator\News\Models\Posts::searchWhere(input("search"))->where("locale", App::getLocale())->orderBy('created_at', 'desc')->get();
+        
+        //dd($search_results);
+
+        $this['query'] = input('q');
+        
+    }
+?>
+==
+
+<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <div class="page_name">
+                Главная
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                Результат поиска
+            </div>
+        </div>
+        <div class="section_wrapper">
+            <div class="center">
+                <div class="title">
+                    Результат поиска
+                </div>
+                <div class="main_news">
+                    {% for item in newsPosts.posts %}
+                    <div class="main_news-item">
+                        <div class="main_news-date">
+                            <span>
+                                {{ item.published_at| date("d.m") }}
+                            </span>
+                            <span>
+                                {{ item.published_at| date("Y") }}
+                            </span>
+                        </div>
+                        <div class="main_news-content">
+                            <div class="main_news-title">
+
+                                {{item.title}}
+                            </div>
+                            <div class="main_news-text">
+                                
+                                {{item.introductory}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}       
+                    
+                    
+                </div>
+
+                {% if newsPosts.posts.total > 10 %}
+                    <div class="section_end">
+                        <div class="page_num">
+                            <a href="{{newsPosts.posts.previousPageUrl}}{{'&q='~query}}">
+                                <div class="direct_btn">
+                                        <img src="{{ 'assets/images/left.svg'|theme }}" alt="">
+                                </div>
+                            </a>
+                            <form action="" method="GET">
+                                <input type="text" name="page" value="{{newsPosts.posts.currentPage}}" class="input_page">
+                            </form>
+                            <a href="{{newsPosts.posts.nextPageUrl}}{{'&q='~query}}">
+                                <div class="direct_btn">
+                                        <img src="{{ 'assets/images/right.svg'|theme }}" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="page_list">
+                            {{(newsPosts.posts.total/newsPosts.posts.perPage)|round(0,"ceil")}} страниц
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="right_side full">
+                <div class="title">
+                    Поиск
+                </div>
+                <form class="form" method="GET">
+                    <div class="input">
+                        <input type="text" name="q" placeholder="Поиск">
+                    </div>
+                    <button class="search">
+                            <img src="{{ 'assets/images/lupa.svg'|theme }}" alt="">
+                    </button>
+                </form>
+                <div class="found_news">
+                    По вашему запросу было найдено <span class="quantity_num">{{newsPosts.posts.total}}</span> статей
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

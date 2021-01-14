@@ -8,7 +8,7 @@ navigation:
     main-menu-item:
         label: Photo
         url: admin/photos/photocontroller
-        icon: icon-life-ring
+        icon: icon-file-photo-o
         permissions:
             - manage_photos
 permissions:

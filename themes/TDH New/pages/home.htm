@@ -1,0 +1,53 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[newsPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postFeatured = 0
+postPage = "home"
+categoryPage = "home"
+==
+<?php
+use RainLab\Translate\Classes\Translator;
+protected $translator;
+
+function onStart()
+{
+    $this->translator = Translator::instance();
+    $this['SelectedLanguage'] = $this->activeLocale = $this->translator->getLocale();
+
+    $featured = \Indikator\News\Models\Posts::where("featured", true)->where("locale", App::getLocale())->orderBy('created_at', 'desc')->get()->first();
+    
+    $this['postFeatured'] = $featured; 
+
+    $imagedata = getimagesize($featured->images->first->path->path);
+
+        $this['imageType'] = $imagedata[0] > $imagedata[1] ? "horizontal" : "vertical";
+
+    
+    
+
+}
+?>
+==
+{% set CurrentLanguage = SelectedLanguage %}
+
+
+<!-- Intro ===================== -->
+<div class="auto_container" id="intro">
+    <div class="intro">
+        {% partial 'home_intro' %}
+        <div class="top_news">
+            {% partial 'home_last_news' %}  
+            {% partial 'home_colleage_news' %}  
+        </div>
+    </div>
+</div>
+
+
+{% partial 'home_categories' %}  

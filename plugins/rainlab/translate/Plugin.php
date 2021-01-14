@@ -228,6 +228,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
+           'RainLab\Translate\Components\LocalePicker' => 'localePicker',
            'RainLab\Translate\Components\AlternateHrefLangElements' => 'alternateHrefLangElements'
         ];
     }

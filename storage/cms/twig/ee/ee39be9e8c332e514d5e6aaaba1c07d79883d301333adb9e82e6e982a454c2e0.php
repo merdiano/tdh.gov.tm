@@ -127,60 +127,68 @@ class __TwigTemplate_1f4597477629652dc393a4b8657e521545ef5202d33a98c6376219df3e5
 ";
         // line 34
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
+        $context['_seq'] = twig_ensure_traversable(($context["postFeatured"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 35
             echo "    <hr>
     <div class=\"texts\">
-        <div class=\"sub__titles\">
-            <a href=\"";
+        ";
+            // line 37
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "images", [], "any", false, false, true, 37), 37, $this->source), "html", null, true);
+            echo "   
+        <img src=\"";
             // line 38
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 38), 38, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_get_attribute($this->env, $this->source, $context["item"], "images", [], "any", false, false, true, 38)) && is_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4) || $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 instanceof ArrayAccess ? ($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4[0] ?? null) : null), "path", [], "any", false, false, true, 38), 38, $this->source), "html", null, true);
+            echo "\" alt=\"\">
+        <!-- <div class=\"sub__titles\">
+            <a href=\"";
+            // line 40
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 40), 40, $this->source), "html", null, true);
             echo "\"> ";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 38), 38, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 40), 40, $this->source), "html", null, true);
             echo "</a>
-        </div>
-        <div class=\"sony\">
+        </div> -->
+        <!-- <div class=\"sony\">
             <div class=\"sub__end\">
                 <div class=\"sub__names\">
                     ";
-            // line 43
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 43), "name", [], "any", false, false, true, 43), 43, $this->source), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 45), "name", [], "any", false, false, true, 45), 45, $this->source), "html", null, true);
             echo "
                 </div>
                 <div class=\"devider\">
                 </div>
                 <div class=\"sub__time\">
                     ";
-            // line 48
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 48), 48, $this->source), "d.m.Y"), "html", null, true);
+            // line 50
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 50), 50, $this->source), "d.m.Y"), "html", null, true);
             echo "
                 </div>
             </div>
             <div class=\"sub__end-link\">
                 <a href=\"";
-            // line 52
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 52), 52, $this->source), "html", null, true);
-            echo "\">Узнать больше</a>
+            // line 54
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 54), 54, $this->source), "html", null, true);
+            echo "\">Узнать большeeeе</a>
             </div>
-        </div>
+        </div> -->
     </div>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 59
         echo "
 ";
-        // line 58
+        // line 60
         if (($context["posts_filtered2"] ?? null)) {
-            // line 59
+            // line 61
             echo "    <div class=\"comment__block\">
         <div class=\"title\">
             ";
-            // line 61
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["cat2"] ?? null), "name", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["cat2"] ?? null), "name", [], "any", false, false, true, 63), 63, $this->source), "html", null, true);
             echo "
         </div>
         <hr>
@@ -192,14 +200,14 @@ class __TwigTemplate_1f4597477629652dc393a4b8657e521545ef5202d33a98c6376219df3e5
                 <span class=\"theme__name\">
                     На тему:
                 </span> ";
-            // line 71
-            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["posts_filtered2"] ?? null), "introductory", [], "any", false, false, true, 71), 71, $this->source);
+            // line 73
+            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["posts_filtered2"] ?? null), "introductory", [], "any", false, false, true, 73), 73, $this->source);
             echo " 
             </div>
             <div class=\"comment__text\">
                 ";
-            // line 74
-            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["posts_filtered2"] ?? null), "content", [], "any", false, false, true, 74), 74, $this->source);
+            // line 76
+            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["posts_filtered2"] ?? null), "content", [], "any", false, false, true, 76), 76, $this->source);
             echo "
             </div>
             
@@ -207,6 +215,59 @@ class __TwigTemplate_1f4597477629652dc393a4b8657e521545ef5202d33a98c6376219df3e5
     </div>
 ";
         }
+        // line 81
+        echo " 
+
+<!-- Intro ===================== -->
+<div class=\"auto_container\" id=\"intro\">
+    
+    <div class=\"intro\">
+        <div class=\"main\">
+            <div class=\"title\">
+                В центре событий
+            </div>
+            ";
+        // line 91
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "images", [], "any", false, false, true, 91), 91, $this->source), "html", null, true);
+        echo "
+            <div class=\"main_part\">
+                <div class=\"main_photo\">
+                    <img src=\"";
+        // line 94
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "images", [], "any", false, false, true, 94)) && is_array($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144) || $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 instanceof ArrayAccess ? ($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144[0] ?? null) : null), "path", [], "any", false, false, true, 94), 94, $this->source), "html", null, true);
+        echo "\" alt=\"\">
+                </div>
+                <div class=\"main_title\">
+                    ";
+        // line 97
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "title", [], "any", false, false, true, 97), 97, $this->source), "html", null, true);
+        echo "
+                </div>
+                <div class=\"main_text\">
+                    ";
+        // line 100
+        echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "introductory", [], "any", false, false, true, 100), 100, $this->source);
+        echo " 
+                </div>
+                <div class=\"main_end\">
+                    <div class=\"main_date\">
+                        ";
+        // line 104
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "published_at", [], "any", false, false, true, 104), 104, $this->source), "d.m.Y"), "html", null, true);
+        echo "
+                    </div>
+                    <div class=\"main_link\">
+                        <a href=\"";
+        // line 107
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "url", [], "any", false, false, true, 107), 107, $this->source), "html", null, true);
+        echo "\">
+                            Узнать больше
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>";
     }
 
     public function getTemplateName()
@@ -221,7 +282,7 @@ class __TwigTemplate_1f4597477629652dc393a4b8657e521545ef5202d33a98c6376219df3e5
 
     public function getDebugInfo()
     {
-        return array (  202 => 74,  196 => 71,  183 => 61,  179 => 59,  177 => 58,  174 => 57,  163 => 52,  156 => 48,  148 => 43,  138 => 38,  133 => 35,  129 => 34,  126 => 33,  116 => 26,  109 => 22,  102 => 19,  91 => 15,  84 => 11,  78 => 8,  71 => 4,  68 => 3,  66 => 2,  62 => 1,);
+        return array (  262 => 107,  256 => 104,  249 => 100,  243 => 97,  237 => 94,  231 => 91,  219 => 81,  210 => 76,  204 => 73,  191 => 63,  187 => 61,  185 => 60,  182 => 59,  171 => 54,  164 => 50,  156 => 45,  146 => 40,  141 => 38,  137 => 37,  133 => 35,  129 => 34,  126 => 33,  116 => 26,  109 => 22,  102 => 19,  91 => 15,  84 => 11,  78 => 8,  71 => 4,  68 => 3,  66 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -259,13 +320,15 @@ class __TwigTemplate_1f4597477629652dc393a4b8657e521545ef5202d33a98c6376219df3e5
     </div>
 {% endif %}
 
-{% for item in posts %}
+{% for item in postFeatured %}
     <hr>
     <div class=\"texts\">
-        <div class=\"sub__titles\">
+        {{ item.images }}   
+        <img src=\"{{ item.images[0].path }}\" alt=\"\">
+        <!-- <div class=\"sub__titles\">
             <a href=\"{{item.url}}\"> {{ item.title }}</a>
-        </div>
-        <div class=\"sony\">
+        </div> -->
+        <!-- <div class=\"sony\">
             <div class=\"sub__end\">
                 <div class=\"sub__names\">
                     {{ item.category.name }}
@@ -277,9 +340,9 @@ class __TwigTemplate_1f4597477629652dc393a4b8657e521545ef5202d33a98c6376219df3e5
                 </div>
             </div>
             <div class=\"sub__end-link\">
-                <a href=\"{{item.url}}\">Узнать больше</a>
+                <a href=\"{{item.url}}\">Узнать большeeeе</a>
             </div>
-        </div>
+        </div> -->
     </div>
 {% endfor %}
 
@@ -304,6 +367,39 @@ class __TwigTemplate_1f4597477629652dc393a4b8657e521545ef5202d33a98c6376219df3e5
             
         </div>
     </div>
-{% endif %}", "C:\\xampp\\htdocs\\tdh/themes/tttttdh/partials/home_main.htm", "");
+{% endif %} 
+
+<!-- Intro ===================== -->
+<div class=\"auto_container\" id=\"intro\">
+    
+    <div class=\"intro\">
+        <div class=\"main\">
+            <div class=\"title\">
+                В центре событий
+            </div>
+            {{ postFeatured.images }}
+            <div class=\"main_part\">
+                <div class=\"main_photo\">
+                    <img src=\"{{ postFeatured.images[0].path }}\" alt=\"\">
+                </div>
+                <div class=\"main_title\">
+                    {{ postFeatured.title }}
+                </div>
+                <div class=\"main_text\">
+                    {{ postFeatured.introductory|raw }} 
+                </div>
+                <div class=\"main_end\">
+                    <div class=\"main_date\">
+                        {{ postFeatured.published_at| date(\"d.m.Y\") }}
+                    </div>
+                    <div class=\"main_link\">
+                        <a href=\"{{postFeatured.url}}\">
+                            Узнать больше
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>", "C:\\xampp\\htdocs\\tdh/themes/tttttdh/partials/home_main.htm", "");
     }
 }

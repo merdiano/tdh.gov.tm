@@ -1,0 +1,23 @@
+fields:
+    title:
+        label: Title
+        span: full
+        type: text
+    pdf:
+        label: 'Pdf upload'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    image:
+        label: 'Image upload'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload

@@ -1,0 +1,123 @@
+title = "gallery"
+url = "/gallery"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function onStart(){
+
+    $gallery = Admin\Photos\Models\Photo::paginate(1);
+    $this['gallery'] = $gallery;
+
+    $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
+
+
+}
+?>
+==
+
+<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <div class="page_name">
+                Главная
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                Фоторепортаж
+            </div>
+        </div>
+        <div class="section_wrapper">
+            <div class="center">
+                <div class="title">
+                    Фоторепортаж
+                </div>
+                <div class="gallery_outer">
+                    
+                    {% for item in gallery %}
+                    <div class="gallery_item">
+                        <div class="gallery_img">
+                            
+                            <img src="{{item.cat_image.path}}" alt="">
+                            
+                            <div style="display: none;">
+                                {% for image in item.getImages() %}
+                                <a href="{{image.path}}" data-fancybox="images-preview-1" data-width="1500"
+                                    data-height="1000" data-thumb="{{image.path}}" data-caption="{{image.id}}"></a>
+
+                                {% endfor %}
+                            </div>      
+                            <h3 class="photo_view">
+                                <a href="{{item.cat_image.path}}" data-fancybox="images-preview-1" data-width="1500"
+                                data-height="1000" data-thumbs='{"autoStart":true}'>Просмотреть</a>
+                            </h3>
+                        </div>
+                        <div class="gallery_info">
+                            <div class="photo_title">
+                                {% if activeLocale == "tm" %}
+                                    {{ item.title_tm }}
+                                {% elseif activeLocale == "ru" %}
+                                    {{ item.title_ru }}
+                                {% elseif activeLocale == "en" %}
+                                    {{ item.title_en }}
+                                {% endif %}
+                            </div>
+                            <div class="photo_date">
+                                {{ item.published_at| date("d.m.Y") }}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% endfor %}
+
+                        
+                </div>
+
+                
+                    
+                <div class="section_end">
+                    <div class="page_num">
+                        <a href="{{gallery.previousPageUrl}}">
+                            <div class="direct_btn">
+                                    <img src="{{ 'assets/images/left.svg'|theme }}" alt="">
+                            </div>
+                        </a>
+                        <form action="" method="GET">
+                            <input type="text" name="page" value="{{gallery.currentPage}}" class="input_page">
+                        </form>
+                        <a href="{{gallery.nextPageUrl}}">
+                            <div class="direct_btn">
+                                    <img src="{{ 'assets/images/right.svg'|theme }}" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="page_list">
+                        {{(gallery.total/gallery.perPage)|round(0,"ceil")}} страниц
+                    </div>
+                </div>
+            </div>
+            <div class="right_side break">
+                <div class="title">
+                    Последние новости
+                </div>
+                
+                {% for item in lastNews %}
+                    <div class="news_info">
+                        <div class="left_date">
+                            {{ item.published_at| date("d.m") }}
+                        </div>
+                        <div class="left_info">
+                            <div class="left_title">
+                                <a href="#">{{item.category.name}}</a>
+                            </div>
+                            <div class="news_text">
+                                {{item.title}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}       
+            </div>
+        </div>
+        
+    </div>
+</section>

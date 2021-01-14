@@ -1,6 +1,7 @@
 <?php namespace Admin\Photos\Models;
 
 use Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Model
@@ -38,4 +39,12 @@ class Photo extends Model
      */
     public $rules = [
     ];
+
+
+    public function getImages(){
+        // return Photo::where('id', $this->id)
+        //     ->get();
+        return Photo::where('id', $this->id)
+        ->get()->first()->image;
+    }
 }

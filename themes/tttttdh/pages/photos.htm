@@ -31,7 +31,7 @@ is_hidden = 0
             
             <div class="gallery__inner">
                {% for item in photos[0].image %}
-                    
+                    {{item}}
                <a class="gallery__card" href="{{item.path}}" data-fancybox="images"
                     data-caption="Name of the picture">
                     <img src="{{item.thumb(500,500)}}" alt="">

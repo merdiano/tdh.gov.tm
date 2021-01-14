@@ -1,0 +1,7 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: Title
+        type: switch

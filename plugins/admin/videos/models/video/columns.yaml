@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+    title_tm:
+        label: 'Title Tm'
+        type: text
+    title_ru:
+        label: 'Title Ru'
+        type: text
+    title_en:
+        label: 'Title En'
+        type: text

@@ -93,7 +93,7 @@ class __TwigTemplate_a1324cb6c98bb808a6d9f22e222a86d26678967bd14985b476f74f5d878
             echo "\"> ";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, true, 18), 18, $this->source), "html", null, true);
             echo "</a>
-            
+            aa
         </div>
         <div class=\"left__text\">
             ";
@@ -112,7 +112,7 @@ class __TwigTemplate_a1324cb6c98bb808a6d9f22e222a86d26678967bd14985b476f74f5d878
                 <a href=\"";
             // line 29
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, true, 29), 29, $this->source), "html", null, true);
-            echo "\">Узнать больше</a>
+            echo "\">Узнать большеrrrrrrrrrrrr</a>
             </div>
         </div>
     </div>
@@ -158,7 +158,7 @@ class __TwigTemplate_a1324cb6c98bb808a6d9f22e222a86d26678967bd14985b476f74f5d878
     <div class=\"news\">
         <div class=\"left__title\">
             <a href=\"{{post.url}}\"> {{ post.title }}</a>
-            
+            aa
         </div>
         <div class=\"left__text\">
             {{ post.introductory|raw }} 
@@ -168,7 +168,7 @@ class __TwigTemplate_a1324cb6c98bb808a6d9f22e222a86d26678967bd14985b476f74f5d878
                 {{ post.published_at| date(\"d.m.Y\") }}
             </div>
             <div class=\"left__link\">
-                <a href=\"{{post.url}}\">Узнать больше</a>
+                <a href=\"{{post.url}}\">Узнать большеrrrrrrrrrrrr</a>
             </div>
         </div>
     </div>

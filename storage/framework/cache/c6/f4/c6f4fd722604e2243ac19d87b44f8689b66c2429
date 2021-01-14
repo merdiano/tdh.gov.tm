@@ -1,0 +1,561 @@
+1610638905a:1:{s:19:"home_categories.htm";a:6:{s:8:"fileName";s:19:"home_categories.htm";s:7:"content";s:11928:"==
+<?php
+function onStart(){
+ 
+    $this['categories'] = \Indikator\News\Models\Categories::orderBy("sort_order")->limit(6)->get();
+
+    
+    $this['interesting'] = Admin\Interesting\Models\Interesing::all();
+    $this['news'] = Admin\WeeklyNews\Models\WeeklyNews::orderBy('created_at', 'desc')->get()->first();
+
+    $this['gallery'] = Admin\Photos\Models\Photo::orderBy("date")->limit(2)->get();
+    $this['gallery'] = Admin\Photos\Models\Photo::orderBy("date")->limit(2)->get();
+    $this['videos'] = Admin\Videos\Models\Video::orderBy("date")->limit(2)->get();
+
+    $this['mainNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", $this->theme->main_news)->orderBy('created_at', 'desc')->limit(4)->get();
+    $this["main_news_cat"] = \Indikator\News\Models\Categories::where("id", $this->theme->main_news)->first();
+}
+?>
+==
+
+<div class="auto_container">
+    <div class="main_wrapper">
+        <div class="content">
+            <div class="main_content">
+                <div class="blocks">
+                    {% for item in categories.slice(0,3) %}
+                    <div class="block">
+                        <div class="title">
+                            <a href="{{ 'category'|page({ slug: item.slug })}}"> {{item.name}}</a>
+                            <a href="{{ 'category'|page({ slug: item.slug })}}">
+                                <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+                            </a>
+                        </div>
+                        
+                        {% for post in item.getPosts() %}
+                            <div class="news_info">
+                                <div class="left_date">
+                                    {{ post.published_at| date("d.m") }} 
+                                </div>
+                                <div class="news_text">
+                                    {{ post.title }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    {% endfor %}
+                    <!-- taze -->
+                    <div class="banner">
+                        <div class="banner_img">
+                            <img src="{{ 'assets/images/bann.png'|theme }}" alt="">
+                        </div>
+                        <div class="banner_text">
+                            Доклад Уполномоченного по правам человека в <br>
+                            Туркменистане по итогам 2020 года
+                        </div>
+                    </div>
+
+                    {% for item in categories.slice(3,6) %}
+                    <div class="block">
+                        <div class="title">
+                            <a href="{{ 'category'|page({ slug: item.slug })}}"> {{item.name}}</a>
+                            <a href="{{ 'category'|page({ slug: item.slug })}}">
+                                <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+                            </a>
+                        </div>
+                        {% for post in item.getPosts() %}
+                            <div class="news_info">
+                                <div class="left_date">
+                                    {{ post.published_at| date("d.m") }}
+                                </div>
+                                <div class="news_text">
+                                    {{ post.title }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+
+                
+                
+            </div>
+
+            <div class="aside">
+                <div class="book">
+                    <div class="title">
+                        Еженедельный вестник
+                    </div>
+                    <div class="book_img">
+                        <img src="{{ news.image[0].getPath() }}" alt="">
+                    </div>
+                    <button class="download">
+                        <a href="{{ news.pdf[0].getPath() }}">
+                            скачать В PDF формате
+                        </a>
+                    </a>
+                </div>
+                <div class="slide">
+                    <div class="title">
+                        Интересные ссылки
+                    </div>
+                    <div class="slide_show">
+                        <div class="slide_inner">
+                            {% for item in interesting %}
+                            <div class="slider__item">
+                                <img src="{{ item.image.getPath() }}" alt="">
+                            </div>
+                            
+                            {% endfor %}
+                            
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="media">
+            <div class="photo">
+                <div class="title">
+                    <a href="{{ 'gallery'|page}}">Фоторепортаж</a>
+                    <a href="{{ 'gallery'|page}}">
+                        <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+                    </a>
+                </div>
+                <div class="gallery">
+                    {% for item in gallery %}
+                        <div class="item">
+                            <div class="item_img">
+                                <a href="{{ 'photos'|page({ category_id: item.id })}}">
+                                    <img src="{{item.cat_image.path}}" alt="">
+                                </a>
+                            </div>
+                            <div class="item_text">
+                                {% if activeLocale == "tm" %}
+                                    {{ item.title_tm }}
+                                {% elseif activeLocale == "ru" %}
+                                    {{ item.title_ru }}
+                                {% elseif activeLocale == "en" %}
+                                    {{ item.title_en }}
+                                {% endif %}
+                            </div>
+                            <div class="item_date">
+                                {{ item.date| date("d.m.Y") }}
+                            </div>
+                        </div>
+                        
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="video">
+                <div class="title">
+                    <a href="{{ 'videos'|page}}">Видеорепортаж</a>
+                    <a href="{{ 'videos'|page}}">
+                        <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+                    </a>
+                </div>
+                <div class="gallery">
+                    {% for item in videos %}
+                    <div class="item">
+                            <div class="item_img">
+                                <a href="#">
+                                    <img src="{{item.image[0].path}}" alt="">
+                                </a>
+                            </div>
+                            <div class="item_text">
+                                {% if activeLocale == "tm" %}
+                                    {{ item.title_tm }}
+                                {% elseif activeLocale == "ru" %}
+                                    {{ item.title_ru }}
+                                {% elseif activeLocale == "en" %}
+                                    {{ item.title_en }}
+                                {% endif %}
+                            </div>
+                            <div class="item_date">
+                                {{ item.date| date("d.m.Y") }}
+                            </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Last News =================== -->
+<div class="auto_container">
+    <div class="homeland">
+        <div class="title">
+            <div>
+               {{main_news_cat.name}}
+            </div>
+            <a href="#">
+                <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+            </a>
+        </div>
+
+        <div class="mini_news">
+            <div class="news_col">
+                
+                {% for item in mainNews.slice(0,2) %}
+                <div class="news_item">
+                    <div class="left_date">
+                        {{ item.date| date("d.m") }}
+                    </div>
+                    <div class="news_text">
+                       {{item.title}}
+                    </div>
+                </div>
+               {% endfor %}
+            </div>
+            <div class="news_col">
+                
+                {% for item in mainNews.slice(2,4) %}
+                <div class="news_item">
+                    <div class="left_date">
+                        {{ item.date| date("d.m") }}
+                    </div>
+                    <div class="news_text">
+                        {{item.title}}
+                    </div>
+                </div>
+               {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Channel ===================== -->
+<div class="auto_container">
+    <div class="channel">
+        <div class="channel__inner">
+            <div class="chanel__items">
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___18.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___19.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___20.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___21.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___22.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___23.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+            </div><!-- chanel__items -->
+        </div> <!-- channel__inner -->
+    </div><!-- channel -->
+</div> <!-- container -->";s:5:"mtime";i:1610629246;s:6:"markup";s:11039:"<div class="auto_container">
+    <div class="main_wrapper">
+        <div class="content">
+            <div class="main_content">
+                <div class="blocks">
+                    {% for item in categories.slice(0,3) %}
+                    <div class="block">
+                        <div class="title">
+                            <a href="{{ 'category'|page({ slug: item.slug })}}"> {{item.name}}</a>
+                            <a href="{{ 'category'|page({ slug: item.slug })}}">
+                                <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+                            </a>
+                        </div>
+                        
+                        {% for post in item.getPosts() %}
+                            <div class="news_info">
+                                <div class="left_date">
+                                    {{ post.published_at| date("d.m") }} 
+                                </div>
+                                <div class="news_text">
+                                    {{ post.title }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    {% endfor %}
+                    <!-- taze -->
+                    <div class="banner">
+                        <div class="banner_img">
+                            <img src="{{ 'assets/images/bann.png'|theme }}" alt="">
+                        </div>
+                        <div class="banner_text">
+                            Доклад Уполномоченного по правам человека в <br>
+                            Туркменистане по итогам 2020 года
+                        </div>
+                    </div>
+
+                    {% for item in categories.slice(3,6) %}
+                    <div class="block">
+                        <div class="title">
+                            <a href="{{ 'category'|page({ slug: item.slug })}}"> {{item.name}}</a>
+                            <a href="{{ 'category'|page({ slug: item.slug })}}">
+                                <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+                            </a>
+                        </div>
+                        {% for post in item.getPosts() %}
+                            <div class="news_info">
+                                <div class="left_date">
+                                    {{ post.published_at| date("d.m") }}
+                                </div>
+                                <div class="news_text">
+                                    {{ post.title }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+
+                
+                
+            </div>
+
+            <div class="aside">
+                <div class="book">
+                    <div class="title">
+                        Еженедельный вестник
+                    </div>
+                    <div class="book_img">
+                        <img src="{{ news.image[0].getPath() }}" alt="">
+                    </div>
+                    <button class="download">
+                        <a href="{{ news.pdf[0].getPath() }}">
+                            скачать В PDF формате
+                        </a>
+                    </a>
+                </div>
+                <div class="slide">
+                    <div class="title">
+                        Интересные ссылки
+                    </div>
+                    <div class="slide_show">
+                        <div class="slide_inner">
+                            {% for item in interesting %}
+                            <div class="slider__item">
+                                <img src="{{ item.image.getPath() }}" alt="">
+                            </div>
+                            
+                            {% endfor %}
+                            
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="media">
+            <div class="photo">
+                <div class="title">
+                    <a href="{{ 'gallery'|page}}">Фоторепортаж</a>
+                    <a href="{{ 'gallery'|page}}">
+                        <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+                    </a>
+                </div>
+                <div class="gallery">
+                    {% for item in gallery %}
+                        <div class="item">
+                            <div class="item_img">
+                                <a href="{{ 'photos'|page({ category_id: item.id })}}">
+                                    <img src="{{item.cat_image.path}}" alt="">
+                                </a>
+                            </div>
+                            <div class="item_text">
+                                {% if activeLocale == "tm" %}
+                                    {{ item.title_tm }}
+                                {% elseif activeLocale == "ru" %}
+                                    {{ item.title_ru }}
+                                {% elseif activeLocale == "en" %}
+                                    {{ item.title_en }}
+                                {% endif %}
+                            </div>
+                            <div class="item_date">
+                                {{ item.date| date("d.m.Y") }}
+                            </div>
+                        </div>
+                        
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="video">
+                <div class="title">
+                    <a href="{{ 'videos'|page}}">Видеорепортаж</a>
+                    <a href="{{ 'videos'|page}}">
+                        <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+                    </a>
+                </div>
+                <div class="gallery">
+                    {% for item in videos %}
+                    <div class="item">
+                            <div class="item_img">
+                                <a href="#">
+                                    <img src="{{item.image[0].path}}" alt="">
+                                </a>
+                            </div>
+                            <div class="item_text">
+                                {% if activeLocale == "tm" %}
+                                    {{ item.title_tm }}
+                                {% elseif activeLocale == "ru" %}
+                                    {{ item.title_ru }}
+                                {% elseif activeLocale == "en" %}
+                                    {{ item.title_en }}
+                                {% endif %}
+                            </div>
+                            <div class="item_date">
+                                {{ item.date| date("d.m.Y") }}
+                            </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Last News =================== -->
+<div class="auto_container">
+    <div class="homeland">
+        <div class="title">
+            <div>
+               {{main_news_cat.name}}
+            </div>
+            <a href="#">
+                <img src="{{ 'assets/images/arrow-right.svg'|theme }}" alt="">
+            </a>
+        </div>
+
+        <div class="mini_news">
+            <div class="news_col">
+                
+                {% for item in mainNews.slice(0,2) %}
+                <div class="news_item">
+                    <div class="left_date">
+                        {{ item.date| date("d.m") }}
+                    </div>
+                    <div class="news_text">
+                       {{item.title}}
+                    </div>
+                </div>
+               {% endfor %}
+            </div>
+            <div class="news_col">
+                
+                {% for item in mainNews.slice(2,4) %}
+                <div class="news_item">
+                    <div class="left_date">
+                        {{ item.date| date("d.m") }}
+                    </div>
+                    <div class="news_text">
+                        {{item.title}}
+                    </div>
+                </div>
+               {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Channel ===================== -->
+<div class="auto_container">
+    <div class="channel">
+        <div class="channel__inner">
+            <div class="chanel__items">
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___18.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___19.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___20.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___21.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___22.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="chan__pic1">
+                        <a href="#">
+                            <img src="{{ 'assets/images/NoPath___23.png'|theme }}" alt="channel">
+                        </a>
+                    </div>
+                </div>
+            </div><!-- chanel__items -->
+        </div> <!-- channel__inner -->
+    </div><!-- channel -->
+</div> <!-- container -->";s:4:"code";s:866:"function onStart(){
+ 
+    $this['categories'] = \Indikator\News\Models\Categories::orderBy("sort_order")->limit(6)->get();
+
+    
+    $this['interesting'] = Admin\Interesting\Models\Interesing::all();
+    $this['news'] = Admin\WeeklyNews\Models\WeeklyNews::orderBy('created_at', 'desc')->get()->first();
+
+    $this['gallery'] = Admin\Photos\Models\Photo::orderBy("date")->limit(2)->get();
+    $this['gallery'] = Admin\Photos\Models\Photo::orderBy("date")->limit(2)->get();
+    $this['videos'] = Admin\Videos\Models\Video::orderBy("date")->limit(2)->get();
+
+    $this['mainNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", $this->theme->main_news)->orderBy('created_at', 'desc')->limit(4)->get();
+    $this["main_news_cat"] = \Indikator\News\Models\Categories::where("id", $this->theme->main_news)->first();
+}";s:17:"_PARSER_ERROR_INI";s:0:"";}}

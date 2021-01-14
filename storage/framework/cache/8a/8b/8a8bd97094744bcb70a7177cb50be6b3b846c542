@@ -1,4 +1,4 @@
-1609849683a:1:{s:10:"photos.htm";a:9:{s:8:"fileName";s:10:"photos.htm";s:7:"content";s:1090:"title = "Photos"
+1610637702a:1:{s:10:"photos.htm";a:9:{s:8:"fileName";s:10:"photos.htm";s:7:"content";s:1098:"title = "Photos"
 url = "/gallery/:category_id"
 layout = "default"
 is_hidden = 0
@@ -31,7 +31,7 @@ is_hidden = 0
             
             <div class="gallery__inner">
                {% for item in photos[0].image %}
-                    
+                    {{item}}
                <a class="gallery__card" href="{{item.path}}" data-fancybox="images"
                     data-caption="Name of the picture">
                     <img src="{{item.thumb(500,500)}}" alt="">
@@ -44,7 +44,7 @@ is_hidden = 0
             
         </div><!-- gallery__outer -->
     </div>
-</section>";s:5:"mtime";i:1607001440;s:6:"markup";s:727:"<section class="gallery">
+</section>";s:5:"mtime";i:1610631154;s:6:"markup";s:735:"<section class="gallery">
     <div class="container">
         <div class="gallery__outer">
             <div class="title padding__left">
@@ -54,7 +54,7 @@ is_hidden = 0
             
             <div class="gallery__inner">
                {% for item in photos[0].image %}
-                    
+                    {{item}}
                <a class="gallery__card" href="{{item.path}}" data-fancybox="images"
                     data-caption="Name of the picture">
                     <img src="{{item.thumb(500,500)}}" alt="">

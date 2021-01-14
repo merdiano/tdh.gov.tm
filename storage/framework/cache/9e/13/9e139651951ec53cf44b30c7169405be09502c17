@@ -1,0 +1,201 @@
+1610639555a:1:{s:10:"videos.htm";a:9:{s:8:"fileName";s:10:"videos.htm";s:7:"content";s:4309:"title = "videos"
+url = "/videos"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function onStart(){
+
+    $this['videos'] = Admin\Videos\Models\Video::paginate(1);
+    
+
+    $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
+
+
+}
+?>
+==
+
+<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <div class="page_name">
+                Главная
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                Видеорепортаж
+            </div>
+        </div>
+        <div class="section_wrapper">
+            <div class="center">
+                <div class="title">
+                    Видеорепортаж
+                </div>
+                <div class="gallery_outer">
+                    {% for item in videos %}
+                        <div class="gallery_item">
+                            <div class="gallery_img">
+                                <img src="{{item.image[0].path}}" alt="">
+                                <h3 class="photo_view">
+                                    <a href="#">Просмотреть</a>
+                                </h3>
+                            </div>
+                            <div class="gallery_info">
+                                <div class="photo_title">
+                                    {% if activeLocale == "tm" %}
+                                        {{ item.title_tm }}
+                                    {% elseif activeLocale == "ru" %}
+                                        {{ item.title_ru }}
+                                    {% elseif activeLocale == "en" %}
+                                        {{ item.title_en }}
+                                    {% endif %}
+                                </div>
+                                <div class="photo_date">
+                                    {{ item.published_at| date("d.m.Y") }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                    
+                <div class="section_end">
+                    <div class="page_num">
+                        <a href="{{videos.previousPageUrl}}">
+                            <div class="direct_btn">
+                                    <img src="{{ 'assets/images/left.svg'|theme }}" alt="">
+                            </div>
+                        </a>
+                        <form action="" method="GET">
+                            <input type="text" name="page" value="{{videos.currentPage}}" class="input_page">
+                        </form>
+                        <a href="{{videos.nextPageUrl}}">
+                            <div class="direct_btn">
+                                    <img src="{{ 'assets/images/right.svg'|theme }}" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="page_list">
+                        {{(videos.total/videos.perPage)|round(0,"ceil")}} страниц
+                    </div>
+                </div>
+            </div>
+            <div class="right_side break">
+                <div class="title">
+                    Последние новости
+                </div>
+                
+                {% for item in lastNews %}
+                    <div class="news_info">
+                        <div class="left_date">
+                            {{ item.published_at| date("d.m") }}
+                        </div>
+                        <div class="left_info">
+                            <div class="left_title">
+                                <a href="#">{{item.category.name}}</a>
+                            </div>
+                            <div class="news_text">
+                                {{item.title}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}       
+            </div>
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1610545082;s:6:"markup";s:3920:"<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <div class="page_name">
+                Главная
+            </div>
+            <div class="slash">\</div>
+            <div class="page_name">
+                Видеорепортаж
+            </div>
+        </div>
+        <div class="section_wrapper">
+            <div class="center">
+                <div class="title">
+                    Видеорепортаж
+                </div>
+                <div class="gallery_outer">
+                    {% for item in videos %}
+                        <div class="gallery_item">
+                            <div class="gallery_img">
+                                <img src="{{item.image[0].path}}" alt="">
+                                <h3 class="photo_view">
+                                    <a href="#">Просмотреть</a>
+                                </h3>
+                            </div>
+                            <div class="gallery_info">
+                                <div class="photo_title">
+                                    {% if activeLocale == "tm" %}
+                                        {{ item.title_tm }}
+                                    {% elseif activeLocale == "ru" %}
+                                        {{ item.title_ru }}
+                                    {% elseif activeLocale == "en" %}
+                                        {{ item.title_en }}
+                                    {% endif %}
+                                </div>
+                                <div class="photo_date">
+                                    {{ item.published_at| date("d.m.Y") }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                    
+                <div class="section_end">
+                    <div class="page_num">
+                        <a href="{{videos.previousPageUrl}}">
+                            <div class="direct_btn">
+                                    <img src="{{ 'assets/images/left.svg'|theme }}" alt="">
+                            </div>
+                        </a>
+                        <form action="" method="GET">
+                            <input type="text" name="page" value="{{videos.currentPage}}" class="input_page">
+                        </form>
+                        <a href="{{videos.nextPageUrl}}">
+                            <div class="direct_btn">
+                                    <img src="{{ 'assets/images/right.svg'|theme }}" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="page_list">
+                        {{(videos.total/videos.perPage)|round(0,"ceil")}} страниц
+                    </div>
+                </div>
+            </div>
+            <div class="right_side break">
+                <div class="title">
+                    Последние новости
+                </div>
+                
+                {% for item in lastNews %}
+                    <div class="news_info">
+                        <div class="left_date">
+                            {{ item.published_at| date("d.m") }}
+                        </div>
+                        <div class="left_info">
+                            <div class="left_title">
+                                <a href="#">{{item.category.name}}</a>
+                            </div>
+                            <div class="news_text">
+                                {{item.title}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}       
+            </div>
+        </div>
+    </div>
+</section>";s:4:"code";s:296:"function onStart(){
+
+    $this['videos'] = Admin\Videos\Models\Video::paginate(1);
+    
+
+    $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
+
+
+}";s:5:"title";s:6:"videos";s:3:"url";s:7:"/videos";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

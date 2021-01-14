@@ -1,0 +1,4 @@
+title: WeeklyNewsController
+modelClass: Admin\WeeklyNews\Models\WeeklyNews
+toolbar:
+    buttons: reorder_toolbar

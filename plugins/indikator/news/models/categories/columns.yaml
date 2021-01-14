@@ -17,16 +17,8 @@ columns:
         path: ~/plugins/indikator/news/models/categories/_image.htm
 
     name:
-        label: Name English
+        label: Name
         searchable: true
-
-    name_ru:
-        label: Name Russian
-        searchable: true
-
-    name_tm:
-        label: Name Turkmen
-        searchable: true	       
 
     slug:
         label: indikator.news::lang.form.slug

@@ -1,0 +1,37 @@
+description = "Default layout"
+
+[localePicker]
+forceUrl = 0
+==
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDH</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'assets/css/slick.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/slick-theme.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/lightpick.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/jquery.fancybox.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
+
+</head>
+<body>
+    {% partial 'header' %}
+        {% page %}
+    {% partial 'footer' %}
+</body>
+
+    <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/js/moment.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/slick.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/news-slider.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.fancybox.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/main.js'|theme }}"></script>
+    
+    <!-- <script src="{{ 'assets/js/main.js'|theme }}"></script> -->
+
+</html>
