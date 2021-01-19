@@ -1,4 +1,4 @@
-1610639555a:1:{s:11:"archive.htm";a:9:{s:8:"fileName";s:11:"archive.htm";s:7:"content";s:3533:"title = "archive"
+1611065428a:1:{s:11:"archive.htm";a:9:{s:8:"fileName";s:11:"archive.htm";s:7:"content";s:3706:"title = "archive"
 url = "/archive"
 layout = "default"
 is_hidden = 0
@@ -24,9 +24,12 @@ is_hidden = 0
 <section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
-            <div class="page_name">
-                Главная
-            </div>
+            <a href="{{ 'home'|page}}">
+                
+                <div class="page_name">
+                    Главная
+                </div>
+            </a>
             <div class="slash">\</div>
             <div class="page_name">
                 Архив
@@ -51,8 +54,8 @@ is_hidden = 0
                         </div>
                         <div class="main_news-content">
                             <div class="main_news-title">
-
-                                {{item.title}}
+                                <a href="{{ url('/') }}/post/{{item.slug}}">
+                                    {{item.title}}</a>
                             </div>
                             <div class="main_news-text">
                                 
@@ -99,12 +102,15 @@ is_hidden = 0
             window.location.replace("{{ ''| page}}?date=" + date.format("Y-M-D"));
         }
     });
-</script>";s:5:"mtime";i:1610549020;s:6:"markup";s:2785:"<section class="section" id="intro">
+</script>";s:5:"mtime";i:1611064826;s:6:"markup";s:2958:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
-            <div class="page_name">
-                Главная
-            </div>
+            <a href="{{ 'home'|page}}">
+                
+                <div class="page_name">
+                    Главная
+                </div>
+            </a>
             <div class="slash">\</div>
             <div class="page_name">
                 Архив
@@ -129,8 +135,8 @@ is_hidden = 0
                         </div>
                         <div class="main_news-content">
                             <div class="main_news-title">
-
-                                {{item.title}}
+                                <a href="{{ url('/') }}/post/{{item.slug}}">
+                                    {{item.title}}</a>
                             </div>
                             <div class="main_news-text">
                                 

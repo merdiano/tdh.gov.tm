@@ -1,7 +1,7 @@
 description = "Default layout"
 
 [localePicker]
-forceUrl = 0
+forceUrl = 1
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -9,6 +9,10 @@ forceUrl = 0
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="{{ this.page.meta_title | default(this.theme.site)}}">
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="canonical" content="{{ this.page.meta_canonical }}">
+    <meta name="keywords" content="{{ this.page.meta_keywords }}">
     <title>TDH</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -23,7 +27,11 @@ forceUrl = 0
     {% partial 'header' %}
         {% page %}
     {% partial 'footer' %}
+
+    
 </body>
+
+
 
     <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
     <script src="{{ 'assets/js/moment.min.js'|theme }}"></script>
@@ -32,6 +40,7 @@ forceUrl = 0
     <script src="{{ 'assets/js/jquery.fancybox.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/main.js'|theme }}"></script>
     
+    {% framework %}
     <!-- <script src="{{ 'assets/js/main.js'|theme }}"></script> -->
 
 </html>

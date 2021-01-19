@@ -21,13 +21,20 @@ function onStart(){
 <section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
-            <div class="page_name">
-                Главная
-            </div>
+            <a href="{{ 'home'|page}}">
+                
+                <div class="page_name">
+                    Главная
+                </div>
+            </a>
             <div class="slash">\</div>
-            <div class="page_name">
+            <a href="{{ 'category'|page({ slug: post.category.slug })}}">
+                
+                <div class="page_name">
                     {{ post.category.name }}
-            </div>
+                </div>
+            </a>
+            
             <div class="slash">\</div>
             <div class="page_name">
                 {{ post.title }}
@@ -86,7 +93,7 @@ function onStart(){
 
                         </div>
                     </div>
-                {% else %}
+                    {% elseif post.images|length > 0 %}
                     <div class="big_photo">
                         <img src="{{ post.images[0].path }}" alt="">
                     </div>
@@ -113,7 +120,7 @@ function onStart(){
                         </div>
                         <div class="left_info">
                             <div class="left_title">
-                                <a href="#">{{item.category.name}}</a>
+                                <a href="{{ url('/') }}/post/{{item.slug}}">{{item.category.name}}</a>
                             </div>
                             <div class="news_text">
                                 {{item.title}}

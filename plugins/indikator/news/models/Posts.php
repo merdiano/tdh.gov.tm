@@ -30,12 +30,21 @@ class Posts extends Model
 
     protected $table = 'indikator_news_posts';
 
+    // public $rules = [
+    //     'title'    => 'required',
+    //     'slug'     => ['regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_news_posts'],
+    //     // 'status'   => 'required|between:1,3|numeric',
+    //     'featured' => 'required|between:1,2|numeric',
+    //     'locale' => 'required'
+    // ];
+
     public $rules = [
         'title'    => 'required',
         'slug'     => ['regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_news_posts'],
-        // 'status'   => 'required|between:1,3|numeric',
+        'status'   => 'required|between:1,3|numeric',
         'featured' => 'required|between:1,2|numeric',
-        'locale' => 'required'
+        'locale' => 'required',
+        'images.*' => 'image|max:1024|dimensions:min_width=100,min_height=100'
     ];
 
     public $attributes = [
@@ -187,6 +196,10 @@ class Posts extends Model
         if (!isset($this->seo_keywords) || empty($this->seo_keywords)) {
             $this->seo_keywords = $this->getKeywords();
         }
+
+        if (!isset($this->seo_title) || empty($this->seo_title)) {
+            $this->seo_title = $this->title;
+        }
     }
 
     private function getKeywords(){
@@ -282,8 +295,11 @@ class Posts extends Model
             'search'   => '',
             'status'   => 1,
             'featured' => 0,
+            'date'     => '',
             'isTrans'  => false,
-            'category' => null
+            'category' => null,
+            'image'    => null,
+            'select'   => null
         ], $options));
 
         $searchableFields = [
@@ -330,15 +346,15 @@ class Posts extends Model
         }
 
         $search = trim($search);
-        $dateFilter = trim($dateFilter);
+        $date = trim($date);
 
 
         if (strlen($search)) {
             $query->searchWhere($search, $searchableFields);
         }
 
-        if (strlen($dateFilter)) {
-            $query->whereDate('published_at', $dateFilter);
+        if (strlen($date)) {
+            $query->whereDate('published_at', $date);
         }
 
         if ($isTrans) {
@@ -349,6 +365,9 @@ class Posts extends Model
                 $ids = Db::table('rainlab_translate_attributes')->where('model_type', 'Indikator\News\Models\Posts')->where('locale', $current_locale)->where('attribute_data', 'not like', '%"title":""%')->pluck('model_id');
                 $query->whereIn('id', $ids);
             }
+        }
+        if($select){
+            $query->select($select);
         }
         $query->where("locale", FacadesApp::getLocale());
 
@@ -435,8 +454,6 @@ class Posts extends Model
 
         return $result;
     }
-
-
     public static function resolveMenuItem($item, $url, $theme)
     {
         if ($item->type == 'post-page') {
@@ -466,12 +483,20 @@ class Posts extends Model
                 'items' => []
             ];
 
-            $elements = self::where('status', 1)->where('published_at', '<', date('Y-m-d H:i:s'))->orderBy('title')->get()->all();
+            $elements = self::select('id','slug','category_id','updated_at','title','published_at')
+                ->where('status', 1)
+                ->where('published_at', '<', date('Y-m-d H:i:s'))
+                ->where('locale',App::getLocale())
+                ->orderBy('published_at','desc')
+                ->take(990)
+                ->get();
+
             foreach ($elements as $element) {
                 $listItem = [
                     'title' => $element->title,
                     'url'   => Url::to(self::getItemUrl($item->cmsPage, $element, $theme)),
-                    'mtime' => $element->updated_at
+                    'mtime' => $element->updated_at,
+                    'published_at' =>$element->published_at
                 ];
 
                 $listItem['isActive'] = $listItem['url'] == $url;
@@ -482,6 +507,69 @@ class Posts extends Model
         return $result;
     }
 
+
+    // public static function resolveMenuItem($item, $url, $theme)
+    // {
+    //     if ($item->type == 'post-page') {
+    //         if (!$item->reference || !$item->cmsPage) {
+    //             return;
+    //         }
+
+    //         $element = self::find($item->reference);
+    //         if (!$element) {
+    //             return;
+    //         }
+
+    //         $pageUrl = self::getItemUrl($item->cmsPage, $element, $theme);
+    //         if (!$pageUrl) {
+    //             return;
+    //         }
+
+    //         $pageUrl = Url::to($pageUrl);
+    //         $result = [];
+    //         $result['url'] = $pageUrl;
+    //         $result['isActive'] = $pageUrl == $url;
+    //         $result['mtime'] = $element->updated_at;
+    //     }
+
+    //     else if ($item->type == 'post-list') {
+    //         $result = [
+    //             'items' => []
+    //         ];
+
+    //         $elements = self::where('status', 1)->where('published_at', '<', date('Y-m-d H:i:s'))->orderBy('title')->get()->all();
+    //         foreach ($elements as $element) {
+    //             $listItem = [
+    //                 'title' => $element->title,
+    //                 'url'   => Url::to(self::getItemUrl($item->cmsPage, $element, $theme)),
+    //                 'mtime' => $element->updated_at
+    //             ];
+
+    //             $listItem['isActive'] = $listItem['url'] == $url;
+    //             $result['items'][] = $listItem;
+    //         }
+    //     }
+
+    //     return $result;
+    // }
+
+    // protected static function getItemUrl($pageCode, $item, $theme)
+    // {
+    //     $page = CmsPage::loadCached($theme, $pageCode);
+    //     if (!$page) {
+    //         return;
+    //     }
+
+    //     $properties = $page->getComponentProperties('newsPost');
+    //     if (!array_key_exists('slug', $properties) || !preg_match('/^\{\{([^\}]+)\}\}$/', $properties['slug'], $matches)) {
+    //         return;
+    //     }
+
+    //     $paramName = substr(trim($matches[1]), 1);
+
+    //     return CmsPage::url($page->getBaseFileName(), [$paramName => $item->slug]);
+    // }
+
     protected static function getItemUrl($pageCode, $item, $theme)
     {
         $page = CmsPage::loadCached($theme, $pageCode);
@@ -489,14 +577,24 @@ class Posts extends Model
             return;
         }
 
-        $properties = $page->getComponentProperties('newsPost');
-        if (!array_key_exists('slug', $properties) || !preg_match('/^\{\{([^\}]+)\}\}$/', $properties['slug'], $matches)) {
-            return;
-        }
+//        $properties = $page->getComponentProperties('newsPost');
+//
+//        if (!array_key_exists('slug', $properties) || !preg_match('/^\{\{([^\}]+)\}\}$/', $properties['slug'], $matches)) {
+//            return;
+//        }
+//
+//        $paramName = substr(trim($matches[1]), 1);
+//        dd($item->getCategory());
+//$item->getCategory();
 
-        $paramName = substr(trim($matches[1]), 1);
+        $locale = App::getLocale();
 
-        return CmsPage::url($page->getBaseFileName(), [$paramName => $item->slug]);
+        $page->rewriteTranslatablePageUrl($locale);
+        $params = ['category' => $item->getCategory()['slug'], 'id' => $item->id, 'slug' => $item->slug];
+        $router = new \October\Rain\Router\Router;
+        $localeUrl = $router->urlFromPattern($page->url, $params);
+
+        return url($locale.$localeUrl);
     }
 
     /**
@@ -504,16 +602,38 @@ class Posts extends Model
      * @param string $pageName
      * @param Cms\Classes\Controller $controller
      */
+    // public function setUrl($pageName, $controller)
+    // {
+    //     $params = [
+    //         'id'   => $this->id,
+    //         'slug' => $this->slug
+    //     ];
+
+    //     if (array_key_exists('category', $this->getRelations())) {
+    //         $params['category'] = $this->category->count() ? $this->category->first()->slug : null;
+    //     }
+
+    //     // Expose published year, month and day as URL parameters
+    //     if ($this->published) {
+    //         $params['year']  = $this->published_at->format('Y');
+    //         $params['month'] = $this->published_at->format('m');
+    //         $params['day']   = $this->published_at->format('d');
+    //     }
+
+    //     return $this->url = $controller->pageUrl($pageName, $params);
+    // }
+
     public function setUrl($pageName, $controller)
     {
         $params = [
             'id'   => $this->id,
-            'slug' => $this->slug
+            'slug' => $this->slug,
+            'category' => $this->category->slug
         ];
 
-        if (array_key_exists('category', $this->getRelations())) {
-            $params['category'] = $this->category->count() ? $this->category->first()->slug : null;
-        }
+//        if (array_key_exists('category', $this->getRelations())) {
+//            $params['category'] = $this->category->count() ? $this->category->first()->slug : null;
+//        }
 
         // Expose published year, month and day as URL parameters
         if ($this->published) {

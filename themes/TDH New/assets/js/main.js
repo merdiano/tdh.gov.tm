@@ -2,8 +2,8 @@
 window.onscroll = function () {
     scrollFunc();
 };
-    // let intro = document.getElementById("intro");
-    // let nav_fixed = document.getElementById("nav");
+// let intro = document.getElementById("intro");
+// let nav_fixed = document.getElementById("nav");
 // let fix = nav_fixed.nextElementSibling;
 // function scrollFunc() {
 //     if (window.pageYOffset >= fix.offsetTop) {
@@ -125,16 +125,16 @@ let languagesMobile = selectElement('.languagesMobile');
 // console.log(burger);
 
 window.onclick = function (e) {
-    if (selectElement('.hide_media').classList.contains('show')  && !e.target.closest('.link_media')) {
+    if (selectElement('.hide_media').classList.contains('show') && !e.target.closest('.link_media')) {
         selectElement('.hide_media').classList.remove('show');
         // selectElement('.link_media').classList.remove('active');
     }
 
-    if(selectElement('.link').classList.contains('active') ) {
+    if (selectElement('.link').classList.contains('active')) {
         selectElement('.link').classList.remove('active')
     }
 
-    if (selectElement('.hide_menu').classList.contains('show')  && !e.target.closest('.menu')) {
+    if (selectElement('.hide_menu').classList.contains('show') && !e.target.closest('.menu')) {
         selectElement('.hide_menu').classList.remove('show');
         // selectElement('.menu').classList.remove('active');
     }
@@ -142,13 +142,20 @@ window.onclick = function (e) {
         selectElement('.navs_inner').classList.remove('open');
     }
 
-    if (selectElement('.languages').classList.contains('dropLang')  && !e.target.closest('.select_language')) {
+    if (selectElement('.languages').classList.contains('dropLang') && !e.target.closest('.select_language')) {
         selectElement('.languages').classList.remove('dropLang');
     }
 
-    if (selectElement('.languagesMobile').classList.contains('openMobile')  && !e.target.closest('.langMobile')) {
+    if (selectElement('.languagesMobile').classList.contains('openMobile') && !e.target.closest('.langMobile')) {
         selectElement('.languagesMobile').classList.remove('openMobile');
     }
+
+    if (selectElement('.player_bg').classList.contains('videoShow') && !e.target.closest('.player')) {
+        selectElement('.player_bg').classList.remove('videoShow');
+        selectElement('.player__video').pause();
+        selectElement('.player__video').currentTime = 0;
+    }
+
 
 }
 
@@ -203,9 +210,116 @@ langMobile.addEventListener('click', function () {
     sleep(2).then(() => {
         languagesMobile.classList.toggle('openMobile');
     });
-}); 
+});
+
+document.querySelectorAll('.video_view').forEach((e) => {
+    e.addEventListener('click', function () {
+        sleep(2).then(() => {
+            selectElement('.player_bg').classList.toggle('videoShow');
+            var vd = selectElement('.player__video');
+            while (vd.lastElementChild) {
+                vd.removeChild(vd.lastElementChild);
+            }
+
+            var source = document.createElement('source');
+            console.log(e)
+            console.log(e.dataset.src)
+
+            source.setAttribute('src', e.dataset.src);
+
+            vd.appendChild(source);
+            vd.load();
+            vd.play();
+        });
+    })
+});
+// }   
+
+document.querySelectorAll('.player__video').forEach((e) => {
+    e.addEventListener('ended', function () {
+        sleep(0).then(() => {
+            selectElement('.player_bg').classList.remove('videoShow');
+        });
+        console.log("pp");
+    })
+});
+
+
 
 // End Header
+
+// Video Player 
+
+// select elements
+const video = document.querySelector('.viewer');
+const toggle = document.querySelector('.toggle');
+const volume = document.querySelector('.volume');
+const skipButtons = document.querySelectorAll('[data-skip]');
+const ranges = document.querySelectorAll('.player__slider');
+const progress = document.querySelector('.progress');
+const progressBar = document.querySelector('.progress__filled');
+const fullscreen = document.querySelector('.fullscreen');
+
+
+// defining functions
+function togglePlay() {
+    // toggle for video play and pause
+    const playOrPause = video.paused ? 'play' : 'pause';
+    video[playOrPause]();
+    // toggle for icon change when play or pause
+    playOrPause === 'play' ? toggle.textContent = '❚ ❚' : toggle.textContent = '►';
+}
+
+function skip() {
+    // add or substract the skip time to current time of video
+    video.currentTime += parseFloat(this.dataset.skip);
+}
+
+function handleRangeChange() {
+    // Change the video's range value
+    video[this.name] = this.value;
+}
+
+function handleProgress() {
+    // convert video's current time into percentage
+    const percent = (video.currentTime / video.duration) * 100;
+    // append it to the flexBasis property (CSS)
+    progressBar.style.flexBasis = `${percent}%`;
+}
+
+function scrub(e) {
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+    video.currentTime = scrubTime;
+}
+
+function handleFullScreen() {
+    video.requestFullscreen();
+}
+
+// Play or Pause events(On video click)
+video.addEventListener('click', togglePlay);
+// 					   (On button click)
+toggle.addEventListener('click', togglePlay);
+
+// skipping video back and forth
+skipButtons.forEach(button => button.addEventListener('click', skip));
+
+// volume or fast forward events
+ranges.forEach(range => range.addEventListener('change', handleRangeChange));
+
+// Change progress wrt time
+video.addEventListener('timeupdate', handleProgress);
+
+// event on clicking progress bar
+let mouseDown = false;
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (e) => mouseDown && scrub(e));
+progress.addEventListener('mousedown', () => mouseDown = true);
+progress.addEventListener('mouseup', () => mouseDown = false);
+
+// add full screen event
+fullscreen.addEventListener('click', handleFullScreen);
+
 
 
 

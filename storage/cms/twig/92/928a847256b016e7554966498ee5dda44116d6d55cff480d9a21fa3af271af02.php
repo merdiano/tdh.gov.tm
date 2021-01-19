@@ -67,9 +67,9 @@ class __TwigTemplate_c4bde4595a56a96b484eeec58df1e8d70bf79c455e6a8e1c3268ae25705
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("home");
         echo "\">
                 
-            <div class=\"page_name\">
-                Главная
-            </div>
+                <div class=\"page_name\">
+                    Главная
+                </div>
             </a>
             <div class=\"slash\">\\</div>
             <div class=\"page_name\">
@@ -239,9 +239,9 @@ class __TwigTemplate_c4bde4595a56a96b484eeec58df1e8d70bf79c455e6a8e1c3268ae25705
         <div class=\"which_page\">
             <a href=\"{{ 'home'|page}}\">
                 
-            <div class=\"page_name\">
-                Главная
-            </div>
+                <div class=\"page_name\">
+                    Главная
+                </div>
             </a>
             <div class=\"slash\">\\</div>
             <div class=\"page_name\">

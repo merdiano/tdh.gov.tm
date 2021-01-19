@@ -22,9 +22,9 @@ function onStart(){
             {% for item in collegueNews %}
             <div class="right_news">
                 {% set foo = item.title|split(':') %}
-                <div class="right_title">
+                <a href="{{ ''| page}}/post/{{item.slug}}" class="right_title">
                     {{foo[0]}}
-                </div>
+                </a>
                 <div class="right_text">
                     {{foo[1]}}
                 </div>
@@ -39,9 +39,9 @@ function onStart(){
             {% for item in collegueNews %}
             <div class="right_news">
                 {% set foo = item.title|split(':') %}
-                <div class="right_title">
+                <a href="{{ ''| page}}/post/{{item.slug}}" class="right_title">
                     {{foo[0]}}
-                </div>
+                </a>
                 <div class="right_text">
                     {{foo[1]}}
                 </div>

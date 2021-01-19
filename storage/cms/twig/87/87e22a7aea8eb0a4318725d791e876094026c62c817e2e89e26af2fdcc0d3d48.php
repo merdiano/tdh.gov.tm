@@ -29,15 +29,15 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("for" => 18, "if" => 28);
-        $filters = array("escape" => 21, "date" => 37, "theme" => 48, "round" => 61);
-        $functions = array();
+        $tags = array("for" => 23, "if" => 68);
+        $filters = array("page" => 6, "escape" => 26, "theme" => 44, "date" => 77, "round" => 102);
+        $functions = array("url" => 118);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for', 'if'],
-                ['escape', 'date', 'theme', 'round'],
-                []
+                ['page', 'escape', 'theme', 'date', 'round'],
+                ['url']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);
@@ -59,12 +59,20 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
     {
         $macros = $this->macros;
         // line 1
-        echo "<section class=\"section\" id=\"intro\">
+        echo "<link rel=\"stylesheet\" href=\"https://cdn.plyr.io/3.6.3/plyr.css\" />
+
+<section class=\"section\" id=\"intro\">
     <div class=\"auto_container\">
         <div class=\"which_page\">
-            <div class=\"page_name\">
-                Главная
-            </div>
+            <a href=\"";
+        // line 6
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("home");
+        echo "\">
+                
+                <div class=\"page_name\">
+                    Главная
+                </div>
+            </a>
             <div class=\"slash\">\\</div>
             <div class=\"page_name\">
                 Видеорепортаж
@@ -77,90 +85,141 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
                 </div>
                 <div class=\"gallery_outer\">
                     ";
-        // line 18
+        // line 23
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["videos"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 19
+        foreach ($context['_seq'] as $context["key"] => $context["item"]) {
+            // line 24
             echo "                        <div class=\"gallery_item\">
-                            <div class=\"gallery_img\">
+                            <div class=\"gallery_video\">
                                 <img src=\"";
-            // line 21
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, true, 21)) && is_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4) || $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 instanceof ArrayAccess ? ($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4[0] ?? null) : null), "path", [], "any", false, false, true, 21), 21, $this->source), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, true, 26)) && is_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4) || $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 instanceof ArrayAccess ? ($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4[0] ?? null) : null), "path", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
             echo "\" alt=\"\">
-                                <h3 class=\"photo_view\">
-                                    <a href=\"#\">Просмотреть</a>
-                                </h3>
+                                
+                                <div class=\"video_view\" data-src=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = twig_get_attribute($this->env, $this->source, $context["item"], "video", [], "any", false, false, true, 28)) && is_array($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144) || $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 instanceof ArrayAccess ? ($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144[0] ?? null) : null), "path", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
+            echo "\">
+                                    Просмотреть
+                                </div>
                             </div>
+                            <div class=\"player_bg\">
+                                <div class=\"player\">
+                                    <video class=\"player__video viewer\">
+                                        
+                                    </video>
+
+                                    <div class=\"player__controls\">
+                                        <div class=\"progress\">
+                                            <div class=\"progress__filled\"></div>
+                                        </div>
+                                        <button class=\"player__button toggle playeer\" title=\"Toggle Play\">►</button>
+                                        <div class=\"control_item\">
+                                            <img src=\"";
+            // line 44
+            echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/sound.svg");
+            echo "\" alt=\"\" class=\"volume\">
+                                            <input type=\"range\" name=\"volume\" class=\"player__slider\" min=\"0\" max=\"1\"
+                                                step=\"0.05\" value=\"1\">
+                                        </div>
+                                        <div class=\"control_item\">
+                                            <img src=\"";
+            // line 49
+            echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/speed.svg");
+            echo "\" alt=\"\" class=\"speed\">
+                                            <input type=\"range\" name=\"playbackRate\" class=\"player__slider\" min=\"0.5\"
+                                                max=\"2\" step=\"0.1\" value=\"1\">
+                                        </div>
+                                        <div class=\"speed_video\">
+                                            <button data-skip=\"-10\" class=\"player__button\">
+                                                <span class=\"backBtn\"><img src=\"";
+            // line 55
+            echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/back.svg");
+            echo "\" alt=\"\"></span> 10s
+                                            </button>
+                                            <button data-skip=\"25\" class=\"player__button\">25s
+                                                <span class=\"forwardBtn\"><img src=\"";
+            // line 58
+            echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/forward.svg");
+            echo "\" alt=\"\"></span>
+                                            </button>
+                                        </div>
+                                        <button class=\"player__button fullscreen bigger\" title=\"FullScreen\">🞕</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class=\"gallery_info\">
                                 <div class=\"photo_title\">
                                     ";
-            // line 28
+            // line 68
             if ((($context["activeLocale"] ?? null) == "tm")) {
-                // line 29
+                // line 69
                 echo "                                        ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_tm", [], "any", false, false, true, 29), 29, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_tm", [], "any", false, false, true, 69), 69, $this->source), "html", null, true);
                 echo "
                                     ";
-            } elseif ((            // line 30
+            } elseif ((            // line 70
 ($context["activeLocale"] ?? null) == "ru")) {
-                // line 31
+                // line 71
                 echo "                                        ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_ru", [], "any", false, false, true, 31), 31, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_ru", [], "any", false, false, true, 71), 71, $this->source), "html", null, true);
                 echo "
                                     ";
-            } elseif ((            // line 32
+            } elseif ((            // line 72
 ($context["activeLocale"] ?? null) == "en")) {
-                // line 33
+                // line 73
                 echo "                                        ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_en", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_en", [], "any", false, false, true, 73), 73, $this->source), "html", null, true);
                 echo "
                                     ";
             }
-            // line 35
+            // line 75
             echo "                                </div>
                                 <div class=\"photo_date\">
                                     ";
-            // line 37
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 37), 37, $this->source), "d.m.Y"), "html", null, true);
+            // line 77
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 77), 77, $this->source), "d.m.Y"), "html", null, true);
             echo "
                                 </div>
                             </div>
+                            
                         </div>
                     ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 83
         echo "                </div>
                     
                 <div class=\"section_end\">
                     <div class=\"page_num\">
                         <a href=\"";
-        // line 46
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "previousPageUrl", [], "any", false, false, true, 46), 46, $this->source), "html", null, true);
+        // line 87
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "previousPageUrl", [], "any", false, false, true, 87), 87, $this->source), "html", null, true);
         echo "\">
                             <div class=\"direct_btn\">
                                     <img src=\"";
-        // line 48
+        // line 89
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/left.svg");
         echo "\" alt=\"\">
                             </div>
                         </a>
                         <form action=\"\" method=\"GET\">
                             <input type=\"text\" name=\"page\" value=\"";
-        // line 52
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "currentPage", [], "any", false, false, true, 52), 52, $this->source), "html", null, true);
+        // line 93
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "currentPage", [], "any", false, false, true, 93), 93, $this->source), "html", null, true);
         echo "\" class=\"input_page\">
                         </form>
                         <a href=\"";
-        // line 54
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "nextPageUrl", [], "any", false, false, true, 54), 54, $this->source), "html", null, true);
+        // line 95
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "nextPageUrl", [], "any", false, false, true, 95), 95, $this->source), "html", null, true);
         echo "\">
                             <div class=\"direct_btn\">
                                     <img src=\"";
-        // line 56
+        // line 97
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/right.svg");
         echo "\" alt=\"\">
                             </div>
@@ -168,8 +227,8 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
                     </div>
                     <div class=\"page_list\">
                         ";
-        // line 61
-        echo twig_escape_filter($this->env, twig_round((twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "total", [], "any", false, false, true, 61) / twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "perPage", [], "any", false, false, true, 61)), 0, "ceil"), "html", null, true);
+        // line 102
+        echo twig_escape_filter($this->env, twig_round((twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "total", [], "any", false, false, true, 102) / twig_get_attribute($this->env, $this->source, ($context["videos"] ?? null), "perPage", [], "any", false, false, true, 102)), 0, "ceil"), "html", null, true);
         echo " страниц
                     </div>
                 </div>
@@ -180,29 +239,33 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
                 </div>
                 
                 ";
-        // line 70
+        // line 111
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["lastNews"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 71
+            // line 112
             echo "                    <div class=\"news_info\">
                         <div class=\"left_date\">
                             ";
-            // line 73
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 73), 73, $this->source), "d.m"), "html", null, true);
+            // line 114
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 114), 114, $this->source), "d.m"), "html", null, true);
             echo "
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
-                                <a href=\"#\">";
-            // line 77
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 77), "name", [], "any", false, false, true, 77), 77, $this->source), "html", null, true);
+                                <a href=\"";
+            // line 118
+            echo url("/");
+            echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 118), 118, $this->source), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 118), "name", [], "any", false, false, true, 118), 118, $this->source), "html", null, true);
             echo "</a>
                             </div>
                             <div class=\"news_text\">
                                 ";
-            // line 80
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 80), 80, $this->source), "html", null, true);
+            // line 121
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 121), 121, $this->source), "html", null, true);
             echo "
                             </div>
                         </div>
@@ -212,12 +275,14 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 125
         echo "       
             </div>
         </div>
     </div>
-</section>";
+</section>
+
+<script src=\"https://cdn.plyr.io/3.6.3/plyr.polyfilled.js\"></script>";
     }
 
     public function getTemplateName()
@@ -232,17 +297,22 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
 
     public function getDebugInfo()
     {
-        return array (  216 => 84,  205 => 80,  199 => 77,  192 => 73,  188 => 71,  184 => 70,  172 => 61,  164 => 56,  159 => 54,  154 => 52,  147 => 48,  142 => 46,  136 => 42,  125 => 37,  121 => 35,  115 => 33,  113 => 32,  108 => 31,  106 => 30,  101 => 29,  99 => 28,  89 => 21,  85 => 19,  81 => 18,  62 => 1,);
+        return array (  279 => 125,  268 => 121,  258 => 118,  251 => 114,  247 => 112,  243 => 111,  231 => 102,  223 => 97,  218 => 95,  213 => 93,  206 => 89,  201 => 87,  195 => 83,  183 => 77,  179 => 75,  173 => 73,  171 => 72,  166 => 71,  164 => 70,  159 => 69,  157 => 68,  144 => 58,  138 => 55,  129 => 49,  121 => 44,  102 => 28,  97 => 26,  93 => 24,  89 => 23,  69 => 6,  62 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<section class=\"section\" id=\"intro\">
+        return new Source("<link rel=\"stylesheet\" href=\"https://cdn.plyr.io/3.6.3/plyr.css\" />
+
+<section class=\"section\" id=\"intro\">
     <div class=\"auto_container\">
         <div class=\"which_page\">
-            <div class=\"page_name\">
-                Главная
-            </div>
+            <a href=\"{{ 'home'|page}}\">
+                
+                <div class=\"page_name\">
+                    Главная
+                </div>
+            </a>
             <div class=\"slash\">\\</div>
             <div class=\"page_name\">
                 Видеорепортаж
@@ -254,14 +324,49 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
                     Видеорепортаж
                 </div>
                 <div class=\"gallery_outer\">
-                    {% for item in videos %}
+                    {% for key,item in videos %}
                         <div class=\"gallery_item\">
-                            <div class=\"gallery_img\">
+                            <div class=\"gallery_video\">
                                 <img src=\"{{item.image[0].path}}\" alt=\"\">
-                                <h3 class=\"photo_view\">
-                                    <a href=\"#\">Просмотреть</a>
-                                </h3>
+                                
+                                <div class=\"video_view\" data-src=\"{{item.video[0].path}}\">
+                                    Просмотреть
+                                </div>
                             </div>
+                            <div class=\"player_bg\">
+                                <div class=\"player\">
+                                    <video class=\"player__video viewer\">
+                                        
+                                    </video>
+
+                                    <div class=\"player__controls\">
+                                        <div class=\"progress\">
+                                            <div class=\"progress__filled\"></div>
+                                        </div>
+                                        <button class=\"player__button toggle playeer\" title=\"Toggle Play\">►</button>
+                                        <div class=\"control_item\">
+                                            <img src=\"{{ 'assets/images/sound.svg'|theme }}\" alt=\"\" class=\"volume\">
+                                            <input type=\"range\" name=\"volume\" class=\"player__slider\" min=\"0\" max=\"1\"
+                                                step=\"0.05\" value=\"1\">
+                                        </div>
+                                        <div class=\"control_item\">
+                                            <img src=\"{{ 'assets/images/speed.svg'|theme }}\" alt=\"\" class=\"speed\">
+                                            <input type=\"range\" name=\"playbackRate\" class=\"player__slider\" min=\"0.5\"
+                                                max=\"2\" step=\"0.1\" value=\"1\">
+                                        </div>
+                                        <div class=\"speed_video\">
+                                            <button data-skip=\"-10\" class=\"player__button\">
+                                                <span class=\"backBtn\"><img src=\"{{ 'assets/images/back.svg'|theme }}\" alt=\"\"></span> 10s
+                                            </button>
+                                            <button data-skip=\"25\" class=\"player__button\">25s
+                                                <span class=\"forwardBtn\"><img src=\"{{ 'assets/images/forward.svg'|theme }}\" alt=\"\"></span>
+                                            </button>
+                                        </div>
+                                        <button class=\"player__button fullscreen bigger\" title=\"FullScreen\">🞕</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class=\"gallery_info\">
                                 <div class=\"photo_title\">
                                     {% if activeLocale == \"tm\" %}
@@ -276,6 +381,7 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
                                     {{ item.published_at| date(\"d.m.Y\") }}
                                 </div>
                             </div>
+                            
                         </div>
                     {% endfor %}
                 </div>
@@ -313,7 +419,7 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
-                                <a href=\"#\">{{item.category.name}}</a>
+                                <a href=\"{{ url('/') }}/post/{{item.slug}}\">{{item.category.name}}</a>
                             </div>
                             <div class=\"news_text\">
                                 {{item.title}}
@@ -324,6 +430,8 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
             </div>
         </div>
     </div>
-</section>", "C:\\xampp\\htdocs\\tdh/themes/TDH New/pages/videos.htm", "");
+</section>
+
+<script src=\"https://cdn.plyr.io/3.6.3/plyr.polyfilled.js\"></script>", "C:\\xampp\\htdocs\\tdh/themes/TDH New/pages/videos.htm", "");
     }
 }

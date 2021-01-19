@@ -1,4 +1,4 @@
-1610639555a:1:{s:10:"search.htm";a:10:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:4481:"title = "search"
+1611065557a:1:{s:10:"search.htm";a:10:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:4686:"title = "search"
 url = "/search"
 layout = "default"
 is_hidden = 0
@@ -31,9 +31,12 @@ function onStart(){
 <section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
-            <div class="page_name">
-                Главная
-            </div>
+            <a href="{{ 'home'|page}}">
+                
+                <div class="page_name">
+                    Главная
+                </div>
+            </a>
             <div class="slash">\</div>
             <div class="page_name">
                 Результат поиска
@@ -58,7 +61,9 @@ function onStart(){
                         <div class="main_news-content">
                             <div class="main_news-title">
 
+                                <a href="{{ url('/') }}/post/{{item.slug}}">
                                 {{item.title}}
+                                </a>
                             </div>
                             <div class="main_news-text">
                                 
@@ -112,12 +117,15 @@ function onStart(){
             </div>
         </div>
     </div>
-</section>";s:5:"mtime";i:1610628840;s:6:"markup";s:3714:"<section class="section" id="intro">
+</section>";s:5:"mtime";i:1611064953;s:6:"markup";s:3919:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
-            <div class="page_name">
-                Главная
-            </div>
+            <a href="{{ 'home'|page}}">
+                
+                <div class="page_name">
+                    Главная
+                </div>
+            </a>
             <div class="slash">\</div>
             <div class="page_name">
                 Результат поиска
@@ -142,7 +150,9 @@ function onStart(){
                         <div class="main_news-content">
                             <div class="main_news-title">
 
+                                <a href="{{ url('/') }}/post/{{item.slug}}">
                                 {{item.title}}
+                                </a>
                             </div>
                             <div class="main_news-text">
                                 

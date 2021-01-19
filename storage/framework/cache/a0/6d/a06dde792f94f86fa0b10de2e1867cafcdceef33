@@ -1,0 +1,158 @@
+1611065817a:1:{s:11:"contact.htm";a:10:{s:8:"fileName";s:11:"contact.htm";s:7:"content";s:3241:"title = "contact"
+url = "/contact"
+layout = "default"
+is_hidden = 0
+
+[contactForm]
+==
+
+
+<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <a href="{{ 'home'|page}}">
+                
+                <div class="page_name">
+                    Главная
+                </div>
+            </a>
+            <div class="slash">\</div>
+            <div class="page_name">
+                Обратная связь
+            </div>
+        </div>
+        <div class="contact_wrapper">
+            <div class="center">
+                <div class="title">
+                    Форма обратной связи
+                </div>
+                {% component 'contactForm' %}
+            </div>
+            <div class="right_side">
+                <div class="title">
+                    Контакты для связи
+                </div>
+                <div class="contact_info">
+                    <div class="contact_address">
+                        <div class="contact_icon">
+                            <img src="{{ 'assets/images/phone_signal.svg'|theme }}" alt="">
+                        </div>
+                        <div class="addres_info">
+                            <div class="address_name">
+                                Телефон:
+                            </div>
+                            <div class="address_num">
+                                + 993 (12) 92 12 12
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_address">
+                        <div class="contact_icon">
+                            <img src="{{ 'assets/images/just_phone.svg'|theme }}" alt="">
+                        </div>
+                        <div class="addres_info">
+                            <div class="address_name">
+                                Факс:
+                            </div>
+                            <div class="address_num">
+                                + 993 (12) 92 52 30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_address">
+                        <div class="contact_icon">
+                            <img src="{{ 'assets/images/mail.svg'|theme }}" alt="">
+                        </div>
+                        <div class="addres_info">
+                            <div class="address_name">
+                                Эл. почта:
+                            </div>
+                            <div class="address_num">
+                                tpress@online.tm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="yandex_map">
+            <script  src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abcb0f3062d6dc50eb95b9731bf57fcf93ab2711a80ee83fabad9febabbc6ab46&amp;width=100%25&amp;height=576&amp;lang=ru_RU&amp;scroll=true">
+            </script>
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1611064530;s:6:"markup";s:3144:"<section class="section" id="intro">
+    <div class="auto_container">
+        <div class="which_page">
+            <a href="{{ 'home'|page}}">
+                
+                <div class="page_name">
+                    Главная
+                </div>
+            </a>
+            <div class="slash">\</div>
+            <div class="page_name">
+                Обратная связь
+            </div>
+        </div>
+        <div class="contact_wrapper">
+            <div class="center">
+                <div class="title">
+                    Форма обратной связи
+                </div>
+                {% component 'contactForm' %}
+            </div>
+            <div class="right_side">
+                <div class="title">
+                    Контакты для связи
+                </div>
+                <div class="contact_info">
+                    <div class="contact_address">
+                        <div class="contact_icon">
+                            <img src="{{ 'assets/images/phone_signal.svg'|theme }}" alt="">
+                        </div>
+                        <div class="addres_info">
+                            <div class="address_name">
+                                Телефон:
+                            </div>
+                            <div class="address_num">
+                                + 993 (12) 92 12 12
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_address">
+                        <div class="contact_icon">
+                            <img src="{{ 'assets/images/just_phone.svg'|theme }}" alt="">
+                        </div>
+                        <div class="addres_info">
+                            <div class="address_name">
+                                Факс:
+                            </div>
+                            <div class="address_num">
+                                + 993 (12) 92 52 30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_address">
+                        <div class="contact_icon">
+                            <img src="{{ 'assets/images/mail.svg'|theme }}" alt="">
+                        </div>
+                        <div class="addres_info">
+                            <div class="address_name">
+                                Эл. почта:
+                            </div>
+                            <div class="address_num">
+                                tpress@online.tm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="yandex_map">
+            <script  src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abcb0f3062d6dc50eb95b9731bf57fcf93ab2711a80ee83fabad9febabbc6ab46&amp;width=100%25&amp;height=576&amp;lang=ru_RU&amp;scroll=true">
+            </script>
+        </div>
+    </div>
+</section>";s:4:"code";N;s:5:"title";s:7:"contact";s:3:"url";s:8:"/contact";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"contactForm";a:0:{}}}

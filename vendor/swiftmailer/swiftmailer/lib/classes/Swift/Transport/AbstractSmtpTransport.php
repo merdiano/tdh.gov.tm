@@ -441,9 +441,9 @@ abstract class Swift_Transport_AbstractSmtpTransport implements Swift_Transport
     /** Throws an Exception if a response code is incorrect */
     protected function assertResponseCode($response, $wanted)
     {
-        // if (!$response) {
-        //     $this->throwException(new Swift_TransportException('Expected response code '.implode('/', $wanted).' but got an empty response'));
-        // }
+        if (!$response) {
+            $this->throwException(new Swift_TransportException('Expected response code '.implode('/', $wanted).' but got an empty response'));
+        }
 
         list($code) = sscanf($response, '%3d');
         $valid = (empty($wanted) || in_array($code, $wanted));
@@ -453,9 +453,9 @@ abstract class Swift_Transport_AbstractSmtpTransport implements Swift_Transport
             $this->eventDispatcher->dispatchEvent($evt, 'responseReceived');
         }
 
-        // if (!$valid) {
-        //     $this->throwException(new Swift_TransportException('Expected response code '.implode('/', $wanted).' but got code "'.$code.'", with message "'.$response.'"', $code));
-        // }
+        if (!$valid) {
+            $this->throwException(new Swift_TransportException('Expected response code '.implode('/', $wanted).' but got code "'.$code.'", with message "'.$response.'"', $code));
+        }
     }
 
     /** Get an entire multi-line response using its sequence number */

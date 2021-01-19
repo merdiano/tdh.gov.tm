@@ -1,4 +1,4 @@
-1610638905a:1:{s:22:"home_colleage_news.htm";a:6:{s:8:"fileName";s:22:"home_colleage_news.htm";s:7:"content";s:1435:"
+1611065601a:1:{s:22:"home_colleage_news.htm";a:6:{s:8:"fileName";s:22:"home_colleage_news.htm";s:7:"content";s:1507:"
 ==
 <?php
 function onStart(){
@@ -22,9 +22,9 @@ function onStart(){
             {% for item in collegueNews %}
             <div class="right_news">
                 {% set foo = item.title|split(':') %}
-                <div class="right_title">
+                <a href="{{ ''| page}}/post/{{item.slug}}" class="right_title">
                     {{foo[0]}}
-                </div>
+                </a>
                 <div class="right_text">
                     {{foo[1]}}
                 </div>
@@ -39,9 +39,9 @@ function onStart(){
             {% for item in collegueNews %}
             <div class="right_news">
                 {% set foo = item.title|split(':') %}
-                <div class="right_title">
+                <a href="{{ ''| page}}/post/{{item.slug}}" class="right_title">
                     {{foo[0]}}
-                </div>
+                </a>
                 <div class="right_text">
                     {{foo[1]}}
                 </div>
@@ -51,7 +51,7 @@ function onStart(){
     
     {% endif %}
 </div>
-";s:5:"mtime";i:1610636119;s:6:"markup";s:1072:"<div class="right">
+";s:5:"mtime";i:1611064028;s:6:"markup";s:1144:"<div class="right">
     <div class="title">
         {{cat.name}}
     </div>
@@ -62,9 +62,9 @@ function onStart(){
             {% for item in collegueNews %}
             <div class="right_news">
                 {% set foo = item.title|split(':') %}
-                <div class="right_title">
+                <a href="{{ ''| page}}/post/{{item.slug}}" class="right_title">
                     {{foo[0]}}
-                </div>
+                </a>
                 <div class="right_text">
                     {{foo[1]}}
                 </div>
@@ -79,9 +79,9 @@ function onStart(){
             {% for item in collegueNews %}
             <div class="right_news">
                 {% set foo = item.title|split(':') %}
-                <div class="right_title">
+                <a href="{{ ''| page}}/post/{{item.slug}}" class="right_title">
                     {{foo[0]}}
-                </div>
+                </a>
                 <div class="right_text">
                     {{foo[1]}}
                 </div>

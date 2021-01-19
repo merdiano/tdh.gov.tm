@@ -1,4 +1,4 @@
-1610639555a:1:{s:12:"category.htm";a:10:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:4267:"title = "category"
+1611065817a:1:{s:12:"category.htm";a:10:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:4279:"title = "category"
 url = "/category/:slug"
 layout = "default"
 is_hidden = 0
@@ -28,9 +28,9 @@ function onStart(){
         <div class="which_page">
             <a href="{{ 'home'|page}}">
                 
-            <div class="page_name">
-                Главная
-            </div>
+                <div class="page_name">
+                    Главная
+                </div>
             </a>
             <div class="slash">\</div>
             <div class="page_name">
@@ -113,14 +113,14 @@ function onStart(){
         </div>
     </div>
 </section>
-";s:5:"mtime";i:1610461556;s:6:"markup";s:3650:"<section class="section" id="intro">
+";s:5:"mtime";i:1611064528;s:6:"markup";s:3662:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
             <a href="{{ 'home'|page}}">
                 
-            <div class="page_name">
-                Главная
-            </div>
+                <div class="page_name">
+                    Главная
+                </div>
             </a>
             <div class="slash">\</div>
             <div class="page_name">

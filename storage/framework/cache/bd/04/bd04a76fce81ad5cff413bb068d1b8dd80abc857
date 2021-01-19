@@ -1,9 +1,0 @@
-1610457241a:1:{s:14:"categories.htm";a:10:{s:8:"fileName";s:14:"categories.htm";s:7:"content";s:169:"title = "categories"
-url = "/categories"
-layout = "default"
-is_hidden = 0
-
-[newsCategories]
-noPostsMessage = "No posts found"
-==
-{% component 'newsCategories' %}";s:5:"mtime";i:1610456639;s:6:"markup";s:32:"{% component 'newsCategories' %}";s:4:"code";N;s:5:"title";s:10:"categories";s:3:"url";s:11:"/categories";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:14:"newsCategories";a:1:{s:14:"noPostsMessage";s:14:"No posts found";}}}

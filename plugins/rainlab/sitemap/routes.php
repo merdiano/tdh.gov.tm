@@ -5,7 +5,7 @@ use Cms\Classes\Controller;
 use RainLab\Sitemap\Models\Definition;
 use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFound;
 
-Route::get('sitemap.xml', function()
+Route::get('{locale}/sitemap.xml', function()
 {
     $themeActive = Theme::getActiveTheme()->getDirName();
 

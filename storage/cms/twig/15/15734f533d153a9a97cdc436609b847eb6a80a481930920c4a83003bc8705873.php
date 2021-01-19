@@ -29,15 +29,15 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("for" => 19, "if" => 39);
-        $filters = array("escape" => 23, "date" => 48, "theme" => 64, "round" => 77);
-        $functions = array();
+        $tags = array("for" => 22, "if" => 47);
+        $filters = array("page" => 4, "escape" => 27, "date" => 56, "theme" => 72, "round" => 85);
+        $functions = array("url" => 101);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for', 'if'],
-                ['escape', 'date', 'theme', 'round'],
-                []
+                ['page', 'escape', 'date', 'theme', 'round'],
+                ['url']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);
@@ -62,9 +62,15 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
         echo "<section class=\"section\" id=\"intro\">
     <div class=\"auto_container\">
         <div class=\"which_page\">
-            <div class=\"page_name\">
-                Главная
-            </div>
+            <a href=\"";
+        // line 4
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("home");
+        echo "\">
+                
+                <div class=\"page_name\">
+                    Главная
+                </div>
+            </a>
             <div class=\"slash\">\\</div>
             <div class=\"page_name\">
                 Фоторепортаж
@@ -78,82 +84,89 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
                 <div class=\"gallery_outer\">
                     
                     ";
-        // line 19
+        // line 22
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["gallery"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 20
-            echo "                    <div class=\"gallery_item\">
+        foreach ($context['_seq'] as $context["key"] => $context["item"]) {
+            // line 23
+            echo "                    
+                    <div class=\"gallery_item\">
                         <div class=\"gallery_img\">
                             
                             <img src=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "cat_image", [], "any", false, false, true, 23), "path", [], "any", false, false, true, 23), 23, $this->source), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "cat_image", [], "any", false, false, true, 27), "path", [], "any", false, false, true, 27), 27, $this->source), "html", null, true);
             echo "\" alt=\"\">
+                            <h3 class=\"photo_view\">
+                                <a class=\"fancybox\" href=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "getImages", [], "method", false, false, true, 29), "first", [], "any", false, false, true, 29), "path", [], "any", false, false, true, 29), 29, $this->source), "html", null, true);
+            echo "\" data-fancybox=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["key"], 29, $this->source), "html", null, true);
+            echo "\"
+                                    data-width=\"1500\" data-height=\"1000\" data-fancybox-arrows=\"true\" data-arrows=\"true\"><i
+                                        class=\"icon-camera\"></i> Просмотреть</a>
+                                
+                            </h3>
                             
-                            <div style=\"display: none;\">
-                                ";
-            // line 26
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["item"], "getImages", [], "method", false, false, true, 26));
-            foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-                // line 27
-                echo "                                <a href=\"";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 27), 27, $this->source), "html", null, true);
-                echo "\" data-fancybox=\"images-preview-1\" data-width=\"1500\"
-                                    data-height=\"1000\" data-thumb=\"";
-                // line 28
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
-                echo "\" data-caption=\"";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "id", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
-                echo "\"></a>
+                        
+                        </div>
 
-                                ";
+                        <div style=\"display: none;\">
+                            ";
+            // line 39
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "getImages", [], "method", false, false, true, 39), "slice", [0 => 1, 1 => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "getImages", [], "method", false, false, true, 39), "size", [], "any", false, false, true, 39)], "method", false, false, true, 39));
+            foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
+                // line 40
+                echo "                            <a href=\"";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 40), 40, $this->source), "html", null, true);
+                echo "\" data-fancybox-arrows=\"true\" data-arrows=\"true\" data-fancybox=\"";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["key"], 40, $this->source), "html", null, true);
+                echo "\" data-width=\"1500\"
+                                data-height=\"1000\" data-thumb=\"";
+                // line 41
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 41), 41, $this->source), "html", null, true);
+                echo "\"></a>
+                            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 31
-            echo "                            </div>      
-                            <h3 class=\"photo_view\">
-                                <a href=\"";
-            // line 33
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "cat_image", [], "any", false, false, true, 33), "path", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
-            echo "\" data-fancybox=\"images-preview-1\" data-width=\"1500\"
-                                data-height=\"1000\" data-thumbs='{\"autoStart\":true}'>Просмотреть</a>
-                            </h3>
+            // line 43
+            echo "
                         </div>
                         <div class=\"gallery_info\">
                             <div class=\"photo_title\">
                                 ";
-            // line 39
+            // line 47
             if ((($context["activeLocale"] ?? null) == "tm")) {
-                // line 40
+                // line 48
                 echo "                                    ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_tm", [], "any", false, false, true, 40), 40, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_tm", [], "any", false, false, true, 48), 48, $this->source), "html", null, true);
                 echo "
                                 ";
-            } elseif ((            // line 41
+            } elseif ((            // line 49
 ($context["activeLocale"] ?? null) == "ru")) {
-                // line 42
+                // line 50
                 echo "                                    ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_ru", [], "any", false, false, true, 42), 42, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_ru", [], "any", false, false, true, 50), 50, $this->source), "html", null, true);
                 echo "
                                 ";
-            } elseif ((            // line 43
+            } elseif ((            // line 51
 ($context["activeLocale"] ?? null) == "en")) {
-                // line 44
+                // line 52
                 echo "                                    ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_en", [], "any", false, false, true, 44), 44, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title_en", [], "any", false, false, true, 52), 52, $this->source), "html", null, true);
                 echo "
                                 ";
             }
-            // line 46
+            // line 54
             echo "                            </div>
                             <div class=\"photo_date\">
                                 ";
-            // line 48
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 48), 48, $this->source), "d.m.Y"), "html", null, true);
+            // line 56
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 56), 56, $this->source), "d.m.Y"), "html", null, true);
             echo "
                             </div>
                         </div>
@@ -162,9 +175,9 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
                     ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 54
+        // line 62
         echo "
                         
                 </div>
@@ -174,29 +187,29 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
                 <div class=\"section_end\">
                     <div class=\"page_num\">
                         <a href=\"";
-        // line 62
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "previousPageUrl", [], "any", false, false, true, 62), 62, $this->source), "html", null, true);
+        // line 70
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "previousPageUrl", [], "any", false, false, true, 70), 70, $this->source), "html", null, true);
         echo "\">
                             <div class=\"direct_btn\">
                                     <img src=\"";
-        // line 64
+        // line 72
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/left.svg");
         echo "\" alt=\"\">
                             </div>
                         </a>
                         <form action=\"\" method=\"GET\">
                             <input type=\"text\" name=\"page\" value=\"";
-        // line 68
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "currentPage", [], "any", false, false, true, 68), 68, $this->source), "html", null, true);
+        // line 76
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "currentPage", [], "any", false, false, true, 76), 76, $this->source), "html", null, true);
         echo "\" class=\"input_page\">
                         </form>
                         <a href=\"";
-        // line 70
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "nextPageUrl", [], "any", false, false, true, 70), 70, $this->source), "html", null, true);
+        // line 78
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "nextPageUrl", [], "any", false, false, true, 78), 78, $this->source), "html", null, true);
         echo "\">
                             <div class=\"direct_btn\">
                                     <img src=\"";
-        // line 72
+        // line 80
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/right.svg");
         echo "\" alt=\"\">
                             </div>
@@ -204,8 +217,8 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
                     </div>
                     <div class=\"page_list\">
                         ";
-        // line 77
-        echo twig_escape_filter($this->env, twig_round((twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "total", [], "any", false, false, true, 77) / twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "perPage", [], "any", false, false, true, 77)), 0, "ceil"), "html", null, true);
+        // line 85
+        echo twig_escape_filter($this->env, twig_round((twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "total", [], "any", false, false, true, 85) / twig_get_attribute($this->env, $this->source, ($context["gallery"] ?? null), "perPage", [], "any", false, false, true, 85)), 0, "ceil"), "html", null, true);
         echo " страниц
                     </div>
                 </div>
@@ -216,29 +229,35 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
                 </div>
                 
                 ";
-        // line 86
+        // line 94
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["lastNews"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 87
+            // line 95
             echo "                    <div class=\"news_info\">
                         <div class=\"left_date\">
                             ";
-            // line 89
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 89), 89, $this->source), "d.m"), "html", null, true);
+            // line 97
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 97), 97, $this->source), "d.m"), "html", null, true);
             echo "
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
-                                <a href=\"#\">";
-            // line 93
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 93), "name", [], "any", false, false, true, 93), 93, $this->source), "html", null, true);
+                                <a href=\"";
+            // line 101
+            echo url("/");
+            echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 101), 101, $this->source), "html", null, true);
+            echo "\">
+                                    ";
+            // line 102
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 102), "name", [], "any", false, false, true, 102), 102, $this->source), "html", null, true);
             echo "</a>
                             </div>
                             <div class=\"news_text\">
                                 ";
-            // line 96
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 96), 96, $this->source), "html", null, true);
+            // line 105
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 105), 105, $this->source), "html", null, true);
             echo "
                             </div>
                         </div>
@@ -248,7 +267,7 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 100
+        // line 109
         echo "       
             </div>
         </div>
@@ -269,7 +288,7 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
 
     public function getDebugInfo()
     {
-        return array (  252 => 100,  241 => 96,  235 => 93,  228 => 89,  224 => 87,  220 => 86,  208 => 77,  200 => 72,  195 => 70,  190 => 68,  183 => 64,  178 => 62,  168 => 54,  156 => 48,  152 => 46,  146 => 44,  144 => 43,  139 => 42,  137 => 41,  132 => 40,  130 => 39,  121 => 33,  117 => 31,  106 => 28,  101 => 27,  97 => 26,  91 => 23,  86 => 20,  82 => 19,  62 => 1,);
+        return array (  271 => 109,  260 => 105,  254 => 102,  248 => 101,  241 => 97,  237 => 95,  233 => 94,  221 => 85,  213 => 80,  208 => 78,  203 => 76,  196 => 72,  191 => 70,  181 => 62,  169 => 56,  165 => 54,  159 => 52,  157 => 51,  152 => 50,  150 => 49,  145 => 48,  143 => 47,  137 => 43,  129 => 41,  122 => 40,  118 => 39,  103 => 29,  98 => 27,  92 => 23,  88 => 22,  67 => 4,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -277,9 +296,12 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
         return new Source("<section class=\"section\" id=\"intro\">
     <div class=\"auto_container\">
         <div class=\"which_page\">
-            <div class=\"page_name\">
-                Главная
-            </div>
+            <a href=\"{{ 'home'|page}}\">
+                
+                <div class=\"page_name\">
+                    Главная
+                </div>
+            </a>
             <div class=\"slash\">\\</div>
             <div class=\"page_name\">
                 Фоторепортаж
@@ -292,23 +314,28 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
                 </div>
                 <div class=\"gallery_outer\">
                     
-                    {% for item in gallery %}
+                    {% for key, item in gallery %}
+                    
                     <div class=\"gallery_item\">
                         <div class=\"gallery_img\">
                             
                             <img src=\"{{item.cat_image.path}}\" alt=\"\">
-                            
-                            <div style=\"display: none;\">
-                                {% for image in item.getImages() %}
-                                <a href=\"{{image.path}}\" data-fancybox=\"images-preview-1\" data-width=\"1500\"
-                                    data-height=\"1000\" data-thumb=\"{{image.path}}\" data-caption=\"{{image.id}}\"></a>
-
-                                {% endfor %}
-                            </div>      
                             <h3 class=\"photo_view\">
-                                <a href=\"{{item.cat_image.path}}\" data-fancybox=\"images-preview-1\" data-width=\"1500\"
-                                data-height=\"1000\" data-thumbs='{\"autoStart\":true}'>Просмотреть</a>
+                                <a class=\"fancybox\" href=\"{{item.getImages().first.path}}\" data-fancybox=\"{{key}}\"
+                                    data-width=\"1500\" data-height=\"1000\" data-fancybox-arrows=\"true\" data-arrows=\"true\"><i
+                                        class=\"icon-camera\"></i> Просмотреть</a>
+                                
                             </h3>
+                            
+                        
+                        </div>
+
+                        <div style=\"display: none;\">
+                            {% for image in item.getImages().slice(1,item.getImages().size) %}
+                            <a href=\"{{image.path}}\" data-fancybox-arrows=\"true\" data-arrows=\"true\" data-fancybox=\"{{key}}\" data-width=\"1500\"
+                                data-height=\"1000\" data-thumb=\"{{image.path}}\"></a>
+                            {% endfor %}
+
                         </div>
                         <div class=\"gallery_info\">
                             <div class=\"photo_title\">
@@ -366,7 +393,8 @@ class __TwigTemplate_c67e55530ba583f0ef70884a4660a317d9cde20a32a60ab86c78046f3e5
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
-                                <a href=\"#\">{{item.category.name}}</a>
+                                <a href=\"{{ url('/') }}/post/{{item.slug}}\">
+                                    {{item.category.name}}</a>
                             </div>
                             <div class=\"news_text\">
                                 {{item.title}}

@@ -11,7 +11,7 @@ use AhmadFatoni\ApiGenerator\Controllers\API\IndexofnewsController as Indexofnew
 
 
 // Custom Routes
-Route::get('api/posts/{locale}', 'AhmadFatoni\ApiGenerator\Controllers\API\IndexofnewsController@news');
+Route::get('{locale}/api/posts', 'AhmadFatoni\ApiGenerator\Controllers\API\IndexofnewsController@news');
 
 Route::get('api/post/{id}', 'AhmadFatoni\ApiGenerator\Controllers\API\IndexofnewsController@post');
 

@@ -1,4 +1,4 @@
-1610638905a:1:{s:14:"home_intro.htm";a:6:{s:8:"fileName";s:14:"home_intro.htm";s:7:"content";s:2180:"==
+1611065601a:1:{s:14:"home_intro.htm";a:6:{s:8:"fileName";s:14:"home_intro.htm";s:7:"content";s:2261:"==
 <?php
 function onStart(){
  
@@ -11,116 +11,124 @@ function onStart(){
     <div class="title">
         В центре событий
     </div>
-    {% if imageType == "horizontal" %}
-    <div class="main_part">
-        {% if postFeatured.images[0].path %}
-            <div class="main_photo">
-                <img src="{{ postFeatured.images[0].path }}" alt="">
-            </div>
-        {% endif %}
-        <div class="main_title">
-            <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
+    {% if imageType == "vertical" %}
+    <div class="vertical_type">
+        <div class="vertical_photo">
+            {% if postFeatured.images[0].path %}
+                <div class="main_photo">
+                    <img src="{{ postFeatured.images[0].path }}" alt="">
+                </div>
+            {% endif %}
         </div>
-        <div class="main_text">
-            {{ postFeatured.introductory|raw }} 
-        </div>
-        <div class="main_end">
-            <div class="main_date">
-                {{ postFeatured.published_at| date("d.m.Y") }}
+        <div class="vertical_text">
+            <div class="main_title">
+                
+                <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
             </div>
-            <div class="main_link">
-                <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
-                    Узнать больше
-                </a>
+            <div class="main_text">
+                
+                {{ postFeatured.introductory|raw }} 
+            </div>
+            <div class="main_end">
+                <div class="main_date">
+                    {{ postFeatured.published_at| date("d.m.Y") }}
+                </div>
+                <div class="main_link">
+                    <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
+                        Узнать больше
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     
     {% else %}
-        <div class="vertical_type">
-            <div class="vertical_photo">
+        
+
+        <div class="main_part">
+            {% if postFeatured.images[0].path %}
                 <div class="main_photo">
                     <img src="{{ postFeatured.images[0].path }}" alt="">
                 </div>
+            {% endif %}
+            <div class="main_title">
+                <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
             </div>
-            <div class="vertical_text">
-                <div class="main_title">
-                    
-                    <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
+            <div class="main_text">
+                {{ postFeatured.introductory|raw }} 
+            </div>
+            <div class="main_end">
+                <div class="main_date">
+                    {{ postFeatured.published_at| date("d.m.Y") }}
                 </div>
-                <div class="main_text">
-                    
-                    {{ postFeatured.introductory|raw }} 
-                </div>
-                <div class="main_end">
-                    <div class="main_date">
-                        {{ postFeatured.published_at| date("d.m.Y") }}
-                    </div>
-                    <div class="main_link">
-                        <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
-                            Узнать больше
-                        </a>
-                    </div>
+                <div class="main_link">
+                    <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
+                        Узнать больше
+                    </a>
                 </div>
             </div>
         </div>
     
     {% endif %}
 </div>
-";s:5:"mtime";i:1610637646;s:6:"markup";s:2124:"<div class="main">
+";s:5:"mtime";i:1610973960;s:6:"markup";s:2205:"<div class="main">
     <div class="title">
         В центре событий
     </div>
-    {% if imageType == "horizontal" %}
-    <div class="main_part">
-        {% if postFeatured.images[0].path %}
-            <div class="main_photo">
-                <img src="{{ postFeatured.images[0].path }}" alt="">
-            </div>
-        {% endif %}
-        <div class="main_title">
-            <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
+    {% if imageType == "vertical" %}
+    <div class="vertical_type">
+        <div class="vertical_photo">
+            {% if postFeatured.images[0].path %}
+                <div class="main_photo">
+                    <img src="{{ postFeatured.images[0].path }}" alt="">
+                </div>
+            {% endif %}
         </div>
-        <div class="main_text">
-            {{ postFeatured.introductory|raw }} 
-        </div>
-        <div class="main_end">
-            <div class="main_date">
-                {{ postFeatured.published_at| date("d.m.Y") }}
+        <div class="vertical_text">
+            <div class="main_title">
+                
+                <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
             </div>
-            <div class="main_link">
-                <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
-                    Узнать больше
-                </a>
+            <div class="main_text">
+                
+                {{ postFeatured.introductory|raw }} 
+            </div>
+            <div class="main_end">
+                <div class="main_date">
+                    {{ postFeatured.published_at| date("d.m.Y") }}
+                </div>
+                <div class="main_link">
+                    <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
+                        Узнать больше
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     
     {% else %}
-        <div class="vertical_type">
-            <div class="vertical_photo">
+        
+
+        <div class="main_part">
+            {% if postFeatured.images[0].path %}
                 <div class="main_photo">
                     <img src="{{ postFeatured.images[0].path }}" alt="">
                 </div>
+            {% endif %}
+            <div class="main_title">
+                <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
             </div>
-            <div class="vertical_text">
-                <div class="main_title">
-                    
-                    <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
+            <div class="main_text">
+                {{ postFeatured.introductory|raw }} 
+            </div>
+            <div class="main_end">
+                <div class="main_date">
+                    {{ postFeatured.published_at| date("d.m.Y") }}
                 </div>
-                <div class="main_text">
-                    
-                    {{ postFeatured.introductory|raw }} 
-                </div>
-                <div class="main_end">
-                    <div class="main_date">
-                        {{ postFeatured.published_at| date("d.m.Y") }}
-                    </div>
-                    <div class="main_link">
-                        <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
-                            Узнать больше
-                        </a>
-                    </div>
+                <div class="main_link">
+                    <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
+                        Узнать больше
+                    </a>
                 </div>
             </div>
         </div>

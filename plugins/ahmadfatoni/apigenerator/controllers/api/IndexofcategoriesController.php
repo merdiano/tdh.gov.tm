@@ -22,7 +22,13 @@ class IndexofcategoriesController extends Controller
 
     public function index(){
 
-        $data = $this->Categories->all()->toArray();
+        $data = $this->Categories->select("id", "name")
+            ->where("status", 1)
+            ->where("hidden", 2)
+            ->with(['translations'])
+            ->get()->toArray();
+
+        
 
         return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
     }

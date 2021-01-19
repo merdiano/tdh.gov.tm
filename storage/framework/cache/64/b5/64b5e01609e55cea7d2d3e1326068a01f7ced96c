@@ -1,7 +1,7 @@
-1610639555a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1384:"description = "Default layout"
+1611065817a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1717:"description = "Default layout"
 
 [localePicker]
-forceUrl = 0
+forceUrl = 1
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -9,6 +9,10 @@ forceUrl = 0
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="{{ this.page.meta_title | default(this.theme.site)}}">
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="canonical" content="{{ this.page.meta_canonical }}">
+    <meta name="keywords" content="{{ this.page.meta_keywords }}">
     <title>TDH</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -23,7 +27,11 @@ forceUrl = 0
     {% partial 'header' %}
         {% page %}
     {% partial 'footer' %}
+
+    
 </body>
+
+
 
     <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
     <script src="{{ 'assets/js/moment.min.js'|theme }}"></script>
@@ -32,14 +40,19 @@ forceUrl = 0
     <script src="{{ 'assets/js/jquery.fancybox.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/main.js'|theme }}"></script>
     
+    {% framework %}
     <!-- <script src="{{ 'assets/js/main.js'|theme }}"></script> -->
 
-</html>";s:5:"mtime";i:1610549362;s:6:"markup";s:1316:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1611061131;s:6:"markup";s:1649:"<!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="{{ this.page.meta_title | default(this.theme.site)}}">
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="canonical" content="{{ this.page.meta_canonical }}">
+    <meta name="keywords" content="{{ this.page.meta_keywords }}">
     <title>TDH</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -54,7 +67,11 @@ forceUrl = 0
     {% partial 'header' %}
         {% page %}
     {% partial 'footer' %}
+
+    
 </body>
+
+
 
     <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
     <script src="{{ 'assets/js/moment.min.js'|theme }}"></script>
@@ -63,6 +80,7 @@ forceUrl = 0
     <script src="{{ 'assets/js/jquery.fancybox.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/main.js'|theme }}"></script>
     
+    {% framework %}
     <!-- <script src="{{ 'assets/js/main.js'|theme }}"></script> -->
 
-</html>";s:4:"code";N;s:11:"description";s:14:"Default layout";s:12:"localePicker";a:1:{s:8:"forceUrl";s:1:"0";}}}
+</html>";s:4:"code";N;s:11:"description";s:14:"Default layout";s:12:"localePicker";a:1:{s:8:"forceUrl";s:1:"1";}}}

@@ -1,5 +1,5 @@
 <?php 
-use RainLab\Translate\Classes\Translator;class Cms600060be8d63f075812543_64513bd364281e2303d353d6f2a1c838Class extends Cms\Classes\PageCode
+use RainLab\Translate\Classes\Translator;class Cms6006e0c288bea694961920_c5359d11581ae08303ac58175dc064a8Class extends Cms\Classes\PageCode
 {
 
 protected $translator;
@@ -11,12 +11,11 @@ public function onStart()
     $featured = \Indikator\News\Models\Posts::where("featured", true)->where("locale", App::getLocale())->orderBy('created_at', 'desc')->get()->first();
     
     $this['postFeatured'] = $featured; 
-
-    $imagedata = getimagesize($featured->images->first->path->path);
+    if($featured->images->first->path){
+        $imagedata = getimagesize($featured->images->first->path->path);
 
         $this['imageType'] = $imagedata[0] > $imagedata[1] ? "horizontal" : "vertical";
-
-    
+    }
     
 
 }

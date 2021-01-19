@@ -1,0 +1,6 @@
+plugin:
+    name: 'admin.contact::lang.plugin.name'
+    description: 'admin.contact::lang.plugin.description'
+    author: Admin
+    icon: oc-icon-mail-forward
+    homepage: ''

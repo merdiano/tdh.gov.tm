@@ -99,11 +99,31 @@ class IndexofnewsController extends Controller
     }
 
     public function news($locale){
-        $data = $this->Posts->where("locale",$locale )->orderBy('created_at', 'desc')->paginate(20);
+        // $data = $this->Posts->where("locale",$locale )->orderBy('created_at', 'desc')->paginate(20);
         
-        // return $data;
-        $jsonArray = json_decode($data,true);
-        return response()->json($data, 200);
+        // // return $data;
+        // $jsonArray = json_decode($data,true);
+
+        $data = Posts::listFrontEnd([
+            'category' => input('category'),
+            'date' => input('date'),
+            'search' => input('search'),
+            'featured' => input('featured'),
+            'page'     => input('page'),
+            'perPage'  => input('count'),
+            'sort'     => input('sort')??'published_at',
+            'select'   => ['id','title','category_id','published_at','featured']
+        ]);
+        
+        $data->load(['images' => function($q){
+            $q->select('id','attachment_id','disk_name');
+        }])->toArray();
+
+        
+        return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
+
+
+        // return response()->json($data, 200);
     }
 
     public function post($id){

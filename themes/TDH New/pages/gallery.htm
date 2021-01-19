@@ -6,7 +6,7 @@ is_hidden = 0
 <?php
 function onStart(){
 
-    $gallery = Admin\Photos\Models\Photo::paginate(1);
+    $gallery = Admin\Photos\Models\Photo::paginate(10   );
     $this['gallery'] = $gallery;
 
     $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
@@ -19,9 +19,12 @@ function onStart(){
 <section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
-            <div class="page_name">
-                Главная
-            </div>
+            <a href="{{ 'home'|page}}">
+                
+                <div class="page_name">
+                    Главная
+                </div>
+            </a>
             <div class="slash">\</div>
             <div class="page_name">
                 Фоторепортаж
@@ -34,23 +37,28 @@ function onStart(){
                 </div>
                 <div class="gallery_outer">
                     
-                    {% for item in gallery %}
+                    {% for key, item in gallery %}
+                    
                     <div class="gallery_item">
                         <div class="gallery_img">
                             
                             <img src="{{item.cat_image.path}}" alt="">
-                            
-                            <div style="display: none;">
-                                {% for image in item.getImages() %}
-                                <a href="{{image.path}}" data-fancybox="images-preview-1" data-width="1500"
-                                    data-height="1000" data-thumb="{{image.path}}" data-caption="{{image.id}}"></a>
-
-                                {% endfor %}
-                            </div>      
                             <h3 class="photo_view">
-                                <a href="{{item.cat_image.path}}" data-fancybox="images-preview-1" data-width="1500"
-                                data-height="1000" data-thumbs='{"autoStart":true}'>Просмотреть</a>
+                                <a class="fancybox" href="{{item.getImages().first.path}}" data-fancybox="{{key}}"
+                                    data-width="1500" data-height="1000" data-fancybox-arrows="true" data-arrows="true"><i
+                                        class="icon-camera"></i> Просмотреть</a>
+                                
                             </h3>
+                            
+                        
+                        </div>
+
+                        <div style="display: none;">
+                            {% for image in item.getImages().slice(1,item.getImages().size) %}
+                            <a href="{{image.path}}" data-fancybox-arrows="true" data-arrows="true" data-fancybox="{{key}}" data-width="1500"
+                                data-height="1000" data-thumb="{{image.path}}"></a>
+                            {% endfor %}
+
                         </div>
                         <div class="gallery_info">
                             <div class="photo_title">
@@ -108,7 +116,8 @@ function onStart(){
                         </div>
                         <div class="left_info">
                             <div class="left_title">
-                                <a href="#">{{item.category.name}}</a>
+                                <a href="{{ url('/') }}/post/{{item.slug}}">
+                                    {{item.category.name}}</a>
                             </div>
                             <div class="news_text">
                                 {{item.title}}

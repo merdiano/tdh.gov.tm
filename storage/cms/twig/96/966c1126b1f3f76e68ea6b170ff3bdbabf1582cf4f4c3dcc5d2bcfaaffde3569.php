@@ -417,15 +417,22 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
 <div class=\"auto_container\">
     <div class=\"homeland\">
         <div class=\"title\">
-            <div>
+            <a href=\"";
+        // line 176
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("category", ["slug" => twig_get_attribute($this->env, $this->source, ($context["main_news_cat"] ?? null), "slug", [], "any", false, false, true, 176)]);
+        echo "\">
                ";
         // line 177
         echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["main_news_cat"] ?? null), "name", [], "any", false, false, true, 177), 177, $this->source), "html", null, true);
         echo "
-            </div>
-            <a href=\"#\">
-                <img src=\"";
+            </a
+            >
+            <a href=\"";
         // line 180
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("category", ["slug" => twig_get_attribute($this->env, $this->source, ($context["main_news_cat"] ?? null), "slug", [], "any", false, false, true, 180)]);
+        echo "\">
+                <img src=\"";
+        // line 181
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/arrow-right.svg");
         echo "\" alt=\"\">
             </a>
@@ -435,60 +442,70 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
             <div class=\"news_col\">
                 
                 ";
-        // line 187
+        // line 188
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["mainNews"] ?? null), "slice", [0 => 0, 1 => 2], "method", false, false, true, 187));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["mainNews"] ?? null), "slice", [0 => 0, 1 => 2], "method", false, false, true, 188));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 188
+            // line 189
             echo "                <div class=\"news_item\">
                     <div class=\"left_date\">
                         ";
-            // line 190
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "date", [], "any", false, false, true, 190), 190, $this->source), "d.m"), "html", null, true);
+            // line 191
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "date", [], "any", false, false, true, 191), 191, $this->source), "d.m"), "html", null, true);
             echo "
                     </div>
-                    <div class=\"news_text\">
-                       ";
+                    <a href=\"";
             // line 193
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 193), 193, $this->source), "html", null, true);
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
+            echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 193), 193, $this->source), "html", null, true);
+            echo "\" class=\"news_text\">
+                        ";
+            // line 194
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 194), 194, $this->source), "html", null, true);
             echo "
-                    </div>
+                    </a>
                 </div>
                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 197
+        // line 198
         echo "            </div>
             <div class=\"news_col\">
                 
                 ";
-        // line 200
+        // line 201
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["mainNews"] ?? null), "slice", [0 => 2, 1 => 4], "method", false, false, true, 200));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["mainNews"] ?? null), "slice", [0 => 2, 1 => 4], "method", false, false, true, 201));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 201
+            // line 202
             echo "                <div class=\"news_item\">
                     <div class=\"left_date\">
                         ";
-            // line 203
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "date", [], "any", false, false, true, 203), 203, $this->source), "d.m"), "html", null, true);
+            // line 204
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "date", [], "any", false, false, true, 204), 204, $this->source), "d.m"), "html", null, true);
             echo "
                     </div>
-                    <div class=\"news_text\">
-                        ";
+                    <a href=\"";
             // line 206
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 206), 206, $this->source), "html", null, true);
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
+            echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 206), 206, $this->source), "html", null, true);
+            echo "\" class=\"news_text\">
+                        ";
+            // line 207
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 207), 207, $this->source), "html", null, true);
             echo "
-                    </div>
+                    </a>
                 </div>
                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 210
+        // line 211
         echo "            </div>
         </div>
     </div>
@@ -502,7 +519,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     <div class=\"chan__pic1\">
                         <a href=\"#\">
                             <img src=\"";
-        // line 222
+        // line 223
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___18.png");
         echo "\" alt=\"channel\">
                         </a>
@@ -512,7 +529,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     <div class=\"chan__pic1\">
                         <a href=\"#\">
                             <img src=\"";
-        // line 229
+        // line 230
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___19.png");
         echo "\" alt=\"channel\">
                         </a>
@@ -522,7 +539,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     <div class=\"chan__pic1\">
                         <a href=\"#\">
                             <img src=\"";
-        // line 236
+        // line 237
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___20.png");
         echo "\" alt=\"channel\">
                         </a>
@@ -532,7 +549,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     <div class=\"chan__pic1\">
                         <a href=\"#\">
                             <img src=\"";
-        // line 243
+        // line 244
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___21.png");
         echo "\" alt=\"channel\">
                         </a>
@@ -542,7 +559,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     <div class=\"chan__pic1\">
                         <a href=\"#\">
                             <img src=\"";
-        // line 250
+        // line 251
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___22.png");
         echo "\" alt=\"channel\">
                         </a>
@@ -552,7 +569,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     <div class=\"chan__pic1\">
                         <a href=\"#\">
                             <img src=\"";
-        // line 257
+        // line 258
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/NoPath___23.png");
         echo "\" alt=\"channel\">
                         </a>
@@ -576,7 +593,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
 
     public function getDebugInfo()
     {
-        return array (  556 => 257,  546 => 250,  536 => 243,  526 => 236,  516 => 229,  506 => 222,  492 => 210,  482 => 206,  476 => 203,  472 => 201,  468 => 200,  463 => 197,  453 => 193,  447 => 190,  443 => 188,  439 => 187,  429 => 180,  423 => 177,  409 => 165,  399 => 161,  395 => 159,  389 => 157,  387 => 156,  382 => 155,  380 => 154,  375 => 153,  373 => 152,  366 => 148,  361 => 145,  357 => 144,  350 => 140,  346 => 139,  342 => 138,  336 => 134,  325 => 129,  321 => 127,  315 => 125,  313 => 124,  308 => 123,  306 => 122,  301 => 121,  299 => 120,  292 => 116,  288 => 115,  284 => 113,  280 => 112,  273 => 108,  269 => 107,  265 => 106,  252 => 95,  242 => 91,  239 => 90,  235 => 89,  221 => 78,  215 => 75,  200 => 62,  191 => 58,  181 => 54,  175 => 51,  171 => 49,  167 => 48,  161 => 45,  157 => 44,  151 => 43,  147 => 41,  143 => 40,  132 => 32,  127 => 29,  118 => 25,  108 => 21,  102 => 18,  98 => 16,  94 => 15,  87 => 11,  83 => 10,  77 => 9,  73 => 7,  69 => 6,  62 => 1,);
+        return array (  573 => 258,  563 => 251,  553 => 244,  543 => 237,  533 => 230,  523 => 223,  509 => 211,  499 => 207,  493 => 206,  488 => 204,  484 => 202,  480 => 201,  475 => 198,  465 => 194,  459 => 193,  454 => 191,  450 => 189,  446 => 188,  436 => 181,  432 => 180,  426 => 177,  422 => 176,  409 => 165,  399 => 161,  395 => 159,  389 => 157,  387 => 156,  382 => 155,  380 => 154,  375 => 153,  373 => 152,  366 => 148,  361 => 145,  357 => 144,  350 => 140,  346 => 139,  342 => 138,  336 => 134,  325 => 129,  321 => 127,  315 => 125,  313 => 124,  308 => 123,  306 => 122,  301 => 121,  299 => 120,  292 => 116,  288 => 115,  284 => 113,  280 => 112,  273 => 108,  269 => 107,  265 => 106,  252 => 95,  242 => 91,  239 => 90,  235 => 89,  221 => 78,  215 => 75,  200 => 62,  191 => 58,  181 => 54,  175 => 51,  171 => 49,  167 => 48,  161 => 45,  157 => 44,  151 => 43,  147 => 41,  143 => 40,  132 => 32,  127 => 29,  118 => 25,  108 => 21,  102 => 18,  98 => 16,  94 => 15,  87 => 11,  83 => 10,  77 => 9,  73 => 7,  69 => 6,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -756,10 +773,11 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
 <div class=\"auto_container\">
     <div class=\"homeland\">
         <div class=\"title\">
-            <div>
+            <a href=\"{{ 'category'|page({ slug: main_news_cat.slug })}}\">
                {{main_news_cat.name}}
-            </div>
-            <a href=\"#\">
+            </a
+            >
+            <a href=\"{{ 'category'|page({ slug: main_news_cat.slug })}}\">
                 <img src=\"{{ 'assets/images/arrow-right.svg'|theme }}\" alt=\"\">
             </a>
         </div>
@@ -772,9 +790,9 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     <div class=\"left_date\">
                         {{ item.date| date(\"d.m\") }}
                     </div>
-                    <div class=\"news_text\">
-                       {{item.title}}
-                    </div>
+                    <a href=\"{{ ''| page}}/post/{{item.slug}}\" class=\"news_text\">
+                        {{item.title}}
+                    </a>
                 </div>
                {% endfor %}
             </div>
@@ -785,9 +803,9 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     <div class=\"left_date\">
                         {{ item.date| date(\"d.m\") }}
                     </div>
-                    <div class=\"news_text\">
+                    <a href=\"{{ ''| page}}/post/{{item.slug}}\" class=\"news_text\">
                         {{item.title}}
-                    </div>
+                    </a>
                 </div>
                {% endfor %}
             </div>

@@ -1,9 +1,6 @@
 // News page slider 
 
 $(document).ready(function () {
-
-
-
     $('.slider__big').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -29,22 +26,36 @@ $(document).ready(function () {
         nextArrow: false
     });
 
-        // slide show
+    // slide show
 
-        $(".slide_inner").slick({
-            dots: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-    
-            infinite: true,
-            speed: 2000,
-            fade: false,
-            slidesToShow: 1,
-            adaptiveHeight: true,
-        });
-    
+    $(".slide_inner").slick({
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+
+        infinite: true,
+        speed: 2000,
+        fade: false,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+    });
+
+    // $(".hidden_slide").slick({
+    //     dots: true,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     autoplay: false,
+    //     autoplaySpeed: 3000,
+
+    //     infinite: true,
+    //     speed: 2000,
+    //     fade: false,
+    //     slidesToShow: 1,
+    //     adaptiveHeight: true,
+    // });
 
 });

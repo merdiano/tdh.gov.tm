@@ -199,18 +199,18 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
                     </a> -->
         </div>
         <nav class=\"navs\">
-          <div class=\"link\">
+          <a href=\"";
+        // line 82
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("archive");
+        echo "\" class=\"link\">
             <span class=\"icons\">
               <img src=\"";
         // line 84
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/inbox.svg");
         echo "\" alt=\"\" />
             </span>
-            <a href=\"";
-        // line 86
-        echo $this->extensions['Cms\Twig\Extension']->pageFilter("archive");
-        echo "\" class=\"nav_link\"> Архив </a>
-          </div>
+            <div class=\"nav_link\"> Архив </div>
+          </a>
           <div class=\"stick\"></div>
           <div class=\"link link_media\">
             <div class=\"icons\">
@@ -235,15 +235,18 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
         echo "\"> Видеорепортаж </a>
           </div>
           <div class=\"stick\"></div>
-          <div class=\"link\">
+          <a href=\"";
+        // line 103
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("contact");
+        echo "\" class=\"link\">
             <div class=\"icons\">
               <img src=\"";
         // line 105
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/phone-call.svg");
         echo "\" alt=\"\" />
             </div>
-            <a href=\"#\" class=\"nav_link\"> Обратная связь </a>
-          </div>
+            <div class=\"nav_link\"> Обратная связь </div>
+          </a>
         </nav>
         <div class=\"langMobile\">
           <div class=\"lang_icon\">
@@ -305,7 +308,7 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
 
     public function getDebugInfo()
     {
-        return array (  286 => 131,  282 => 130,  278 => 129,  267 => 121,  260 => 117,  252 => 112,  242 => 105,  234 => 100,  229 => 98,  219 => 91,  211 => 86,  206 => 84,  197 => 77,  186 => 75,  182 => 74,  175 => 70,  164 => 62,  158 => 59,  138 => 42,  132 => 39,  127 => 37,  120 => 33,  117 => 32,  115 => 31,  111 => 30,  102 => 24,  98 => 23,  94 => 22,  87 => 18,  81 => 15,  71 => 8,  62 => 1,);
+        return array (  289 => 131,  285 => 130,  281 => 129,  270 => 121,  263 => 117,  255 => 112,  245 => 105,  240 => 103,  234 => 100,  229 => 98,  219 => 91,  209 => 84,  204 => 82,  197 => 77,  186 => 75,  182 => 74,  175 => 70,  164 => 62,  158 => 59,  138 => 42,  132 => 39,  127 => 37,  120 => 33,  117 => 32,  115 => 31,  111 => 30,  102 => 24,  98 => 23,  94 => 22,  87 => 18,  81 => 15,  71 => 8,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -391,12 +394,12 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
                     </a> -->
         </div>
         <nav class=\"navs\">
-          <div class=\"link\">
+          <a href=\"{{ 'archive'|page }}\" class=\"link\">
             <span class=\"icons\">
               <img src=\"{{ 'assets/images/inbox.svg'|theme }}\" alt=\"\" />
             </span>
-            <a href=\"{{ 'archive'|page }}\" class=\"nav_link\"> Архив </a>
-          </div>
+            <div class=\"nav_link\"> Архив </div>
+          </a>
           <div class=\"stick\"></div>
           <div class=\"link link_media\">
             <div class=\"icons\">
@@ -412,12 +415,12 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
             <a href=\"{{ 'videos'|page}}\"> Видеорепортаж </a>
           </div>
           <div class=\"stick\"></div>
-          <div class=\"link\">
+          <a href=\"{{ 'contact'|page}}\" class=\"link\">
             <div class=\"icons\">
               <img src=\"{{ 'assets/images/phone-call.svg'|theme }}\" alt=\"\" />
             </div>
-            <a href=\"#\" class=\"nav_link\"> Обратная связь </a>
-          </div>
+            <div class=\"nav_link\"> Обратная связь </div>
+          </a>
         </nav>
         <div class=\"langMobile\">
           <div class=\"lang_icon\">
