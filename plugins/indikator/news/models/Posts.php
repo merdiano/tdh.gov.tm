@@ -94,7 +94,8 @@ class Posts extends Model
 
     
     public $attachMany = [
-        'images' => 'System\Models\File',
+        // 'images' => 'System\Models\File',
+         'images' => 'Indikator\News\Classes\Attachment',
     ];
 
     public $hasMany = [
@@ -169,7 +170,7 @@ class Posts extends Model
     }
 
     public function filterLocale(){
-        return ['en' => 'English','tm' => 'Turkmen', 'ru' => 'Russian'];
+        return ['en' => 'English','tk' => 'Turkmen', 'ru' => 'Russian'];
     }
 
     /**
@@ -210,7 +211,7 @@ class Posts extends Model
         {
             $rake = RakePlus::create($text,'ru_RU');
         }
-        else if($this->locale == 'tm')
+        else if($this->locale == 'tk')
         {
             $rake = RakePlus::create($text,'tm_TM');
         }
@@ -674,5 +675,18 @@ class Posts extends Model
         }
 
         return $this->_category;
+    }
+
+
+    public function getImageDetails($image){
+        // return Posts::where('category_id', $this->id)
+        //     ->where("locale", App::getLocale())
+        //     ->isPublished()
+        //     ->limit($limit)
+        //     ->orderBy('published_at', 'desc')
+        //     ->get();
+
+        $imagedata = getimagesize($image);
+        return $imagedata[0] > $imagedata[1] ? "horizontal" : "vertical";
     }
 }

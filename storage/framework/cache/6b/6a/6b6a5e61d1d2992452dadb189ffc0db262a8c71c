@@ -1,4 +1,4 @@
-1611065715a:1:{s:18:"home_last_news.htm";a:6:{s:8:"fileName";s:18:"home_last_news.htm";s:7:"content";s:1794:"
+1612013255a:1:{s:18:"home_last_news.htm";a:6:{s:8:"fileName";s:18:"home_last_news.htm";s:7:"content";s:1818:"
 ==
 <?php
 function onStart(){
@@ -23,7 +23,7 @@ function onStart(){
                 </div>
                 <div class="left_info">
                     <div class="left_title">
-                        <a href="{{ ''| page}}/post/{{item.slug}}">{{item.category.name}}</a>
+                        <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}">{{item.category.name}}</a>
                     </div>
                     <div class="top-news_text">
                         {{item.title}}
@@ -44,7 +44,7 @@ function onStart(){
                 </div>
                 <div class="left_info">
                     <div class="left_title">
-                        <a href="{{ ''| page}}/post/{{item.slug}}">{{item.category.name}}</a>
+                        <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}">{{item.category.name}}</a>
                     </div>
                     <div class="top-news_text">
                         {{item.title}}
@@ -54,7 +54,7 @@ function onStart(){
             {% endfor %}   
         </div>
     {% endif %}
-</div> ";s:5:"mtime";i:1611063822;s:6:"markup";s:1540:"<div class="left">
+</div> ";s:5:"mtime";i:1612012333;s:6:"markup";s:1564:"<div class="left">
     <div class="title">
         Последние новости
     </div>
@@ -68,7 +68,7 @@ function onStart(){
                 </div>
                 <div class="left_info">
                     <div class="left_title">
-                        <a href="{{ ''| page}}/post/{{item.slug}}">{{item.category.name}}</a>
+                        <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}">{{item.category.name}}</a>
                     </div>
                     <div class="top-news_text">
                         {{item.title}}
@@ -89,7 +89,7 @@ function onStart(){
                 </div>
                 <div class="left_info">
                     <div class="left_title">
-                        <a href="{{ ''| page}}/post/{{item.slug}}">{{item.category.name}}</a>
+                        <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}">{{item.category.name}}</a>
                     </div>
                     <div class="top-news_text">
                         {{item.title}}

@@ -1,4 +1,4 @@
-1611065817a:1:{s:12:"category.htm";a:10:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:4279:"title = "category"
+1612013252a:1:{s:12:"category.htm";a:10:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:4357:"title = "category"
 url = "/category/:slug"
 layout = "default"
 is_hidden = 0
@@ -100,7 +100,8 @@ function onStart(){
                         </div>
                         <div class="left_info">
                             <div class="left_title">
-                                <a href="#">{{item.category.name}}</a>
+                                
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">{{item.category.name}}</a>
                             </div>
                             <div class="news_text">
                                 {{item.title}}
@@ -113,7 +114,7 @@ function onStart(){
         </div>
     </div>
 </section>
-";s:5:"mtime";i:1611064528;s:6:"markup";s:3662:"<section class="section" id="intro">
+";s:5:"mtime";i:1612012454;s:6:"markup";s:3740:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
             <a href="{{ 'home'|page}}">
@@ -190,7 +191,8 @@ function onStart(){
                         </div>
                         <div class="left_info">
                             <div class="left_title">
-                                <a href="#">{{item.category.name}}</a>
+                                
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">{{item.category.name}}</a>
                             </div>
                             <div class="news_text">
                                 {{item.title}}

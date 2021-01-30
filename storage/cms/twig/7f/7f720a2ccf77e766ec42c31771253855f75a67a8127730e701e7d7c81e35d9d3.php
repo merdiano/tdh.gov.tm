@@ -30,8 +30,8 @@ class __TwigTemplate_2255b4bc210decc7c742997fe7709fbfee8002db9de2ade070062722120
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("component" => 1, "if" => 51, "for" => 54);
-        $filters = array("page" => 6, "escape" => 16, "date" => 39, "theme" => 44, "length" => 51, "raw" => 87);
-        $functions = array("url" => 105);
+        $filters = array("page" => 6, "escape" => 16, "date" => 39, "theme" => 44, "length" => 51, "raw" => 135);
+        $functions = array("url" => 153);
 
         try {
             $this->sandbox->checkSecurity(
@@ -151,70 +151,154 @@ class __TwigTemplate_2255b4bc210decc7c742997fe7709fbfee8002db9de2ade070062722120
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "images", [], "any", false, false, true, 54));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                 // line 55
-                echo "                            <div>
-                                <div class=\"slider__card\">
-                                    <div class=\"image__inner\">
-                                        <img class=\"norm\" src=\"";
-                // line 58
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 58), 58, $this->source), "html", null, true);
-                echo "\" alt=\"picture\">
+                echo "                                ";
+                if ((twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "getImageDetails", [0 => twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 55)], "method", false, false, true, 55) == "vertical")) {
+                    // line 56
+                    echo "                                    <div>
+                                        <div class=\"slider__card\">
+                                            <div class=\"bg__blur\">
+                                                <img src=\"";
+                    // line 59
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
+                    echo "\" alt=\"picture\">
+                                            </div>
+                                            <div class=\"image__inner\">
+                                                <img src=\"";
+                    // line 62
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 62), 62, $this->source), "html", null, true);
+                    echo "\" alt=\"picture\">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                
+                                ";
+                } else {
+                    // line 68
+                    echo "
+                                    <div>
+                                        <div class=\"slider__card big-horizontal\">
+                                            <div class=\"image__inner\">
+                                                <img src=\"";
+                    // line 72
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 72), 72, $this->source), "html", null, true);
+                    echo "\" alt=\"picture\">
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                ";
+                }
+                // line 78
+                echo "                           
                             ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 63
+            // line 80
             echo "                            
                         </div>
                         <div class=\"slider__mini\">
                             ";
-            // line 66
+            // line 83
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "images", [], "any", false, false, true, 66));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "images", [], "any", false, false, true, 83));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 67
-                echo "                            <div>
-                                <div class=\"image__inner\">
-                                    <img src=\"";
-                // line 69
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 69), 69, $this->source), "html", null, true);
-                echo "\" alt=\"picture\">
-                                </div>
-                            </div>
+                // line 84
+                echo "                                ";
+                if ((twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "getImageDetails", [0 => twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 84)], "method", false, false, true, 84) == "vertical")) {
+                    // line 85
+                    echo "                                    
+                                    <div class=\"mini-box\">
+                                        <div class=\"bg__blur-mini\">
+                                            <img src=\"";
+                    // line 88
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 88), 88, $this->source), "html", null, true);
+                    echo "\" alt=\"picture\">
+                                        </div>
+                                        <div class=\"image__inner\">
+                                            <img src=\"";
+                    // line 91
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 91), 91, $this->source), "html", null, true);
+                    echo "\" alt=\"picture\">
+                                        </div>
+                                    </div>
+                                        
+                                ";
+                } else {
+                    // line 96
+                    echo "
+                                    <div class=\"mini-horizontal\">
+                                        <!-- <div class=\"bg__blur-mini\">
+                                            <img src=\"images/news4.png\"\" alt=\"picture\">
+                                        </div> -->
+                                        <div class=\"image__inner\">
+                                            <img src=\"";
+                    // line 102
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, true, 102), 102, $this->source), "html", null, true);
+                    echo "\" alt=\"picture\">
+                                        </div>
+                                    </div>
+                                
+                                ";
+                }
+                // line 107
+                echo "                           
                             ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 73
+            // line 109
             echo "
                             
 
                         </div>
                     </div>
                     ";
-        } elseif ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source,         // line 78
-($context["post"] ?? null), "images", [], "any", false, false, true, 78)) > 0)) {
-            // line 79
-            echo "                    <div class=\"big_photo\">
-                        <img src=\"";
-            // line 80
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "images", [], "any", false, false, true, 80)) && is_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4) || $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 instanceof ArrayAccess ? ($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4[0] ?? null) : null), "path", [], "any", false, false, true, 80), 80, $this->source), "html", null, true);
-            echo "\" alt=\"\">
-                    </div>
-                ";
+        } elseif ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source,         // line 114
+($context["post"] ?? null), "images", [], "any", false, false, true, 114)) > 0)) {
+            // line 115
+            echo "                        ";
+            if ((twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "getImageDetails", [0 => twig_get_attribute($this->env, $this->source, (($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "images", [], "any", false, false, true, 115)) && is_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4) || $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 instanceof ArrayAccess ? ($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4[0] ?? null) : null), "path", [], "any", false, false, true, 115)], "method", false, false, true, 115) == "vertical")) {
+                // line 116
+                echo "                        
+                            <div class=\"vertical_big\">
+                                <div class=\"bg_blur-post\">
+                                    <img src=\"";
+                // line 119
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "images", [], "any", false, false, true, 119)) && is_array($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144) || $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 instanceof ArrayAccess ? ($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144[0] ?? null) : null), "path", [], "any", false, false, true, 119), 119, $this->source), "html", null, true);
+                echo "\" alt=\"picture\">
+                                </div>
+                                <div class=\"image_inner-post\">
+                                    <img src=\"";
+                // line 122
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "images", [], "any", false, false, true, 122)) && is_array($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b) || $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b instanceof ArrayAccess ? ($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b[0] ?? null) : null), "path", [], "any", false, false, true, 122), 122, $this->source), "html", null, true);
+                echo "\" alt=\"picture\">
+                                </div>
+                            </div>
+                        ";
+            } else {
+                // line 126
+                echo "                            <div class=\"big_photo\">
+                                <img src=\"";
+                // line 127
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "images", [], "any", false, false, true, 127)) && is_array($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002) || $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 instanceof ArrayAccess ? ($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002[0] ?? null) : null), "path", [], "any", false, false, true, 127), 127, $this->source), "html", null, true);
+                echo "\" alt=\"\">
+                            </div>
+                        ";
+            }
+            // line 130
+            echo "                ";
         }
-        // line 83
+        // line 131
         echo "
                 
                 <div class=\"news_page-text\">
                     <p class=\"para_text\">
                         ";
-        // line 87
-        echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "content", [], "any", false, false, true, 87), 87, $this->source);
+        // line 135
+        echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "content", [], "any", false, false, true, 135), 135, $this->source);
         echo "
                     </p>
                     
@@ -227,33 +311,35 @@ class __TwigTemplate_2255b4bc210decc7c742997fe7709fbfee8002db9de2ade070062722120
                 </div>
                 
                 ";
-        // line 98
+        // line 146
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["lastNews"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 99
+            // line 147
             echo "                    <div class=\"news_info\">
                         <div class=\"left_date\">
                             ";
-            // line 101
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 101), 101, $this->source), "d.m"), "html", null, true);
+            // line 149
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "published_at", [], "any", false, false, true, 149), 149, $this->source), "d.m"), "html", null, true);
             echo "
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
                                 <a href=\"";
-            // line 105
+            // line 153
             echo url("/");
             echo "/post/";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 105), 105, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, true, 153), 153, $this->source), "html", null, true);
+            echo "/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 153), 153, $this->source), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 105), "name", [], "any", false, false, true, 105), 105, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 153), "name", [], "any", false, false, true, 153), 153, $this->source), "html", null, true);
             echo "</a>
                             </div>
                             <div class=\"news_text\">
                                 ";
-            // line 108
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 108), 108, $this->source), "html", null, true);
+            // line 156
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 156), 156, $this->source), "html", null, true);
             echo "
                             </div>
                         </div>
@@ -263,7 +349,7 @@ class __TwigTemplate_2255b4bc210decc7c742997fe7709fbfee8002db9de2ade070062722120
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 112
+        // line 160
         echo "       
             </div>
         </div>
@@ -283,7 +369,7 @@ class __TwigTemplate_2255b4bc210decc7c742997fe7709fbfee8002db9de2ade070062722120
 
     public function getDebugInfo()
     {
-        return array (  267 => 112,  256 => 108,  246 => 105,  239 => 101,  235 => 99,  231 => 98,  217 => 87,  211 => 83,  205 => 80,  202 => 79,  200 => 78,  193 => 73,  183 => 69,  179 => 67,  175 => 66,  170 => 63,  159 => 58,  154 => 55,  150 => 54,  146 => 52,  144 => 51,  137 => 47,  131 => 44,  123 => 39,  112 => 31,  106 => 28,  97 => 22,  88 => 16,  82 => 13,  72 => 6,  66 => 2,  62 => 1,);
+        return array (  353 => 160,  342 => 156,  330 => 153,  323 => 149,  319 => 147,  315 => 146,  301 => 135,  295 => 131,  292 => 130,  286 => 127,  283 => 126,  276 => 122,  270 => 119,  265 => 116,  262 => 115,  260 => 114,  253 => 109,  246 => 107,  238 => 102,  230 => 96,  222 => 91,  216 => 88,  211 => 85,  208 => 84,  204 => 83,  199 => 80,  192 => 78,  183 => 72,  177 => 68,  168 => 62,  162 => 59,  157 => 56,  154 => 55,  150 => 54,  146 => 52,  144 => 51,  137 => 47,  131 => 44,  123 => 39,  112 => 31,  106 => 28,  97 => 22,  88 => 16,  82 => 13,  72 => 6,  66 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -342,23 +428,59 @@ class __TwigTemplate_2255b4bc210decc7c742997fe7709fbfee8002db9de2ade070062722120
                     <div class=\"news_slider\">
                         <div class=\"slider__big\">
                             {% for item in  post.images %}
-                            <div>
-                                <div class=\"slider__card\">
-                                    <div class=\"image__inner\">
-                                        <img class=\"norm\" src=\"{{item.path}}\" alt=\"picture\">
+                                {% if post.getImageDetails(item.path) == \"vertical\" %}
+                                    <div>
+                                        <div class=\"slider__card\">
+                                            <div class=\"bg__blur\">
+                                                <img src=\"{{item.path}}\" alt=\"picture\">
+                                            </div>
+                                            <div class=\"image__inner\">
+                                                <img src=\"{{item.path}}\" alt=\"picture\">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                
+                                {% else %}
+
+                                    <div>
+                                        <div class=\"slider__card big-horizontal\">
+                                            <div class=\"image__inner\">
+                                                <img src=\"{{item.path}}\" alt=\"picture\">
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                {% endif %}
+                           
                             {% endfor %}
                             
                         </div>
                         <div class=\"slider__mini\">
                             {% for item in  post.images %}
-                            <div>
-                                <div class=\"image__inner\">
-                                    <img src=\"{{item.path}}\" alt=\"picture\">
-                                </div>
-                            </div>
+                                {% if post.getImageDetails(item.path) == \"vertical\" %}
+                                    
+                                    <div class=\"mini-box\">
+                                        <div class=\"bg__blur-mini\">
+                                            <img src=\"{{item.path}}\" alt=\"picture\">
+                                        </div>
+                                        <div class=\"image__inner\">
+                                            <img src=\"{{item.path}}\" alt=\"picture\">
+                                        </div>
+                                    </div>
+                                        
+                                {% else %}
+
+                                    <div class=\"mini-horizontal\">
+                                        <!-- <div class=\"bg__blur-mini\">
+                                            <img src=\"images/news4.png\"\" alt=\"picture\">
+                                        </div> -->
+                                        <div class=\"image__inner\">
+                                            <img src=\"{{item.path}}\" alt=\"picture\">
+                                        </div>
+                                    </div>
+                                
+                                {% endif %}
+                           
                             {% endfor %}
 
                             
@@ -366,9 +488,21 @@ class __TwigTemplate_2255b4bc210decc7c742997fe7709fbfee8002db9de2ade070062722120
                         </div>
                     </div>
                     {% elseif post.images|length > 0 %}
-                    <div class=\"big_photo\">
-                        <img src=\"{{ post.images[0].path }}\" alt=\"\">
-                    </div>
+                        {% if post.getImageDetails(post.images[0].path) == \"vertical\" %}
+                        
+                            <div class=\"vertical_big\">
+                                <div class=\"bg_blur-post\">
+                                    <img src=\"{{ post.images[0].path }}\" alt=\"picture\">
+                                </div>
+                                <div class=\"image_inner-post\">
+                                    <img src=\"{{ post.images[0].path }}\" alt=\"picture\">
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class=\"big_photo\">
+                                <img src=\"{{ post.images[0].path }}\" alt=\"\">
+                            </div>
+                        {% endif %}
                 {% endif %}
 
                 
@@ -392,7 +526,7 @@ class __TwigTemplate_2255b4bc210decc7c742997fe7709fbfee8002db9de2ade070062722120
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
-                                <a href=\"{{ url('/') }}/post/{{item.slug}}\">{{item.category.name}}</a>
+                                <a href=\"{{ url('/') }}/post/{{item.id}}/{{item.slug}}\">{{item.category.name}}</a>
                             </div>
                             <div class=\"news_text\">
                                 {{item.title}}

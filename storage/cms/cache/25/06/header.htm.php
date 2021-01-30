@@ -1,5 +1,5 @@
 <?php 
-class Cms6006d713314e3393550522_57ecbfae26a7a731bc1074aa88005e45Class extends Cms\Classes\PartialCode
+class Cms60155a1a4bc50109750235_80cf8fca213d7961f8eb635b444af020Class extends Cms\Classes\PartialCode
 {
 public function onStart(){
         $categories = \Indikator\News\Models\Categories::all();

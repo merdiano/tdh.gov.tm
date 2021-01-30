@@ -7,7 +7,7 @@ is_hidden = 0
 function onStart(){
 
     $this['videos'] = Admin\Videos\Models\Video::paginate(10);
-    
+
 
     $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
 
@@ -22,7 +22,7 @@ function onStart(){
     <div class="auto_container">
         <div class="which_page">
             <a href="{{ 'home'|page}}">
-                
+
                 <div class="page_name">
                     Главная
                 </div>
@@ -42,7 +42,7 @@ function onStart(){
                         <div class="gallery_item">
                             <div class="gallery_video">
                                 <img src="{{item.image[0].path}}" alt="">
-                                
+
                                 <div class="video_view" data-src="{{item.video[0].path}}">
                                     Просмотреть
                                 </div>
@@ -50,7 +50,7 @@ function onStart(){
                             <div class="player_bg">
                                 <div class="player">
                                     <video class="player__video viewer">
-                                        
+
                                     </video>
 
                                     <div class="player__controls">
@@ -63,19 +63,8 @@ function onStart(){
                                             <input type="range" name="volume" class="player__slider" min="0" max="1"
                                                 step="0.05" value="1">
                                         </div>
-                                        <div class="control_item">
-                                            <img src="{{ 'assets/images/speed.svg'|theme }}" alt="" class="speed">
-                                            <input type="range" name="playbackRate" class="player__slider" min="0.5"
-                                                max="2" step="0.1" value="1">
-                                        </div>
-                                        <div class="speed_video">
-                                            <button data-skip="-10" class="player__button">
-                                                <span class="backBtn"><img src="{{ 'assets/images/back.svg'|theme }}" alt=""></span> 10s
-                                            </button>
-                                            <button data-skip="25" class="player__button">25s
-                                                <span class="forwardBtn"><img src="{{ 'assets/images/forward.svg'|theme }}" alt=""></span>
-                                            </button>
-                                        </div>
+
+
                                         <button class="player__button fullscreen bigger" title="FullScreen">🞕</button>
                                     </div>
                                 </div>
@@ -95,11 +84,11 @@ function onStart(){
                                     {{ item.published_at| date("d.m.Y") }}
                                 </div>
                             </div>
-                            
+
                         </div>
                     {% endfor %}
                 </div>
-                    
+
                 <div class="section_end">
                     <div class="page_num">
                         <a href="{{videos.previousPageUrl}}">
@@ -125,7 +114,7 @@ function onStart(){
                 <div class="title">
                     Последние новости
                 </div>
-                
+
                 {% for item in lastNews %}
                     <div class="news_info">
                         <div class="left_date">
@@ -133,14 +122,14 @@ function onStart(){
                         </div>
                         <div class="left_info">
                             <div class="left_title">
-                                <a href="{{ url('/') }}/post/{{item.slug}}">{{item.category.name}}</a>
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">{{item.category.name}}</a>
                             </div>
                             <div class="news_text">
                                 {{item.title}}
                             </div>
                         </div>
                     </div>
-                {% endfor %}       
+                {% endfor %}
             </div>
         </div>
     </div>

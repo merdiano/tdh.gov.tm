@@ -23,7 +23,7 @@ class Photo extends Model
     public $table = 'admin_photos_';
 
     public $attachMany = [
-        'image' => 'System\Models\File',
+        'image' => 'Admin\Photos\Classes\Attachment',
         // 'thumb_image' => 'System\Models\File',
     ];
 
@@ -31,7 +31,7 @@ class Photo extends Model
         'image'
     ];
     public $attachOne = [
-        'cat_image' => 'System\Models\File'
+        'cat_image' => 'Admin\Photos\Classes\Attachment'
     ];
 
     /**

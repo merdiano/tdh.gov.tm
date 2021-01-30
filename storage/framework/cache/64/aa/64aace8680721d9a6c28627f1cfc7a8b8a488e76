@@ -1,4 +1,4 @@
-1611065557a:1:{s:10:"search.htm";a:10:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:4686:"title = "search"
+1612013252a:1:{s:10:"search.htm";a:10:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:4663:"title = "search"
 url = "/search"
 layout = "default"
 is_hidden = 0
@@ -18,7 +18,7 @@ function onStart(){
 
         
         //$this['search_results'] = \Indikator\News\Models\Posts::searchWhere(input("q"))->where("locale", App::getLocale())->orderBy('created_at', 'desc')->paginate(10);
-        //$search_results = \Indikator\News\Models\Posts::searchWhere(input("search"))->where("locale", App::getLocale())->orderBy('created_at', 'desc')->get();
+        //$search_results = \Indikator\News\Models\Posts::searchWhere(input("search"))->orderBy('created_at', 'desc')->get();
         
         //dd($search_results);
 
@@ -61,7 +61,7 @@ function onStart(){
                         <div class="main_news-content">
                             <div class="main_news-title">
 
-                                <a href="{{ url('/') }}/post/{{item.slug}}">
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">
                                 {{item.title}}
                                 </a>
                             </div>
@@ -117,7 +117,7 @@ function onStart(){
             </div>
         </div>
     </div>
-</section>";s:5:"mtime";i:1611064953;s:6:"markup";s:3919:"<section class="section" id="intro">
+</section>";s:5:"mtime";i:1612012496;s:6:"markup";s:3931:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
             <a href="{{ 'home'|page}}">
@@ -150,7 +150,7 @@ function onStart(){
                         <div class="main_news-content">
                             <div class="main_news-title">
 
-                                <a href="{{ url('/') }}/post/{{item.slug}}">
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">
                                 {{item.title}}
                                 </a>
                             </div>
@@ -206,11 +206,11 @@ function onStart(){
             </div>
         </div>
     </div>
-</section>";s:4:"code";s:464:"function onStart(){
+</section>";s:4:"code";s:429:"function onStart(){
 
         
         //$this['search_results'] = \Indikator\News\Models\Posts::searchWhere(input("q"))->where("locale", App::getLocale())->orderBy('created_at', 'desc')->paginate(10);
-        //$search_results = \Indikator\News\Models\Posts::searchWhere(input("search"))->where("locale", App::getLocale())->orderBy('created_at', 'desc')->get();
+        //$search_results = \Indikator\News\Models\Posts::searchWhere(input("search"))->orderBy('created_at', 'desc')->get();
         
         //dd($search_results);
 

@@ -36,11 +36,11 @@ fields:
         span: storm
         cssClass: col-md-6
         type: dropdown
-        default: tm
+        default: tk
         options:
             en: English
             ru: Russian
-            tm: Turkmen
+            tk: Turkmen
 
     images:
         label: indikator.news::lang.form.image

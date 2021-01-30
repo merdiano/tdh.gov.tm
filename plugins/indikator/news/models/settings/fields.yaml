@@ -109,3 +109,10 @@ fields:
         type: switch
         default: false
         span: auto
+
+    random_increment:
+        label: Random Statistics Incrementer
+        comment: Enable/Disable Random Incrementer
+        type: switch
+        default: false
+        span: auto

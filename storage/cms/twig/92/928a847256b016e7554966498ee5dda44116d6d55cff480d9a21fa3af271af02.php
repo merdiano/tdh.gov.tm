@@ -31,13 +31,13 @@ class __TwigTemplate_c4bde4595a56a96b484eeec58df1e8d70bf79c455e6a8e1c3268ae25705
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 21);
         $filters = array("page" => 4, "escape" => 12, "date" => 25, "theme" => 47, "round" => 60);
-        $functions = array();
+        $functions = array("url" => 79);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for'],
                 ['page', 'escape', 'date', 'theme', 'round'],
-                []
+                ['url']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);
@@ -190,15 +190,22 @@ class __TwigTemplate_c4bde4595a56a96b484eeec58df1e8d70bf79c455e6a8e1c3268ae25705
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
-                                <a href=\"#\">";
-            // line 78
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 78), "name", [], "any", false, false, true, 78), 78, $this->source), "html", null, true);
+                                
+                                <a href=\"";
+            // line 79
+            echo url("/");
+            echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, true, 79), 79, $this->source), "html", null, true);
+            echo "/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 79), 79, $this->source), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 79), "name", [], "any", false, false, true, 79), 79, $this->source), "html", null, true);
             echo "</a>
                             </div>
                             <div class=\"news_text\">
                                 ";
-            // line 81
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 81), 81, $this->source), "html", null, true);
+            // line 82
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, true, 82), 82, $this->source), "html", null, true);
             echo "
                             </div>
                         </div>
@@ -208,7 +215,7 @@ class __TwigTemplate_c4bde4595a56a96b484eeec58df1e8d70bf79c455e6a8e1c3268ae25705
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 85
+        // line 86
         echo "       
             </div>
 
@@ -229,7 +236,7 @@ class __TwigTemplate_c4bde4595a56a96b484eeec58df1e8d70bf79c455e6a8e1c3268ae25705
 
     public function getDebugInfo()
     {
-        return array (  212 => 85,  201 => 81,  195 => 78,  188 => 74,  184 => 72,  180 => 71,  166 => 60,  158 => 55,  153 => 53,  148 => 51,  141 => 47,  134 => 42,  123 => 37,  116 => 33,  108 => 28,  102 => 25,  97 => 22,  93 => 21,  87 => 18,  78 => 12,  67 => 4,  62 => 1,);
+        return array (  219 => 86,  208 => 82,  196 => 79,  188 => 74,  184 => 72,  180 => 71,  166 => 60,  158 => 55,  153 => 53,  148 => 51,  141 => 47,  134 => 42,  123 => 37,  116 => 33,  108 => 28,  102 => 25,  97 => 22,  93 => 21,  87 => 18,  78 => 12,  67 => 4,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -311,7 +318,8 @@ class __TwigTemplate_c4bde4595a56a96b484eeec58df1e8d70bf79c455e6a8e1c3268ae25705
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
-                                <a href=\"#\">{{item.category.name}}</a>
+                                
+                                <a href=\"{{ url('/') }}/post/{{item.id}}/{{item.slug}}\">{{item.category.name}}</a>
                             </div>
                             <div class=\"news_text\">
                                 {{item.title}}

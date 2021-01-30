@@ -90,6 +90,8 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
             // line 17
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
             echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "id", [], "any", false, false, true, 17), 17, $this->source), "html", null, true);
+            echo "/";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "slug", [], "any", false, false, true, 17), 17, $this->source), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "title", [], "any", false, false, true, 17), 17, $this->source), "html", null, true);
@@ -114,6 +116,8 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
             // line 28
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
             echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "id", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
+            echo "/";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "slug", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
             echo "\">
                         Узнать больше
@@ -147,6 +151,8 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
             // line 46
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
             echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "id", [], "any", false, false, true, 46), 46, $this->source), "html", null, true);
+            echo "/";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "slug", [], "any", false, false, true, 46), 46, $this->source), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "title", [], "any", false, false, true, 46), 46, $this->source), "html", null, true);
@@ -170,6 +176,8 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
             // line 56
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
             echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "id", [], "any", false, false, true, 56), 56, $this->source), "html", null, true);
+            echo "/";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["postFeatured"] ?? null), "slug", [], "any", false, false, true, 56), 56, $this->source), "html", null, true);
             echo "\">
                         Узнать больше
@@ -196,7 +204,7 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
 
     public function getDebugInfo()
     {
-        return array (  184 => 64,  171 => 56,  165 => 53,  158 => 49,  148 => 46,  145 => 45,  139 => 42,  136 => 41,  134 => 40,  129 => 37,  115 => 28,  109 => 25,  102 => 21,  91 => 17,  85 => 13,  79 => 10,  76 => 9,  74 => 8,  70 => 6,  68 => 5,  62 => 1,);
+        return array (  192 => 64,  177 => 56,  171 => 53,  164 => 49,  152 => 46,  149 => 45,  143 => 42,  140 => 41,  138 => 40,  133 => 37,  117 => 28,  111 => 25,  104 => 21,  91 => 17,  85 => 13,  79 => 10,  76 => 9,  74 => 8,  70 => 6,  68 => 5,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -217,7 +225,7 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
         <div class=\"vertical_text\">
             <div class=\"main_title\">
                 
-                <a href=\"{{ ''| page}}/post/{{postFeatured.slug}}\">{{ postFeatured.title }}</a>
+                <a href=\"{{ ''| page}}/post/{{postFeatured.id}}/{{postFeatured.slug}}\">{{ postFeatured.title }}</a>
             </div>
             <div class=\"main_text\">
                 
@@ -228,7 +236,7 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
                     {{ postFeatured.published_at| date(\"d.m.Y\") }}
                 </div>
                 <div class=\"main_link\">
-                    <a href=\"{{ ''| page}}/post/{{postFeatured.slug}}\">
+                    <a href=\"{{ ''| page}}/post/{{postFeatured.id}}/{{postFeatured.slug}}\">
                         Узнать больше
                     </a>
                 </div>
@@ -246,7 +254,7 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
                 </div>
             {% endif %}
             <div class=\"main_title\">
-                <a href=\"{{ ''| page}}/post/{{postFeatured.slug}}\">{{ postFeatured.title }}</a>
+                <a href=\"{{ ''| page}}/post/{{postFeatured.id}}/{{postFeatured.slug}}\">{{ postFeatured.title }}</a>
             </div>
             <div class=\"main_text\">
                 {{ postFeatured.introductory|raw }} 
@@ -256,7 +264,7 @@ class __TwigTemplate_945b22f5916148fbb1be8d17502cc4b7fcc8bc4f3335225ae30e0ccf947
                     {{ postFeatured.published_at| date(\"d.m.Y\") }}
                 </div>
                 <div class=\"main_link\">
-                    <a href=\"{{ ''| page}}/post/{{postFeatured.slug}}\">
+                    <a href=\"{{ ''| page}}/post/{{postFeatured.id}}/{{postFeatured.slug}}\">
                         Узнать больше
                     </a>
                 </div>

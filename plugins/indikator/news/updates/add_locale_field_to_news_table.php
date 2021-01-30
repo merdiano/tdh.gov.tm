@@ -9,7 +9,7 @@ class AddLocaleFieldToNewsTable extends Migration
     {
         Schema::table('indikator_news_posts', function($table)
         {
-            $table->string('locale')->default('tm');
+            $table->string('locale')->default('tk');
         });
 
 

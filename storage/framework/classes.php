@@ -228,4 +228,9 @@
   'KoderHut\\RssFeedster\\Classes\\Contracts\\IRenderer' => 'plugins\\koderhut\\rssfeedster\\classes\\contracts\\IRenderer.php',
   'KoderHut\\RssFeedster\\Classes\\View\\XmlRenderer' => 'plugins\\koderhut\\rssfeedster\\classes\\view\\XmlRenderer.php',
   'KoderHut\\RssFeedster\\Classes\\Support\\Adapters\\NewsXmlAdapter' => 'plugins\\koderhut\\rssfeedster\\classes\\support\\adapters\\NewsXmlAdapter.php',
+  'AhmadFatoni\\ApiGenerator\\Controllers\\API\\newsController' => 'plugins\\ahmadfatoni\\apigenerator\\controllers\\api\\newsController.php',
+  'AhmadFatoni\\ApiGenerator\\Controllers\\API\\categoriesController' => 'plugins\\ahmadfatoni\\apigenerator\\controllers\\api\\categoriesController.php',
+  'Indikator\\News\\Classes\\Attachment' => 'plugins\\indikator\\news\\classes\\Attachment.php',
+  'Admin\\Photos\\Classes\\Attachment' => 'plugins\\admin\\photos\\classes\\Attachment.php',
+  'Admin\\Videos\\Classes\\Attachment' => 'plugins\\admin\\videos\\classes\\Attachment.php',
 );

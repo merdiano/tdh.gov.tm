@@ -1,4 +1,4 @@
-1611065715a:1:{s:19:"home_categories.htm";a:6:{s:8:"fileName";s:19:"home_categories.htm";s:7:"content";s:12118:"==
+1612013255a:1:{s:19:"home_categories.htm";a:6:{s:8:"fileName";s:19:"home_categories.htm";s:7:"content";s:14453:"==
 <?php
 function onStart(){
  
@@ -37,9 +37,9 @@ function onStart(){
                                 <div class="left_date">
                                     {{ post.published_at| date("d.m") }} 
                                 </div>
-                                <div class="news_text">
+                                <a href="{{ ''| page}}/post/{{item.id}}/{{post.slug}}" class="news_text">
                                     {{ post.title }}
-                                </div>
+                                </a>
                             </div>
                         {% endfor %}
                         
@@ -70,9 +70,9 @@ function onStart(){
                                 <div class="left_date">
                                     {{ post.published_at| date("d.m") }}
                                 </div>
-                                <div class="news_text">
+                                <a href="{{ ''| page}}/post/{{item.id}}/{{post.slug}}" class="news_text">
                                     {{ post.title }}
-                                </div>
+                                </a>
                             </div>
                         {% endfor %}
                         
@@ -129,13 +129,25 @@ function onStart(){
                     </a>
                 </div>
                 <div class="gallery">
-                    {% for item in gallery %}
+                    {% for  key, item in gallery %}
                         <div class="item">
                             <div class="item_img">
-                                <a href="{{ 'photos'|page({ category_id: item.id })}}">
-                                    <img src="{{item.cat_image.path}}" alt="">
-                                </a>
+                                <img src="{{item.cat_image.path}}" alt="">
+
+                                <h3 class="photo_view">
+                                    <a class="fancybox" href="{{item.getImages().first.path}}" data-fancybox="{{key}}"
+                                        data-width="1500" data-height="1000"><i
+                                            class="icon-camera"></i> Просмотреть</a>
+                                </h3>
                             </div>
+
+                            <div style="display: none;">
+                                {% for image in item.getImages().slice(1,item.getImages().size) %}
+                                <a href="{{image.path}}" data-fancybox-arrows="true" data-arrows="true" data-fancybox="{{key}}" data-width="1500"
+                                    data-height="1000" data-thumb="{{image.path}}"></a>
+                                {% endfor %}
+                            </div>
+
                             <div class="item_text">
                                 {% if activeLocale == "tm" %}
                                     {{ item.title_tm }}
@@ -164,10 +176,34 @@ function onStart(){
                     {% for item in videos %}
                     <div class="item">
                             <div class="item_img">
-                                <a href="#">
-                                    <img src="{{item.image[0].path}}" alt="">
-                                </a>
+                                <img src="{{item.image[0].path}}" alt="">
+
+                                <div class="video_view" data-src="{{item.video[0].path}}">
+                                    Просмотреть
+                                </div>
                             </div>
+
+                            <div class="player_bg">
+                                <div class="player">
+                                    <video class="player__video viewer">
+                                        <!-- <source url="video/3.mp4"> -->
+                                    </video>
+
+                                    <div class="player__controls">
+                                        <div class="progress">
+                                            <div class="progress__filled"></div>
+                                        </div>
+                                        <button class="player__button toggle playeer" title="Toggle Play">►</button>
+                                        <div class="control_item">
+                                            <img src="{{ 'assets/images/sound.svg'|theme }}" alt="" class="volume">
+                                            <input type="range" name="volume" class="player__slider" min="0" max="1"
+                                                step="0.05" value="1">
+                                        </div>
+                                        <button class="player__button fullscreen bigger" title="FullScreen">🞕</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="item_text">
                                 {% if activeLocale == "tm" %}
                                     {{ item.title_tm }}
@@ -210,7 +246,7 @@ function onStart(){
                     <div class="left_date">
                         {{ item.date| date("d.m") }}
                     </div>
-                    <a href="{{ ''| page}}/post/{{item.slug}}" class="news_text">
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="news_text">
                         {{item.title}}
                     </a>
                 </div>
@@ -223,7 +259,7 @@ function onStart(){
                     <div class="left_date">
                         {{ item.date| date("d.m") }}
                     </div>
-                    <a href="{{ ''| page}}/post/{{item.slug}}" class="news_text">
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="news_text">
                         {{item.title}}
                     </a>
                 </div>
@@ -282,7 +318,7 @@ function onStart(){
             </div><!-- chanel__items -->
         </div> <!-- channel__inner -->
     </div><!-- channel -->
-</div> <!-- container -->";s:5:"mtime";i:1611064420;s:6:"markup";s:11229:"<div class="auto_container">
+</div> <!-- container -->";s:5:"mtime";i:1612012376;s:6:"markup";s:13564:"<div class="auto_container">
     <div class="main_wrapper">
         <div class="content">
             <div class="main_content">
@@ -301,9 +337,9 @@ function onStart(){
                                 <div class="left_date">
                                     {{ post.published_at| date("d.m") }} 
                                 </div>
-                                <div class="news_text">
+                                <a href="{{ ''| page}}/post/{{item.id}}/{{post.slug}}" class="news_text">
                                     {{ post.title }}
-                                </div>
+                                </a>
                             </div>
                         {% endfor %}
                         
@@ -334,9 +370,9 @@ function onStart(){
                                 <div class="left_date">
                                     {{ post.published_at| date("d.m") }}
                                 </div>
-                                <div class="news_text">
+                                <a href="{{ ''| page}}/post/{{item.id}}/{{post.slug}}" class="news_text">
                                     {{ post.title }}
-                                </div>
+                                </a>
                             </div>
                         {% endfor %}
                         
@@ -393,13 +429,25 @@ function onStart(){
                     </a>
                 </div>
                 <div class="gallery">
-                    {% for item in gallery %}
+                    {% for  key, item in gallery %}
                         <div class="item">
                             <div class="item_img">
-                                <a href="{{ 'photos'|page({ category_id: item.id })}}">
-                                    <img src="{{item.cat_image.path}}" alt="">
-                                </a>
+                                <img src="{{item.cat_image.path}}" alt="">
+
+                                <h3 class="photo_view">
+                                    <a class="fancybox" href="{{item.getImages().first.path}}" data-fancybox="{{key}}"
+                                        data-width="1500" data-height="1000"><i
+                                            class="icon-camera"></i> Просмотреть</a>
+                                </h3>
                             </div>
+
+                            <div style="display: none;">
+                                {% for image in item.getImages().slice(1,item.getImages().size) %}
+                                <a href="{{image.path}}" data-fancybox-arrows="true" data-arrows="true" data-fancybox="{{key}}" data-width="1500"
+                                    data-height="1000" data-thumb="{{image.path}}"></a>
+                                {% endfor %}
+                            </div>
+
                             <div class="item_text">
                                 {% if activeLocale == "tm" %}
                                     {{ item.title_tm }}
@@ -428,10 +476,34 @@ function onStart(){
                     {% for item in videos %}
                     <div class="item">
                             <div class="item_img">
-                                <a href="#">
-                                    <img src="{{item.image[0].path}}" alt="">
-                                </a>
+                                <img src="{{item.image[0].path}}" alt="">
+
+                                <div class="video_view" data-src="{{item.video[0].path}}">
+                                    Просмотреть
+                                </div>
                             </div>
+
+                            <div class="player_bg">
+                                <div class="player">
+                                    <video class="player__video viewer">
+                                        <!-- <source url="video/3.mp4"> -->
+                                    </video>
+
+                                    <div class="player__controls">
+                                        <div class="progress">
+                                            <div class="progress__filled"></div>
+                                        </div>
+                                        <button class="player__button toggle playeer" title="Toggle Play">►</button>
+                                        <div class="control_item">
+                                            <img src="{{ 'assets/images/sound.svg'|theme }}" alt="" class="volume">
+                                            <input type="range" name="volume" class="player__slider" min="0" max="1"
+                                                step="0.05" value="1">
+                                        </div>
+                                        <button class="player__button fullscreen bigger" title="FullScreen">🞕</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="item_text">
                                 {% if activeLocale == "tm" %}
                                     {{ item.title_tm }}
@@ -474,7 +546,7 @@ function onStart(){
                     <div class="left_date">
                         {{ item.date| date("d.m") }}
                     </div>
-                    <a href="{{ ''| page}}/post/{{item.slug}}" class="news_text">
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="news_text">
                         {{item.title}}
                     </a>
                 </div>
@@ -487,7 +559,7 @@ function onStart(){
                     <div class="left_date">
                         {{ item.date| date("d.m") }}
                     </div>
-                    <a href="{{ ''| page}}/post/{{item.slug}}" class="news_text">
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="news_text">
                         {{item.title}}
                     </a>
                 </div>

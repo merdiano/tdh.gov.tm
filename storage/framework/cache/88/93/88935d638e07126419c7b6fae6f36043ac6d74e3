@@ -1,4 +1,4 @@
-1611065382a:1:{s:10:"header.htm";a:6:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:4917:"==
+1612013262a:1:{s:10:"header.htm";a:6:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:4957:"==
 <?php
 function onStart(){
         $categories = \Indikator\News\Models\Categories::all();
@@ -29,7 +29,7 @@ function onStart(){
             </div>
             <div class="languages">
               <a href="{{ url('/ru') }}"> Русский </a>
-              <a href="{{ url('/tm') }}"> Türkmen </a>
+              <a href="{{ url('/tk') }}"> Türkmen </a>
               <a href="{{ url('/en') }}"> English </a>
             </div>
           </div>
@@ -63,9 +63,9 @@ function onStart(){
       <div class="navs_inner">
         <!-- taze -->
         <div class="search_mobile">
-          <form action="#" class="form">
+          <form action="{{ 'search'|page }}" class="form" method="GET">
             <div class="input">
-              <input type="text" placeholder="{{'Поиск'|_}}" />
+              <input type="text" name="q" placeholder="{{'Поиск'|_}}" />
             </div>
             <button class="search">
               <img src="{{ 'assets/images/lupa.svg'|theme }}" alt="" />
@@ -136,7 +136,7 @@ function onStart(){
         </div>
         <div class="languagesMobile">
           <a href="{{ url('/ru') }}"> Русский </a>
-          <a href="{{ url('/tm') }}"> Türkmen </a>
+          <a href="{{ url('/tk') }}"> Türkmen </a>
           <a href="{{ url('/en') }}"> English </a>
         </div>
       </div>
@@ -144,7 +144,7 @@ function onStart(){
     <!-- auto_container -->
   </div>
 </header>
-";s:5:"mtime";i:1611056138;s:6:"markup";s:4757:"<!-- Header ==================== -->
+";s:5:"mtime";i:1611217712;s:6:"markup";s:4797:"<!-- Header ==================== -->
 
 <header class="header">
   <div class="auto_container">
@@ -166,7 +166,7 @@ function onStart(){
             </div>
             <div class="languages">
               <a href="{{ url('/ru') }}"> Русский </a>
-              <a href="{{ url('/tm') }}"> Türkmen </a>
+              <a href="{{ url('/tk') }}"> Türkmen </a>
               <a href="{{ url('/en') }}"> English </a>
             </div>
           </div>
@@ -200,9 +200,9 @@ function onStart(){
       <div class="navs_inner">
         <!-- taze -->
         <div class="search_mobile">
-          <form action="#" class="form">
+          <form action="{{ 'search'|page }}" class="form" method="GET">
             <div class="input">
-              <input type="text" placeholder="{{'Поиск'|_}}" />
+              <input type="text" name="q" placeholder="{{'Поиск'|_}}" />
             </div>
             <button class="search">
               <img src="{{ 'assets/images/lupa.svg'|theme }}" alt="" />
@@ -273,7 +273,7 @@ function onStart(){
         </div>
         <div class="languagesMobile">
           <a href="{{ url('/ru') }}"> Русский </a>
-          <a href="{{ url('/tm') }}"> Türkmen </a>
+          <a href="{{ url('/tk') }}"> Türkmen </a>
           <a href="{{ url('/en') }}"> English </a>
         </div>
       </div>

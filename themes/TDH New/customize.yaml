@@ -15,7 +15,7 @@ tabs:
       span: left
       mode: image
 
-    logo_tm:
+    logo_tk:
       tab: Logos
       label: Logo Turkmen
       type: fileupload

@@ -41,25 +41,21 @@ function onStart(){
                     
                     <div class="gallery_item">
                         <div class="gallery_img">
-                            
                             <img src="{{item.cat_image.path}}" alt="">
                             <h3 class="photo_view">
                                 <a class="fancybox" href="{{item.getImages().first.path}}" data-fancybox="{{key}}"
-                                    data-width="1500" data-height="1000" data-fancybox-arrows="true" data-arrows="true"><i
+                                    data-width="1500" data-height="1000"><i
                                         class="icon-camera"></i> Просмотреть</a>
-                                
                             </h3>
-                            
-                        
                         </div>
 
                         <div style="display: none;">
                             {% for image in item.getImages().slice(1,item.getImages().size) %}
-                            <a href="{{image.path}}" data-fancybox-arrows="true" data-arrows="true" data-fancybox="{{key}}" data-width="1500"
+                            <a href="{{image.path}}" data-fancybox="{{key}}" data-width="1500"
                                 data-height="1000" data-thumb="{{image.path}}"></a>
                             {% endfor %}
-
                         </div>
+
                         <div class="gallery_info">
                             <div class="photo_title">
                                 {% if activeLocale == "tm" %}
@@ -116,7 +112,7 @@ function onStart(){
                         </div>
                         <div class="left_info">
                             <div class="left_title">
-                                <a href="{{ url('/') }}/post/{{item.slug}}">
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">
                                     {{item.category.name}}</a>
                             </div>
                             <div class="news_text">

@@ -1,6 +1,6 @@
-1611065382a:1:{s:10:"footer.htm";a:5:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:4388:"<!-- Footer ====================== -->
+1612013419a:1:{s:10:"footer.htm";a:5:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:4427:"<!-- Footer ====================== -->
 <div class="auto_container">
-    <div class="footer">
+    <div class="footer" style="padding-bottom: 50px;">
         <div class="foot_logo">
             <a href="{{ 'home'|page}}">
                 <img src="{{ 'assets/images/Logo.svg'|theme }}" alt="Logo">
@@ -14,7 +14,7 @@
 </div>
 
 <!-- Countries =================== -->
-<div class="auto_container">
+<!-- <div class="auto_container">
     <div class="country">
         <div class="main_end">
             <div class="visitor">
@@ -120,9 +120,9 @@
             </div>
         </div>
     </div>
-</div>";s:5:"mtime";i:1610636581;s:6:"markup";s:4388:"<!-- Footer ====================== -->
+</div> -->";s:5:"mtime";i:1612012819;s:6:"markup";s:4427:"<!-- Footer ====================== -->
 <div class="auto_container">
-    <div class="footer">
+    <div class="footer" style="padding-bottom: 50px;">
         <div class="foot_logo">
             <a href="{{ 'home'|page}}">
                 <img src="{{ 'assets/images/Logo.svg'|theme }}" alt="Logo">
@@ -136,7 +136,7 @@
 </div>
 
 <!-- Countries =================== -->
-<div class="auto_container">
+<!-- <div class="auto_container">
     <div class="country">
         <div class="main_end">
             <div class="visitor">
@@ -242,4 +242,4 @@
             </div>
         </div>
     </div>
-</div>";s:4:"code";N;}}
+</div> -->";s:4:"code";N;}}

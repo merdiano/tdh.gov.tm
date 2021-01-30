@@ -23,7 +23,7 @@ function onStart(){
         <div class="vertical_text">
             <div class="main_title">
                 
-                <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
+                <a href="{{ ''| page}}/post/{{postFeatured.id}}/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
             </div>
             <div class="main_text">
                 
@@ -34,7 +34,7 @@ function onStart(){
                     {{ postFeatured.published_at| date("d.m.Y") }}
                 </div>
                 <div class="main_link">
-                    <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
+                    <a href="{{ ''| page}}/post/{{postFeatured.id}}/{{postFeatured.slug}}">
                         Узнать больше
                     </a>
                 </div>
@@ -52,7 +52,7 @@ function onStart(){
                 </div>
             {% endif %}
             <div class="main_title">
-                <a href="{{ ''| page}}/post/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
+                <a href="{{ ''| page}}/post/{{postFeatured.id}}/{{postFeatured.slug}}">{{ postFeatured.title }}</a>
             </div>
             <div class="main_text">
                 {{ postFeatured.introductory|raw }} 
@@ -62,7 +62,7 @@ function onStart(){
                     {{ postFeatured.published_at| date("d.m.Y") }}
                 </div>
                 <div class="main_link">
-                    <a href="{{ ''| page}}/post/{{postFeatured.slug}}">
+                    <a href="{{ ''| page}}/post/{{postFeatured.id}}/{{postFeatured.slug}}">
                         Узнать больше
                     </a>
                 </div>

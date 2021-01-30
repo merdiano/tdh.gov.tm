@@ -88,6 +88,8 @@ class __TwigTemplate_048abbe479d92e96e4df060cc02596d0bf8c1159c1d06f2c8977531ea52
                 // line 15
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
                 echo "/post/";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, true, 15), 15, $this->source), "html", null, true);
+                echo "/";
                 echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 15), 15, $this->source), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 15), "name", [], "any", false, false, true, 15), 15, $this->source), "html", null, true);
@@ -135,6 +137,8 @@ class __TwigTemplate_048abbe479d92e96e4df060cc02596d0bf8c1159c1d06f2c8977531ea52
                 // line 36
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
                 echo "/post/";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
+                echo "/";
                 echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 36), "name", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
@@ -174,7 +178,7 @@ class __TwigTemplate_048abbe479d92e96e4df060cc02596d0bf8c1159c1d06f2c8977531ea52
 
     public function getDebugInfo()
     {
-        return array (  162 => 46,  157 => 43,  146 => 39,  136 => 36,  129 => 32,  124 => 29,  120 => 28,  116 => 26,  110 => 22,  99 => 18,  89 => 15,  82 => 11,  77 => 8,  73 => 7,  70 => 6,  68 => 5,  62 => 1,);
+        return array (  166 => 46,  161 => 43,  150 => 39,  138 => 36,  131 => 32,  126 => 29,  122 => 28,  118 => 26,  112 => 22,  101 => 18,  89 => 15,  82 => 11,  77 => 8,  73 => 7,  70 => 6,  68 => 5,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -193,7 +197,7 @@ class __TwigTemplate_048abbe479d92e96e4df060cc02596d0bf8c1159c1d06f2c8977531ea52
                 </div>
                 <div class=\"left_info\">
                     <div class=\"left_title\">
-                        <a href=\"{{ ''| page}}/post/{{item.slug}}\">{{item.category.name}}</a>
+                        <a href=\"{{ ''| page}}/post/{{item.id}}/{{item.slug}}\">{{item.category.name}}</a>
                     </div>
                     <div class=\"top-news_text\">
                         {{item.title}}
@@ -214,7 +218,7 @@ class __TwigTemplate_048abbe479d92e96e4df060cc02596d0bf8c1159c1d06f2c8977531ea52
                 </div>
                 <div class=\"left_info\">
                     <div class=\"left_title\">
-                        <a href=\"{{ ''| page}}/post/{{item.slug}}\">{{item.category.name}}</a>
+                        <a href=\"{{ ''| page}}/post/{{item.id}}/{{item.slug}}\">{{item.category.name}}</a>
                     </div>
                     <div class=\"top-news_text\">
                         {{item.title}}

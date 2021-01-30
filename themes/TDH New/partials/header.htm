@@ -29,7 +29,7 @@ function onStart(){
             </div>
             <div class="languages">
               <a href="{{ url('/ru') }}"> Русский </a>
-              <a href="{{ url('/tm') }}"> Türkmen </a>
+              <a href="{{ url('/tk') }}"> Türkmen </a>
               <a href="{{ url('/en') }}"> English </a>
             </div>
           </div>
@@ -63,9 +63,9 @@ function onStart(){
       <div class="navs_inner">
         <!-- taze -->
         <div class="search_mobile">
-          <form action="#" class="form">
+          <form action="{{ 'search'|page }}" class="form" method="GET">
             <div class="input">
-              <input type="text" placeholder="{{'Поиск'|_}}" />
+              <input type="text" name="q" placeholder="{{'Поиск'|_}}" />
             </div>
             <button class="search">
               <img src="{{ 'assets/images/lupa.svg'|theme }}" alt="" />
@@ -136,7 +136,7 @@ function onStart(){
         </div>
         <div class="languagesMobile">
           <a href="{{ url('/ru') }}"> Русский </a>
-          <a href="{{ url('/tm') }}"> Türkmen </a>
+          <a href="{{ url('/tk') }}"> Türkmen </a>
           <a href="{{ url('/en') }}"> English </a>
         </div>
       </div>

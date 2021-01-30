@@ -87,6 +87,8 @@ class __TwigTemplate_0fd92592ff725362756d9cfda3cc5acdeb523dc91fb292fd8be09b9ca55
                 echo "                <a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
                 echo "/post/";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, true, 12), 12, $this->source), "html", null, true);
+                echo "/";
                 echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 12), 12, $this->source), "html", null, true);
                 echo "\" class=\"right_title\">
                     ";
@@ -129,6 +131,8 @@ class __TwigTemplate_0fd92592ff725362756d9cfda3cc5acdeb523dc91fb292fd8be09b9ca55
                 echo "                <a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("");
                 echo "/post/";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, true, 29), 29, $this->source), "html", null, true);
+                echo "/";
                 echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 29), 29, $this->source), "html", null, true);
                 echo "\" class=\"right_title\">
                     ";
@@ -169,7 +173,7 @@ class __TwigTemplate_0fd92592ff725362756d9cfda3cc5acdeb523dc91fb292fd8be09b9ca55
 
     public function getDebugInfo()
     {
-        return array (  157 => 40,  152 => 37,  142 => 33,  136 => 30,  129 => 29,  127 => 28,  124 => 27,  120 => 26,  115 => 23,  110 => 20,  100 => 16,  94 => 13,  87 => 12,  85 => 11,  82 => 10,  78 => 9,  74 => 7,  72 => 6,  66 => 3,  62 => 1,);
+        return array (  161 => 40,  156 => 37,  146 => 33,  140 => 30,  131 => 29,  129 => 28,  126 => 27,  122 => 26,  117 => 23,  112 => 20,  102 => 16,  96 => 13,  87 => 12,  85 => 11,  82 => 10,  78 => 9,  74 => 7,  72 => 6,  66 => 3,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -185,7 +189,7 @@ class __TwigTemplate_0fd92592ff725362756d9cfda3cc5acdeb523dc91fb292fd8be09b9ca55
             {% for item in collegueNews %}
             <div class=\"right_news\">
                 {% set foo = item.title|split(':') %}
-                <a href=\"{{ ''| page}}/post/{{item.slug}}\" class=\"right_title\">
+                <a href=\"{{ ''| page}}/post/{{item.id}}/{{item.slug}}\" class=\"right_title\">
                     {{foo[0]}}
                 </a>
                 <div class=\"right_text\">
@@ -202,7 +206,7 @@ class __TwigTemplate_0fd92592ff725362756d9cfda3cc5acdeb523dc91fb292fd8be09b9ca55
             {% for item in collegueNews %}
             <div class=\"right_news\">
                 {% set foo = item.title|split(':') %}
-                <a href=\"{{ ''| page}}/post/{{item.slug}}\" class=\"right_title\">
+                <a href=\"{{ ''| page}}/post/{{item.id}}/{{item.slug}}\" class=\"right_title\">
                     {{foo[0]}}
                 </a>
                 <div class=\"right_text\">

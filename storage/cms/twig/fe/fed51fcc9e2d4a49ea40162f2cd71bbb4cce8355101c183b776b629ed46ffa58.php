@@ -95,7 +95,7 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
         echo "\"> Русский </a>
               <a href=\"";
         // line 23
-        echo url("/tm");
+        echo url("/tk");
         echo "\"> Türkmen </a>
               <a href=\"";
         // line 24
@@ -151,9 +151,12 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
       <div class=\"navs_inner\">
         <!-- taze -->
         <div class=\"search_mobile\">
-          <form action=\"#\" class=\"form\">
+          <form action=\"";
+        // line 57
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("search");
+        echo "\" class=\"form\" method=\"GET\">
             <div class=\"input\">
-              <input type=\"text\" placeholder=\"";
+              <input type=\"text\" name=\"q\" placeholder=\"";
         // line 59
         echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Поиск"]);
         echo "\" />
@@ -282,7 +285,7 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
         echo "\"> Русский </a>
           <a href=\"";
         // line 130
-        echo url("/tm");
+        echo url("/tk");
         echo "\"> Türkmen </a>
           <a href=\"";
         // line 131
@@ -308,7 +311,7 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
 
     public function getDebugInfo()
     {
-        return array (  289 => 131,  285 => 130,  281 => 129,  270 => 121,  263 => 117,  255 => 112,  245 => 105,  240 => 103,  234 => 100,  229 => 98,  219 => 91,  209 => 84,  204 => 82,  197 => 77,  186 => 75,  182 => 74,  175 => 70,  164 => 62,  158 => 59,  138 => 42,  132 => 39,  127 => 37,  120 => 33,  117 => 32,  115 => 31,  111 => 30,  102 => 24,  98 => 23,  94 => 22,  87 => 18,  81 => 15,  71 => 8,  62 => 1,);
+        return array (  292 => 131,  288 => 130,  284 => 129,  273 => 121,  266 => 117,  258 => 112,  248 => 105,  243 => 103,  237 => 100,  232 => 98,  222 => 91,  212 => 84,  207 => 82,  200 => 77,  189 => 75,  185 => 74,  178 => 70,  167 => 62,  161 => 59,  156 => 57,  138 => 42,  132 => 39,  127 => 37,  120 => 33,  117 => 32,  115 => 31,  111 => 30,  102 => 24,  98 => 23,  94 => 22,  87 => 18,  81 => 15,  71 => 8,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -335,7 +338,7 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
             </div>
             <div class=\"languages\">
               <a href=\"{{ url('/ru') }}\"> Русский </a>
-              <a href=\"{{ url('/tm') }}\"> Türkmen </a>
+              <a href=\"{{ url('/tk') }}\"> Türkmen </a>
               <a href=\"{{ url('/en') }}\"> English </a>
             </div>
           </div>
@@ -369,9 +372,9 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
       <div class=\"navs_inner\">
         <!-- taze -->
         <div class=\"search_mobile\">
-          <form action=\"#\" class=\"form\">
+          <form action=\"{{ 'search'|page }}\" class=\"form\" method=\"GET\">
             <div class=\"input\">
-              <input type=\"text\" placeholder=\"{{'Поиск'|_}}\" />
+              <input type=\"text\" name=\"q\" placeholder=\"{{'Поиск'|_}}\" />
             </div>
             <button class=\"search\">
               <img src=\"{{ 'assets/images/lupa.svg'|theme }}\" alt=\"\" />
@@ -442,7 +445,7 @@ class __TwigTemplate_bd2c329b96b020146951266c9b0a8ac65b99ff21b8050cd540d99ba327a
         </div>
         <div class=\"languagesMobile\">
           <a href=\"{{ url('/ru') }}\"> Русский </a>
-          <a href=\"{{ url('/tm') }}\"> Türkmen </a>
+          <a href=\"{{ url('/tk') }}\"> Türkmen </a>
           <a href=\"{{ url('/en') }}\"> English </a>
         </div>
       </div>

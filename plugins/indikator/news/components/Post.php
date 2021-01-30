@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Indikator\News\Models\Posts as NewsPost;
 use Redirect;
 use BackendAuth;
+use Indikator\News\Models\Settings;
 
 class Post extends ComponentBase
 {
@@ -24,6 +25,12 @@ class Post extends ComponentBase
                 'title'       => 'indikator.news::lang.settings.slug_title',
                 'description' => 'indikator.news::lang.settings.slug_description',
                 'default'     => '{{ :slug }}',
+                'type'        => 'string'
+            ],
+            'id' => [
+                'title'       => 'ID',
+                'description' => '',
+                'default'     => '{{ :id }}',
                 'type'        => 'string'
             ]
         ];
@@ -46,15 +53,17 @@ class Post extends ComponentBase
 
     protected function loadPost()
     {
-        $slug = $this->property('slug');
+        // $slug = $this->property('slug');
+        $id = $this->property('id');
 
         $post = new NewsPost;
 
-        $post = $post->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel')
-            ? $post->transWhere('slug', $slug)
-            : $post->where('slug', $slug);
+        // $post = $post->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel')
+        //     ? $post->transWhere('slug', $slug)
+        //     : $post->where('slug', $slug);
 
-        $post = $post->isPublished()->first();
+
+        $post = $post->where("id", $id)->isPublished()->first();
 
         if (!$post) {
             return $post;
@@ -84,6 +93,11 @@ class Post extends ComponentBase
             }
         }
         $this->page->meta_keywords = $post_keywords;
+
+        if(Settings::get("random_increment", false))
+            $post->increment('statistics', 1);
+        else 
+            $post->increment('statistics', rand(1,5));
 
         return $post;
     }

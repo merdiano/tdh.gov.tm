@@ -8,7 +8,7 @@ use Model;
 class Video extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
@@ -28,7 +28,8 @@ class Video extends Model
     ];
 
     public $attachMany = [
-        'video' => 'System\Models\File',
-        'image' => 'System\Models\File',
+        'video' => 'Admin\Videos\Classes\Attachment',
+        'image' => 'Admin\Videos\Classes\Attachment',
     ];
+
 }

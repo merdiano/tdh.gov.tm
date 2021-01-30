@@ -1,17 +1,15 @@
 title = "post"
-url = "/post/:slug"
+url = "/post/:id/:slug"
 layout = "default"
 is_hidden = 0
 
 [newsPost]
 slug = "{{ :slug }}"
 ==
-
 <?php
 function onStart(){
 
     $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
-
 
 }
 ?>
@@ -70,23 +68,59 @@ function onStart(){
                     <div class="news_slider">
                         <div class="slider__big">
                             {% for item in  post.images %}
-                            <div>
-                                <div class="slider__card">
-                                    <div class="image__inner">
-                                        <img class="norm" src="{{item.path}}" alt="picture">
+                                {% if post.getImageDetails(item.path) == "vertical" %}
+                                    <div>
+                                        <div class="slider__card">
+                                            <div class="bg__blur">
+                                                <img src="{{item.path}}" alt="picture">
+                                            </div>
+                                            <div class="image__inner">
+                                                <img src="{{item.path}}" alt="picture">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                
+                                {% else %}
+
+                                    <div>
+                                        <div class="slider__card big-horizontal">
+                                            <div class="image__inner">
+                                                <img src="{{item.path}}" alt="picture">
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                {% endif %}
+                           
                             {% endfor %}
                             
                         </div>
                         <div class="slider__mini">
                             {% for item in  post.images %}
-                            <div>
-                                <div class="image__inner">
-                                    <img src="{{item.path}}" alt="picture">
-                                </div>
-                            </div>
+                                {% if post.getImageDetails(item.path) == "vertical" %}
+                                    
+                                    <div class="mini-box">
+                                        <div class="bg__blur-mini">
+                                            <img src="{{item.path}}" alt="picture">
+                                        </div>
+                                        <div class="image__inner">
+                                            <img src="{{item.path}}" alt="picture">
+                                        </div>
+                                    </div>
+                                        
+                                {% else %}
+
+                                    <div class="mini-horizontal">
+                                        <!-- <div class="bg__blur-mini">
+                                            <img src="images/news4.png"" alt="picture">
+                                        </div> -->
+                                        <div class="image__inner">
+                                            <img src="{{item.path}}" alt="picture">
+                                        </div>
+                                    </div>
+                                
+                                {% endif %}
+                           
                             {% endfor %}
 
                             
@@ -94,9 +128,21 @@ function onStart(){
                         </div>
                     </div>
                     {% elseif post.images|length > 0 %}
-                    <div class="big_photo">
-                        <img src="{{ post.images[0].path }}" alt="">
-                    </div>
+                        {% if post.getImageDetails(post.images[0].path) == "vertical" %}
+                        
+                            <div class="vertical_big">
+                                <div class="bg_blur-post">
+                                    <img src="{{ post.images[0].path }}" alt="picture">
+                                </div>
+                                <div class="image_inner-post">
+                                    <img src="{{ post.images[0].path }}" alt="picture">
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="big_photo">
+                                <img src="{{ post.images[0].path }}" alt="">
+                            </div>
+                        {% endif %}
                 {% endif %}
 
                 
@@ -120,7 +166,7 @@ function onStart(){
                         </div>
                         <div class="left_info">
                             <div class="left_title">
-                                <a href="{{ url('/') }}/post/{{item.slug}}">{{item.category.name}}</a>
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">{{item.category.name}}</a>
                             </div>
                             <div class="news_text">
                                 {{item.title}}

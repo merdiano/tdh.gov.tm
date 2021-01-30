@@ -61,7 +61,7 @@ class __TwigTemplate_d5cefdf838955dd6b11651fa30601c2cea9df1e64f21bde056c36fb9c72
         // line 1
         echo "<!-- Footer ====================== -->
 <div class=\"auto_container\">
-    <div class=\"footer\">
+    <div class=\"footer\" style=\"padding-bottom: 50px;\">
         <div class=\"foot_logo\">
             <a href=\"";
         // line 5
@@ -81,7 +81,7 @@ class __TwigTemplate_d5cefdf838955dd6b11651fa30601c2cea9df1e64f21bde056c36fb9c72
 </div>
 
 <!-- Countries =================== -->
-<div class=\"auto_container\">
+<!-- <div class=\"auto_container\">
     <div class=\"country\">
         <div class=\"main_end\">
             <div class=\"visitor\">
@@ -223,7 +223,7 @@ class __TwigTemplate_d5cefdf838955dd6b11651fa30601c2cea9df1e64f21bde056c36fb9c72
             </div>
         </div>
     </div>
-</div>";
+</div> -->";
     }
 
     public function getTemplateName()
@@ -245,7 +245,7 @@ class __TwigTemplate_d5cefdf838955dd6b11651fa30601c2cea9df1e64f21bde056c36fb9c72
     {
         return new Source("<!-- Footer ====================== -->
 <div class=\"auto_container\">
-    <div class=\"footer\">
+    <div class=\"footer\" style=\"padding-bottom: 50px;\">
         <div class=\"foot_logo\">
             <a href=\"{{ 'home'|page}}\">
                 <img src=\"{{ 'assets/images/Logo.svg'|theme }}\" alt=\"Logo\">
@@ -259,7 +259,7 @@ class __TwigTemplate_d5cefdf838955dd6b11651fa30601c2cea9df1e64f21bde056c36fb9c72
 </div>
 
 <!-- Countries =================== -->
-<div class=\"auto_container\">
+<!-- <div class=\"auto_container\">
     <div class=\"country\">
         <div class=\"main_end\">
             <div class=\"visitor\">
@@ -365,6 +365,6 @@ class __TwigTemplate_d5cefdf838955dd6b11651fa30601c2cea9df1e64f21bde056c36fb9c72
             </div>
         </div>
     </div>
-</div>", "C:\\xampp\\htdocs\\tdh/themes/TDH New/partials/footer.htm", "");
+</div> -->", "C:\\xampp\\htdocs\\tdh/themes/TDH New/partials/footer.htm", "");
     }
 }

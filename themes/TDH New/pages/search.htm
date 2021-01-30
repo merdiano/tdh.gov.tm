@@ -18,7 +18,7 @@ function onStart(){
 
         
         //$this['search_results'] = \Indikator\News\Models\Posts::searchWhere(input("q"))->where("locale", App::getLocale())->orderBy('created_at', 'desc')->paginate(10);
-        //$search_results = \Indikator\News\Models\Posts::searchWhere(input("search"))->where("locale", App::getLocale())->orderBy('created_at', 'desc')->get();
+        //$search_results = \Indikator\News\Models\Posts::searchWhere(input("search"))->orderBy('created_at', 'desc')->get();
         
         //dd($search_results);
 
@@ -61,7 +61,7 @@ function onStart(){
                         <div class="main_news-content">
                             <div class="main_news-title">
 
-                                <a href="{{ url('/') }}/post/{{item.slug}}">
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">
                                 {{item.title}}
                                 </a>
                             </div>

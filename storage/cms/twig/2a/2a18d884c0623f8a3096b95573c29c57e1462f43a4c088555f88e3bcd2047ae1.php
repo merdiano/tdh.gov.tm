@@ -110,6 +110,8 @@ class __TwigTemplate_2b144fa074fc6dfd0f910bce8f69b90a8b1b9ce8474482d2c9bf2bf36ec
             // line 34
             echo url("/");
             echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, true, 34), 34, $this->source), "html", null, true);
+            echo "/";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 34), 34, $this->source), "html", null, true);
             echo "\">
                                     ";
@@ -204,7 +206,7 @@ class __TwigTemplate_2b144fa074fc6dfd0f910bce8f69b90a8b1b9ce8474482d2c9bf2bf36ec
 
     public function getDebugInfo()
     {
-        return array (  188 => 79,  180 => 74,  169 => 66,  165 => 65,  154 => 57,  150 => 56,  135 => 43,  124 => 39,  117 => 35,  111 => 34,  103 => 29,  97 => 26,  92 => 23,  88 => 22,  67 => 4,  62 => 1,);
+        return array (  190 => 79,  182 => 74,  171 => 66,  167 => 65,  156 => 57,  152 => 56,  137 => 43,  126 => 39,  119 => 35,  111 => 34,  103 => 29,  97 => 26,  92 => 23,  88 => 22,  67 => 4,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -242,7 +244,7 @@ class __TwigTemplate_2b144fa074fc6dfd0f910bce8f69b90a8b1b9ce8474482d2c9bf2bf36ec
                         </div>
                         <div class=\"main_news-content\">
                             <div class=\"main_news-title\">
-                                <a href=\"{{ url('/') }}/post/{{item.slug}}\">
+                                <a href=\"{{ url('/') }}/post/{{item.id}}/{{item.slug}}\">
                                     {{item.title}}</a>
                             </div>
                             <div class=\"main_news-text\">
