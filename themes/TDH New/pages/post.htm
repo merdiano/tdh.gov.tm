@@ -22,7 +22,7 @@ function onStart(){
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
@@ -49,7 +49,7 @@ function onStart(){
                 <div class="news_publish">
                     <div class="publish_date">
                         <span>
-                            Опубликованно
+                           {{'Опубликованно'|_}}
                         </span>
                         <span>
                             {{ post.published_at| date("d.m.Y") }}
@@ -156,7 +156,7 @@ function onStart(){
 
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
                 
                 {% for item in lastNews %}

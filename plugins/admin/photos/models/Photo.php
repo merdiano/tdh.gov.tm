@@ -44,7 +44,7 @@ class Photo extends Model
     public function getImages(){
         // return Photo::where('id', $this->id)
         //     ->get();
-        return Photo::where('id', $this->id)
-        ->get()->first()->image;
+        return Photo::where('id', $this->id)->get()->first()->image;
+        // dd( Photo::where('id', $this->id)->get()->first()->image);
     }
 }

@@ -1,4 +1,4 @@
-1612013252a:1:{s:12:"category.htm";a:10:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:4357:"title = "category"
+1612117601a:1:{s:12:"category.htm";a:10:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:4509:"title = "category"
 url = "/category/:slug"
 layout = "default"
 is_hidden = 0
@@ -29,7 +29,7 @@ function onStart(){
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
@@ -55,11 +55,13 @@ function onStart(){
                         </div>
                         <div class="main_news-content">
                             <div class="main_news-title">
-                                {{ item.title }}
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">
+                                    {{ item.title }}
+                                </a>
                             </div>
                             <div class="main_news-text">
                                 
-                                {{ item.introductory }}
+                                {{ item.introductory|raw }}
                             </div>
                         </div>
                     </div>
@@ -90,7 +92,7 @@ function onStart(){
 
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
                 
                 {% for item in lastNews %}
@@ -114,13 +116,13 @@ function onStart(){
         </div>
     </div>
 </section>
-";s:5:"mtime";i:1612012454;s:6:"markup";s:3740:"<section class="section" id="intro">
+";s:5:"mtime";i:1612116730;s:6:"markup";s:3892:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
@@ -146,11 +148,13 @@ function onStart(){
                         </div>
                         <div class="main_news-content">
                             <div class="main_news-title">
-                                {{ item.title }}
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">
+                                    {{ item.title }}
+                                </a>
                             </div>
                             <div class="main_news-text">
                                 
-                                {{ item.introductory }}
+                                {{ item.introductory|raw }}
                             </div>
                         </div>
                     </div>
@@ -181,7 +185,7 @@ function onStart(){
 
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
                 
                 {% for item in lastNews %}

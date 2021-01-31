@@ -1,4 +1,4 @@
-1612013255a:1:{s:22:"home_colleage_news.htm";a:6:{s:8:"fileName";s:22:"home_colleage_news.htm";s:7:"content";s:1531:"
+1612117602a:1:{s:22:"home_colleage_news.htm";a:6:{s:8:"fileName";s:22:"home_colleage_news.htm";s:7:"content";s:3396:"
 ==
 <?php
 function onStart(){
@@ -7,93 +7,195 @@ function onStart(){
     $this['collegueNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(10)->get();
     
     $this["cat"] = \Indikator\News\Models\Categories::where("id", $this->theme->colleagues_news)->first();
+
+    
+    $this['currentLanguage'] = $this->activeLocale;
+
+    $this['collegueNews2'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", 5)->orderBy('created_at', 'desc')->limit(10)->get();
+    
+    $this["cat2"] = \Indikator\News\Models\Categories::where("id", 5)->first();
+
 }
 ?>
 ==
 
-<div class="right">
-    <div class="title">
-        {{cat.name}}
-    </div>
-    
-    {% if imageType == "horizontal" %}
-        <div class="scroll">
-            
-            {% for item in collegueNews %}
-            <div class="right_news">
-                {% set foo = item.title|split(':') %}
-                <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
-                    {{foo[0]}}
-                </a>
-                <div class="right_text">
-                    {{foo[1]}}
-                </div>
-            </div>
-            {% endfor %}
+{% if currentLanguage == "ru" %}
+    <div class="right">
+        <div class="title">
+            {{cat.name}}
         </div>
-    
-    {% else %}
-
-        <div class="scroll_vertical">
+        
+        {% if imageType == "horizontal" %}
+            <div class="scroll">
                 
-            {% for item in collegueNews %}
-            <div class="right_news">
-                {% set foo = item.title|split(':') %}
-                <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
-                    {{foo[0]}}
-                </a>
-                <div class="right_text">
-                    {{foo[1]}}
+                {% for item in collegueNews %}
+                <div class="right_news">
+                    {% set foo = item.title|split(':') %}
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
+                        {{foo[0]}}
+                    </a>
+                    <div class="right_text">
+                        {{foo[1]}}
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
-    
-    {% endif %}
-</div>
-";s:5:"mtime";i:1612012413;s:6:"markup";s:1168:"<div class="right">
-    <div class="title">
-        {{cat.name}}
-    </div>
-    
-    {% if imageType == "horizontal" %}
-        <div class="scroll">
-            
-            {% for item in collegueNews %}
-            <div class="right_news">
-                {% set foo = item.title|split(':') %}
-                <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
-                    {{foo[0]}}
-                </a>
-                <div class="right_text">
-                    {{foo[1]}}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    
-    {% else %}
+        
+        {% else %}
 
-        <div class="scroll_vertical">
-                
-            {% for item in collegueNews %}
-            <div class="right_news">
-                {% set foo = item.title|split(':') %}
-                <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
-                    {{foo[0]}}
-                </a>
-                <div class="right_text">
-                    {{foo[1]}}
+            <div class="scroll_vertical">
+                    
+                {% for item in collegueNews %}
+                <div class="right_news">
+                    {% set foo = item.title|split(':') %}
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
+                        {{foo[0]}}
+                    </a>
+                    <div class="right_text">
+                        {{foo[1]}}
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+        
+        {% endif %}
+    </div>
+{% else %}
+    <div class="right">
+        <div class="title">
+            {{cat2.name}}
         </div>
-    
-    {% endif %}
-</div>";s:4:"code";s:336:"function onStart(){
+        
+        {% if imageType == "horizontal" %}
+            <div class="scroll">
+                
+                {% for item in collegueNews2 %}
+                <div class="right_news">
+                    {% set foo = item.title|split(':') %}
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
+                        {{foo[0]}}
+                    </a>
+                    <div class="right_text">
+                        {{foo[1]}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        
+        {% else %}
+
+            <div class="scroll_vertical">
+                    
+                {% for item in collegueNews2 %}
+                <div class="right_news">
+                    {% set foo = item.title|split(':') %}
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
+                        {{foo[0]}}
+                    </a>
+                    <div class="right_text">
+                        {{foo[1]}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        
+        {% endif %}
+    </div>
+{% endif %}
+";s:5:"mtime";i:1612113914;s:6:"markup";s:2712:"{% if currentLanguage == "ru" %}
+    <div class="right">
+        <div class="title">
+            {{cat.name}}
+        </div>
+        
+        {% if imageType == "horizontal" %}
+            <div class="scroll">
+                
+                {% for item in collegueNews %}
+                <div class="right_news">
+                    {% set foo = item.title|split(':') %}
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
+                        {{foo[0]}}
+                    </a>
+                    <div class="right_text">
+                        {{foo[1]}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        
+        {% else %}
+
+            <div class="scroll_vertical">
+                    
+                {% for item in collegueNews %}
+                <div class="right_news">
+                    {% set foo = item.title|split(':') %}
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
+                        {{foo[0]}}
+                    </a>
+                    <div class="right_text">
+                        {{foo[1]}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        
+        {% endif %}
+    </div>
+{% else %}
+    <div class="right">
+        <div class="title">
+            {{cat2.name}}
+        </div>
+        
+        {% if imageType == "horizontal" %}
+            <div class="scroll">
+                
+                {% for item in collegueNews2 %}
+                <div class="right_news">
+                    {% set foo = item.title|split(':') %}
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
+                        {{foo[0]}}
+                    </a>
+                    <div class="right_text">
+                        {{foo[1]}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        
+        {% else %}
+
+            <div class="scroll_vertical">
+                    
+                {% for item in collegueNews2 %}
+                <div class="right_news">
+                    {% set foo = item.title|split(':') %}
+                    <a href="{{ ''| page}}/post/{{item.id}}/{{item.slug}}" class="right_title">
+                        {{foo[0]}}
+                    </a>
+                    <div class="right_text">
+                        {{foo[1]}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        
+        {% endif %}
+    </div>
+{% endif %}";s:4:"code";s:657:"function onStart(){
 
 
     $this['collegueNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(10)->get();
     
     $this["cat"] = \Indikator\News\Models\Categories::where("id", $this->theme->colleagues_news)->first();
+
+    
+    $this['currentLanguage'] = $this->activeLocale;
+
+    $this['collegueNews2'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", 5)->orderBy('created_at', 'desc')->limit(10)->get();
+    
+    $this["cat2"] = \Indikator\News\Models\Categories::where("id", 5)->first();
+
 }";s:17:"_PARSER_ERROR_INI";s:0:"";}}

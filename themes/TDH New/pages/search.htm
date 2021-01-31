@@ -34,18 +34,18 @@ function onStart(){
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
             <div class="page_name">
-                Результат поиска
+                {{'Результат поиска'|_}}
             </div>
         </div>
         <div class="section_wrapper">
             <div class="center">
                 <div class="title">
-                    Результат поиска
+                    {{'Результат поиска'|_}}
                 </div>
                 <div class="main_news">
                     {% for item in newsPosts.posts %}
@@ -67,7 +67,7 @@ function onStart(){
                             </div>
                             <div class="main_news-text">
                                 
-                                {{item.introductory}}
+                                {{ item.introductory|raw }}
                             </div>
                         </div>
                     </div>
@@ -94,14 +94,14 @@ function onStart(){
                             </a>
                         </div>
                         <div class="page_list">
-                            {{(newsPosts.posts.total/newsPosts.posts.perPage)|round(0,"ceil")}} страниц
+                            {{(newsPosts.posts.total/newsPosts.posts.perPage)|round(0,"ceil")}} {{'страниц'|_}}
                         </div>
                     </div>
                 {% endif %}
             </div>
             <div class="right_side full">
                 <div class="title">
-                    Поиск
+                    {{'Поиск'|_}}
                 </div>
                 <form class="form" method="GET">
                     <div class="input">
@@ -112,7 +112,7 @@ function onStart(){
                     </button>
                 </form>
                 <div class="found_news">
-                    По вашему запросу было найдено <span class="quantity_num">{{newsPosts.posts.total}}</span> статей
+                    {{'По вашему запросу было найдено'|_}} <span class="quantity_num">{{newsPosts.posts.total}}</span> {{'статей'|_}}
                 </div>
             </div>
         </div>

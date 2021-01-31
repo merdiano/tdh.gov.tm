@@ -14,6 +14,8 @@ class WeeklyNewsController extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Admin.WeeklyNews', 'main-menu-item');
+        // BackendMenu::setContext('Admin.WeeklyNews', 'main-menu-item');
+        
+        BackendMenu::setContext('Admin.Photos', 'tdh', 'weekly_news');
     }
 }

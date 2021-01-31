@@ -1,4 +1,4 @@
-1612013252a:1:{s:8:"post.htm";a:10:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:7507:"title = "post"
+1612117601a:1:{s:8:"post.htm";a:10:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:7530:"title = "post"
 url = "/post/:id/:slug"
 layout = "default"
 is_hidden = 0
@@ -22,7 +22,7 @@ function onStart(){
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
@@ -49,7 +49,7 @@ function onStart(){
                 <div class="news_publish">
                     <div class="publish_date">
                         <span>
-                            Опубликованно
+                           {{'Опубликованно'|_}}
                         </span>
                         <span>
                             {{ post.published_at| date("d.m.Y") }}
@@ -156,7 +156,7 @@ function onStart(){
 
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
                 
                 {% for item in lastNews %}
@@ -177,7 +177,7 @@ function onStart(){
             </div>
         </div>
     </div>
-</section>";s:5:"mtime";i:1612012485;s:6:"markup";s:7151:"{% component 'newsPost' %}
+</section>";s:5:"mtime";i:1612116873;s:6:"markup";s:7174:"{% component 'newsPost' %}
 
 <section class="section" id="intro">
     <div class="auto_container">
@@ -185,7 +185,7 @@ function onStart(){
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
@@ -212,7 +212,7 @@ function onStart(){
                 <div class="news_publish">
                     <div class="publish_date">
                         <span>
-                            Опубликованно
+                           {{'Опубликованно'|_}}
                         </span>
                         <span>
                             {{ post.published_at| date("d.m.Y") }}
@@ -319,7 +319,7 @@ function onStart(){
 
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
                 
                 {% for item in lastNews %}

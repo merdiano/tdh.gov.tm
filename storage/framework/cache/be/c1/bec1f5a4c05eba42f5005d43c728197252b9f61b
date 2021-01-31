@@ -1,4 +1,4 @@
-1612013252a:1:{s:11:"gallery.htm";a:9:{s:8:"fileName";s:11:"gallery.htm";s:7:"content";s:5174:"title = "gallery"
+1612117601a:1:{s:11:"gallery.htm";a:9:{s:8:"fileName";s:11:"gallery.htm";s:7:"content";s:5243:"title = "gallery"
 url = "/gallery"
 layout = "default"
 is_hidden = 0
@@ -6,7 +6,7 @@ is_hidden = 0
 <?php
 function onStart(){
 
-    $gallery = Admin\Photos\Models\Photo::paginate(10   );
+    $gallery = Admin\Photos\Models\Photo::orderBy("date")->paginate(10);
     $this['gallery'] = $gallery;
 
     $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();
@@ -22,18 +22,18 @@ function onStart(){
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
             <div class="page_name">
-                Фоторепортаж
+                {{'Фоторепортаж'|_}}
             </div>
         </div>
         <div class="section_wrapper">
             <div class="center">
                 <div class="title">
-                    Фоторепортаж
+                    {{'Фоторепортаж'|_}}
                 </div>
                 <div class="gallery_outer">
                     
@@ -41,14 +41,14 @@ function onStart(){
                     
                     <div class="gallery_item">
                         <div class="gallery_img">
-                            <img src="{{item.cat_image.path}}" alt="">
+                            <img src="{{item.image[0].path}}" alt="">
                             <h3 class="photo_view">
                                 <a class="fancybox" href="{{item.getImages().first.path}}" data-fancybox="{{key}}"
                                     data-width="1500" data-height="1000"><i
                                         class="icon-camera"></i> Просмотреть</a>
                             </h3>
                         </div>
-
+                        
                         <div style="display: none;">
                             {% for image in item.getImages().slice(1,item.getImages().size) %}
                             <a href="{{image.path}}" data-fancybox="{{key}}" data-width="1500"
@@ -102,7 +102,7 @@ function onStart(){
             </div>
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
                 
                 {% for item in lastNews %}
@@ -125,24 +125,24 @@ function onStart(){
         </div>
         
     </div>
-</section>";s:5:"mtime";i:1612012471;s:6:"markup";s:4758:"<section class="section" id="intro">
+</section>";s:5:"mtime";i:1612116798;s:6:"markup";s:4813:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
             <div class="page_name">
-                Фоторепортаж
+                {{'Фоторепортаж'|_}}
             </div>
         </div>
         <div class="section_wrapper">
             <div class="center">
                 <div class="title">
-                    Фоторепортаж
+                    {{'Фоторепортаж'|_}}
                 </div>
                 <div class="gallery_outer">
                     
@@ -150,14 +150,14 @@ function onStart(){
                     
                     <div class="gallery_item">
                         <div class="gallery_img">
-                            <img src="{{item.cat_image.path}}" alt="">
+                            <img src="{{item.image[0].path}}" alt="">
                             <h3 class="photo_view">
                                 <a class="fancybox" href="{{item.getImages().first.path}}" data-fancybox="{{key}}"
                                     data-width="1500" data-height="1000"><i
                                         class="icon-camera"></i> Просмотреть</a>
                             </h3>
                         </div>
-
+                        
                         <div style="display: none;">
                             {% for image in item.getImages().slice(1,item.getImages().size) %}
                             <a href="{{image.path}}" data-fancybox="{{key}}" data-width="1500"
@@ -211,7 +211,7 @@ function onStart(){
             </div>
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
                 
                 {% for item in lastNews %}
@@ -234,9 +234,9 @@ function onStart(){
         </div>
         
     </div>
-</section>";s:4:"code";s:321:"function onStart(){
+</section>";s:4:"code";s:335:"function onStart(){
 
-    $gallery = Admin\Photos\Models\Photo::paginate(10   );
+    $gallery = Admin\Photos\Models\Photo::orderBy("date")->paginate(10);
     $this['gallery'] = $gallery;
 
     $this['lastNews'] = \Indikator\News\Models\Posts::where("locale", App::getLocale())->where("category_id", "!=", $this->theme->colleagues_news)->orderBy('created_at', 'desc')->limit(6)->get();

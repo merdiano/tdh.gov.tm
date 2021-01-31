@@ -1,5 +1,5 @@
 <?php 
-use RainLab\Translate\Classes\Translator;class Cms60155ae946adc418610428_205260f8b0e0c59e18d54c52b78dc252Class extends Cms\Classes\PageCode
+use RainLab\Translate\Classes\Translator;class Cms6016f409e499b218865136_5e90681af4064f184ea37948372fca54Class extends Cms\Classes\PageCode
 {
 
 protected $translator;
@@ -17,6 +17,5 @@ public function onStart()
         $this['imageType'] = $imagedata[0] > $imagedata[1] ? "horizontal" : "vertical";
     }
     
-
 }
 }

@@ -1,4 +1,4 @@
-1612013257a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:1317:"title = "Home"
+1612117601a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:1317:"title = "Home"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -30,7 +30,6 @@ function onStart()
         $this['imageType'] = $imagedata[0] > $imagedata[1] ? "horizontal" : "vertical";
     }
     
-
 }
 ?>
 ==
@@ -38,6 +37,8 @@ function onStart()
 
 
 <!-- Intro ===================== -->
+
+
 <div class="auto_container" id="intro">
     <div class="intro">
         {% partial 'home_intro' %}
@@ -48,11 +49,12 @@ function onStart()
     </div>
 </div>
 
-
-{% partial 'home_categories' %}  ";s:5:"mtime";i:1610971361;s:6:"markup";s:389:"{% set CurrentLanguage = SelectedLanguage %}
+{% partial 'home_categories' %}  ";s:5:"mtime";i:1612116841;s:6:"markup";s:391:"{% set CurrentLanguage = SelectedLanguage %}
 
 
 <!-- Intro ===================== -->
+
+
 <div class="auto_container" id="intro">
     <div class="intro">
         {% partial 'home_intro' %}
@@ -63,8 +65,7 @@ function onStart()
     </div>
 </div>
 
-
-{% partial 'home_categories' %}";s:4:"code";s:653:"use RainLab\Translate\Classes\Translator;
+{% partial 'home_categories' %}";s:4:"code";s:651:"use RainLab\Translate\Classes\Translator;
 protected $translator;
 
 function onStart()
@@ -81,5 +82,4 @@ function onStart()
         $this['imageType'] = $imagedata[0] > $imagedata[1] ? "horizontal" : "vertical";
     }
     
-
 }";s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"newsPosts";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"postFeatured";s:1:"0";s:8:"postPage";s:4:"home";s:12:"categoryPage";s:4:"home";}}}

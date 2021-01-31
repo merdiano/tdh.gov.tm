@@ -29,7 +29,7 @@ function onStart(){
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
@@ -55,11 +55,13 @@ function onStart(){
                         </div>
                         <div class="main_news-content">
                             <div class="main_news-title">
-                                {{ item.title }}
+                                <a href="{{ url('/') }}/post/{{item.id}}/{{item.slug}}">
+                                    {{ item.title }}
+                                </a>
                             </div>
                             <div class="main_news-text">
                                 
-                                {{ item.introductory }}
+                                {{ item.introductory|raw }}
                             </div>
                         </div>
                     </div>
@@ -90,7 +92,7 @@ function onStart(){
 
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
                 
                 {% for item in lastNews %}

@@ -299,7 +299,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                             <div class=\"item_img\">
                                 <img src=\"";
             // line 115
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "cat_image", [], "any", false, false, true, 115), "path", [], "any", false, false, true, 115), 115, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, true, 115)) && is_array($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b) || $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b instanceof ArrayAccess ? ($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b[0] ?? null) : null), "path", [], "any", false, false, true, 115), 115, $this->source), "html", null, true);
             echo "\" alt=\"\">
 
                                 <h3 class=\"photo_view\">
@@ -407,12 +407,12 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                             <div class=\"item_img\">
                                 <img src=\"";
             // line 159
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, true, 159)) && is_array($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b) || $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b instanceof ArrayAccess ? ($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b[0] ?? null) : null), "path", [], "any", false, false, true, 159), 159, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, true, 159)) && is_array($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002) || $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 instanceof ArrayAccess ? ($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002[0] ?? null) : null), "path", [], "any", false, false, true, 159), 159, $this->source), "html", null, true);
             echo "\" alt=\"\">
 
                                 <div class=\"video_view\" data-src=\"";
             // line 161
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = twig_get_attribute($this->env, $this->source, $context["item"], "video", [], "any", false, false, true, 161)) && is_array($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002) || $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 instanceof ArrayAccess ? ($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002[0] ?? null) : null), "path", [], "any", false, false, true, 161), 161, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, (($__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4 = twig_get_attribute($this->env, $this->source, $context["item"], "video", [], "any", false, false, true, 161)) && is_array($__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4) || $__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4 instanceof ArrayAccess ? ($__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4[0] ?? null) : null), "path", [], "any", false, false, true, 161), 161, $this->source), "html", null, true);
             echo "\">
                                     Просмотреть
                                 </div>
@@ -791,7 +791,7 @@ class __TwigTemplate_3868346dc8fc74ceebda4d15ce293643df2b44b16a9740c8668f0f5fd18
                     {% for  key, item in gallery %}
                         <div class=\"item\">
                             <div class=\"item_img\">
-                                <img src=\"{{item.cat_image.path}}\" alt=\"\">
+                                <img src=\"{{item.image[0].path}}\" alt=\"\">
 
                                 <h3 class=\"photo_view\">
                                     <a class=\"fancybox\" href=\"{{item.getImages().first.path}}\" data-fancybox=\"{{key}}\"

@@ -14,6 +14,8 @@ class Interesting extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Admin.Interesting', 'main-menu-item');
+        // BackendMenu::setContext('Admin.Interesting', 'main-menu-item');
+        
+        BackendMenu::setContext('Admin.Photos', 'tdh', 'interesting');
     }
 }

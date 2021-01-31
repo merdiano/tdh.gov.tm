@@ -24,18 +24,18 @@ function onStart(){
             <a href="{{ 'home'|page}}">
 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
             <div class="page_name">
-                Видеорепортаж
+                {{'Видеорепортаж'|_}}
             </div>
         </div>
         <div class="section_wrapper">
             <div class="center">
                 <div class="title">
-                    Видеорепортаж
+                    {{'Видеорепортаж'|_}}
                 </div>
                 <div class="gallery_outer">
                     {% for key,item in videos %}
@@ -44,7 +44,7 @@ function onStart(){
                                 <img src="{{item.image[0].path}}" alt="">
 
                                 <div class="video_view" data-src="{{item.video[0].path}}">
-                                    Просмотреть
+                                    {{'Просмотреть'|_}}
                                 </div>
                             </div>
                             <div class="player_bg">
@@ -106,13 +106,13 @@ function onStart(){
                         </a>
                     </div>
                     <div class="page_list">
-                        {{(videos.total/videos.perPage)|round(0,"ceil")}} страниц
+                        {{(videos.total/videos.perPage)|round(0,"ceil")}} {{'страниц'|_}}
                     </div>
                 </div>
             </div>
             <div class="right_side break">
                 <div class="title">
-                    Последние новости
+                    {{'Последние новости'|_}}
                 </div>
 
                 {% for item in lastNews %}

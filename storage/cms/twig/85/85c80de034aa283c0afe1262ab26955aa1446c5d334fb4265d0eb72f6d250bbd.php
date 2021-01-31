@@ -29,7 +29,7 @@ class __TwigTemplate_270a5830efdb3c4ba64c647eb7c005c4a7f7bb6b2828fde8dd9e11e519b
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("set" => 1, "partial" => 7);
+        $tags = array("set" => 1, "partial" => 9);
         $filters = array();
         $functions = array();
 
@@ -64,23 +64,25 @@ class __TwigTemplate_270a5830efdb3c4ba64c647eb7c005c4a7f7bb6b2828fde8dd9e11e519b
         echo "
 
 <!-- Intro ===================== -->
+
+
 <div class=\"auto_container\" id=\"intro\">
     <div class=\"intro\">
         ";
-        // line 7
+        // line 9
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("home_intro"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 8
+        // line 10
         echo "        <div class=\"top_news\">
             ";
-        // line 9
+        // line 11
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("home_last_news"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
         echo "  
             ";
-        // line 10
+        // line 12
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("home_colleage_news"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
@@ -89,9 +91,8 @@ class __TwigTemplate_270a5830efdb3c4ba64c647eb7c005c4a7f7bb6b2828fde8dd9e11e519b
     </div>
 </div>
 
-
 ";
-        // line 16
+        // line 17
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("home_categories"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
@@ -109,7 +110,7 @@ class __TwigTemplate_270a5830efdb3c4ba64c647eb7c005c4a7f7bb6b2828fde8dd9e11e519b
 
     public function getDebugInfo()
     {
-        return array (  95 => 16,  84 => 10,  78 => 9,  75 => 8,  71 => 7,  64 => 2,  62 => 1,);
+        return array (  96 => 17,  86 => 12,  80 => 11,  77 => 10,  73 => 9,  64 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -118,6 +119,8 @@ class __TwigTemplate_270a5830efdb3c4ba64c647eb7c005c4a7f7bb6b2828fde8dd9e11e519b
 
 
 <!-- Intro ===================== -->
+
+
 <div class=\"auto_container\" id=\"intro\">
     <div class=\"intro\">
         {% partial 'home_intro' %}
@@ -127,7 +130,6 @@ class __TwigTemplate_270a5830efdb3c4ba64c647eb7c005c4a7f7bb6b2828fde8dd9e11e519b
         </div>
     </div>
 </div>
-
 
 {% partial 'home_categories' %}", "C:\\xampp\\htdocs\\tdh/themes/TDH New/pages/home.htm", "");
     }

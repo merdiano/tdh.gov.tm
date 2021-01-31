@@ -1,4 +1,4 @@
-1612013255a:1:{s:19:"home_categories.htm";a:6:{s:8:"fileName";s:19:"home_categories.htm";s:7:"content";s:14453:"==
+1612117602a:1:{s:19:"home_categories.htm";a:6:{s:8:"fileName";s:19:"home_categories.htm";s:7:"content";s:14452:"==
 <?php
 function onStart(){
  
@@ -132,7 +132,7 @@ function onStart(){
                     {% for  key, item in gallery %}
                         <div class="item">
                             <div class="item_img">
-                                <img src="{{item.cat_image.path}}" alt="">
+                                <img src="{{item.image[0].path}}" alt="">
 
                                 <h3 class="photo_view">
                                     <a class="fancybox" href="{{item.getImages().first.path}}" data-fancybox="{{key}}"
@@ -318,7 +318,7 @@ function onStart(){
             </div><!-- chanel__items -->
         </div> <!-- channel__inner -->
     </div><!-- channel -->
-</div> <!-- container -->";s:5:"mtime";i:1612012376;s:6:"markup";s:13564:"<div class="auto_container">
+</div> <!-- container -->";s:5:"mtime";i:1612113991;s:6:"markup";s:13563:"<div class="auto_container">
     <div class="main_wrapper">
         <div class="content">
             <div class="main_content">
@@ -432,7 +432,7 @@ function onStart(){
                     {% for  key, item in gallery %}
                         <div class="item">
                             <div class="item_img">
-                                <img src="{{item.cat_image.path}}" alt="">
+                                <img src="{{item.image[0].path}}" alt="">
 
                                 <h3 class="photo_view">
                                     <a class="fancybox" href="{{item.getImages().first.path}}" data-fancybox="{{key}}"

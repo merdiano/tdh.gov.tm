@@ -1,4 +1,4 @@
-1612013252a:1:{s:11:"archive.htm";a:9:{s:8:"fileName";s:11:"archive.htm";s:7:"content";s:3718:"title = "archive"
+1612117601a:1:{s:11:"archive.htm";a:9:{s:8:"fileName";s:11:"archive.htm";s:7:"content";s:3752:"title = "archive"
 url = "/archive"
 layout = "default"
 is_hidden = 0
@@ -27,18 +27,18 @@ is_hidden = 0
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
             <div class="page_name">
-                Архив
+                {{'Архив'|_}}
             </div>
         </div>
         <div class="section_wrapper">
             <div class="center">
                 <div class="title">
-                    Архив
+                    {{'Архив'|_}}
                 </div>
                 <div class="main_news">
                     
@@ -69,7 +69,7 @@ is_hidden = 0
             </div>
             <div class="right_side half full">
                 <div class="title">
-                    Календарь
+                    {{'Календарь'|_}}  
                 </div>
 
                 <div class="cal">
@@ -102,24 +102,24 @@ is_hidden = 0
             window.location.replace("{{ ''| page}}?date=" + date.format("Y-M-D"));
         }
     });
-</script>";s:5:"mtime";i:1612012442;s:6:"markup";s:2970:"<section class="section" id="intro">
+</script>";s:5:"mtime";i:1612116688;s:6:"markup";s:3004:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
             <a href="{{ 'home'|page}}">
                 
                 <div class="page_name">
-                    Главная
+                    {{'Главная'|_}}
                 </div>
             </a>
             <div class="slash">\</div>
             <div class="page_name">
-                Архив
+                {{'Архив'|_}}
             </div>
         </div>
         <div class="section_wrapper">
             <div class="center">
                 <div class="title">
-                    Архив
+                    {{'Архив'|_}}
                 </div>
                 <div class="main_news">
                     
@@ -150,7 +150,7 @@ is_hidden = 0
             </div>
             <div class="right_side half full">
                 <div class="title">
-                    Календарь
+                    {{'Календарь'|_}}  
                 </div>
 
                 <div class="cal">

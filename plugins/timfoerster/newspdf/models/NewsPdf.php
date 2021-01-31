@@ -54,6 +54,8 @@ class NewsPdf extends Model
         $data = [
             'title' => $this->news->title, 
             'content' => $content,
+            'category' => $this->news->category->name,
+            'date' => $this->news->published_at,
             'images' => $images];
 
         return PDF::loadTemplate($templateCode, $data);

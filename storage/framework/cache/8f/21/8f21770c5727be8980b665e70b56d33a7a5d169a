@@ -1,4 +1,4 @@
-1612012865a:1:{s:14:"home_intro.htm";a:6:{s:8:"fileName";s:14:"home_intro.htm";s:7:"content";s:2341:"==
+1612117602a:1:{s:14:"home_intro.htm";a:6:{s:8:"fileName";s:14:"home_intro.htm";s:7:"content";s:2341:"==
 <?php
 function onStart(){
  
@@ -71,7 +71,7 @@ function onStart(){
     
     {% endif %}
 </div>
-";s:5:"mtime";i:1612011675;s:6:"markup";s:2285:"<div class="main">
+";s:5:"mtime";i:1612099994;s:6:"markup";s:2285:"<div class="main">
     <div class="title">
         В центре событий
     </div>

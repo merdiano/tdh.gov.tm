@@ -237,6 +237,8 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
             // line 107
             echo url("/");
             echo "/post/";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, true, 107), 107, $this->source), "html", null, true);
+            echo "/";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "slug", [], "any", false, false, true, 107), 107, $this->source), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, true, 107), "name", [], "any", false, false, true, 107), 107, $this->source), "html", null, true);
@@ -276,7 +278,7 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
 
     public function getDebugInfo()
     {
-        return array (  259 => 115,  248 => 110,  238 => 107,  231 => 103,  227 => 101,  223 => 100,  211 => 91,  203 => 86,  198 => 84,  193 => 82,  186 => 78,  181 => 76,  175 => 72,  163 => 66,  159 => 64,  153 => 62,  151 => 61,  146 => 60,  144 => 59,  139 => 58,  137 => 57,  121 => 44,  102 => 28,  97 => 26,  93 => 24,  89 => 23,  69 => 6,  62 => 1,);
+        return array (  261 => 115,  250 => 110,  238 => 107,  231 => 103,  227 => 101,  223 => 100,  211 => 91,  203 => 86,  198 => 84,  193 => 82,  186 => 78,  181 => 76,  175 => 72,  163 => 66,  159 => 64,  153 => 62,  151 => 61,  146 => 60,  144 => 59,  139 => 58,  137 => 57,  121 => 44,  102 => 28,  97 => 26,  93 => 24,  89 => 23,  69 => 6,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -387,7 +389,7 @@ class __TwigTemplate_e5e4979b74b70495859d7a064cfc96252275598fdc26837f2bb898b44ad
                         </div>
                         <div class=\"left_info\">
                             <div class=\"left_title\">
-                                <a href=\"{{ url('/') }}/post/{{item.slug}}\">{{item.category.name}}</a>
+                                <a href=\"{{ url('/') }}/post/{{item.id}}/{{item.slug}}\">{{item.category.name}}</a>
                             </div>
                             <div class=\"news_text\">
                                 {{item.title}}

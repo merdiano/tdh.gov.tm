@@ -958,6 +958,7 @@ input[type='text']:focus {
 .item {
     margin-right: 40px;
     text-align: center;
+    max-width: calc(50% - 20px);
 }
 
 .item_img {
@@ -2330,10 +2331,15 @@ input[type=range]::-moz-range-thumb {
         -ms-flex-direction: column;
     }
 
+    .item {
+        margin-right: 0;
+        max-width: 100%;
+    }
+
     .item:last-child {
         margin-top: 50px;
         margin-right: 0;
-        max-width: calc(100% - 40px);
+        max-width: 100%;
     }
 
     .gallery_outer {

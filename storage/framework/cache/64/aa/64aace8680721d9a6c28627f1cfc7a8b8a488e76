@@ -1,4 +1,4 @@
-1612013252a:1:{s:10:"search.htm";a:10:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:4663:"title = "search"
+1612117601a:1:{s:10:"search.htm";a:10:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:4669:"title = "search"
 url = "/search"
 layout = "default"
 is_hidden = 0
@@ -67,7 +67,7 @@ function onStart(){
                             </div>
                             <div class="main_news-text">
                                 
-                                {{item.introductory}}
+                                {{ item.introductory|raw }}
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@ function onStart(){
             </div>
         </div>
     </div>
-</section>";s:5:"mtime";i:1612012496;s:6:"markup";s:3931:"<section class="section" id="intro">
+</section>";s:5:"mtime";i:1612099648;s:6:"markup";s:3937:"<section class="section" id="intro">
     <div class="auto_container">
         <div class="which_page">
             <a href="{{ 'home'|page}}">
@@ -156,7 +156,7 @@ function onStart(){
                             </div>
                             <div class="main_news-text">
                                 
-                                {{item.introductory}}
+                                {{ item.introductory|raw }}
                             </div>
                         </div>
                     </div>

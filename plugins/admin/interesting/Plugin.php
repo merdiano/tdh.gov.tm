@@ -11,4 +11,9 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+
+    public function registerNavigation()
+    {
+        
+    }
 }
